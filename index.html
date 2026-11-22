@@ -380,6 +380,25 @@
       justify-content: center;
       font-weight: 900;
     }
+
+    /* Static Total Overview Card (Non-clickable, reports total only) */
+    .folder-card-static {
+      cursor: default !important;
+      background: #f8fafc !important;
+      border: 1.5px solid #cbd5e1 !important;
+      box-shadow: none !important;
+    }
+    .folder-card-static:hover {
+      transform: none !important;
+      border-color: #cbd5e1 !important;
+      box-shadow: none !important;
+    }
+    .folder-card-static .counter-total {
+      background: #0f172a !important;
+      color: #ffffff !important;
+      border-color: #0f172a !important;
+      box-shadow: none !important;
+    }
     .folder-icon {
       font-size: 32px;
       display: flex;
@@ -960,13 +979,14 @@
         </p>
       </div>
 
-      <!-- Categories Folders (CLICK TO SELECT, CLICK AGAIN TO DESELECT) -->
+      <!-- Categories Folders (STATISTIC COUNTER + INTERACTIVE SECTION FOLDERS) -->
       <div class="folders-grid">
-        <div class="folder-card" id="folder-btn-all" onclick="toggleCategoryFolder('all')">
-          <div class="folder-icon">📁</div>
+        <!-- Static Total Overview (Non-clickable, reports grand total) -->
+        <div class="folder-card folder-card-static" id="total-overview-card" title="إجمالي الأصول المفتوحة المعتمدة في المكتبة">
+          <div class="folder-icon">📊</div>
           <div>
-            <h3>جميع الموارد</h3>
-            <span id="allCount">جاري التحميل...</span>
+            <h3 style="color:#475569;">إجمالي الموارد</h3>
+            <span id="allCount" class="counter-total">جاري التحميل...</span>
           </div>
         </div>
         <div class="folder-card" id="folder-btn-ai" onclick="toggleCategoryFolder('ai')">
@@ -2104,18 +2124,12 @@
       const headerTitle = document.getElementById('currentCategoryTitle');
       const headerBadge = document.getElementById('currentCategoryBadge');
 
-      if (catId === 'all') {
-        headerIcon.innerText = '📁';
-        headerTitle.innerText = 'جميع الموارد المعتمدة';
-        headerBadge.innerText = `${allResources.length} مورد`;
-      } else {
-        const catObj = CATEGORIES.find(c => c.id === catId);
-        if (catObj) {
-          headerIcon.innerText = catObj.icon;
-          headerTitle.innerText = catObj.title;
-          const cnt = allResources.filter(x => x.category === catId).length;
-          headerBadge.innerText = `${cnt} ${catObj.label} معتمدة`;
-        }
+      const catObj = CATEGORIES.find(c => c.id === catId);
+      if (catObj) {
+        headerIcon.innerText = catObj.icon;
+        headerTitle.innerText = catObj.title;
+        const cnt = allResources.filter(x => x.category === catId).length;
+        headerBadge.innerText = `${cnt} ${catObj.label} معتمدة`;
       }
 
       renderCards();
@@ -2132,14 +2146,13 @@
     function handleSearch() {
       searchQuery = document.getElementById('searchInput').value.trim().toLowerCase();
       if (searchQuery && !selectedCategory) {
-        selectedCategory = 'all';
+        selectedCategory = 'search';
         document.querySelectorAll('.folder-card').forEach(c => c.classList.remove('selected'));
-        document.getElementById('folder-btn-all').classList.add('selected');
         document.getElementById('cardsListHeader').style.display = 'flex';
         document.getElementById('currentCategoryIcon').innerText = '🔍';
         document.getElementById('currentCategoryTitle').innerText = 'نتائج البحث';
       }
-      if (!searchQuery && selectedCategory === 'all' && document.getElementById('currentCategoryTitle').innerText === 'نتائج البحث') {
+      if (!searchQuery && selectedCategory === 'search') {
         selectedCategory = null;
         renderInitialView();
         return;
@@ -2159,7 +2172,7 @@
 
       // Filter by category and search
       const filtered = allResources.filter(it => {
-        if (selectedCategory && selectedCategory !== 'all' && it.category !== selectedCategory) {
+        if (selectedCategory && selectedCategory !== 'search' && it.category !== selectedCategory) {
           return false;
         }
         if (!searchQuery) return true;
