@@ -4,6 +4,11 @@ sync_resources.py
 Automated deep-mining scanner and updater for Itqan Library (مكتبة إتقان).
 Scans Itqan Community discussions AND replies/posts across all tags
 for new datasets, models, tools, and papers, and automatically upserts them into resources.json.
+
+Includes a Resilient 3-Tier Fallback Engine:
+- Tier 1: Google Gemini 1.5 Flash (AI Semantic Classification & Summarization)
+- Tier 2: Groq Llama-3.3-70B / OpenRouter (Secondary AI Backup if Gemini is rate-limited or fails)
+- Tier 3: Deterministic Rule-Based & Heuristic Engine (Zero-AI, Zero-cost, 100% offline & keyless)
 """
 
 import json
@@ -114,6 +119,141 @@ def extract_links_from_text(text):
         verified.append({"name": name, "url": u, "src": src})
     return verified
 
+def rule_based_classify_and_summarize(title, content):
+    """
+    Tier 3 Fallback: Deterministic Rule-Based & Heuristic Engine.
+    Zero-AI, zero-key, executes in milliseconds with zero dependencies.
+    """
+    title_and_text = (title + " " + content).lower()
+    category = "tools"
+    icon = "💻"
+    
+    if any(w in title_and_text for w in ["huggingface.co/models", "نموذج", "whisper", "zipformer", "tajweedformer", "تسميع"]):
+        category = "ai"
+        icon = "👳‍♂️"
+    elif any(w in title_and_text for w in ["archive.org", "حزمة صوت", "تسجيلات", "تلاوات", "corpus", "dataset"]):
+        category = "audio"
+        icon = "🔊"
+    elif any(w in title_and_text for w in ["خط", "رسم عثماني", "مصحف", "ttf", "woff2", "svg"]):
+        category = "fonts"
+        icon = "✒️"
+    elif any(w in title_and_text for w in ["arxiv", "paper", "ورقة بحثية", "دراسة", "معيار"]):
+        category = "research"
+        icon = "📚"
+    elif any(w in title_and_text for w in ["ورشة", "محاضرة", "لقاء تقني", "شرح عملي", "youtube"]):
+        category = "workshops"
+        icon = "📺"
+
+    clean_desc = re.sub(r'<[^>]+>', ' ', content)
+    clean_desc = re.sub(r'\s+', ' ', clean_desc).strip()
+    if len(clean_desc) > 175:
+        clean_desc = clean_desc[:172] + "..."
+    if not clean_desc:
+        clean_desc = f"مورد تقني معتمد مستخرج من أطروحات المجتمع: {title}"
+
+    return {
+        "category": category,
+        "icon": icon,
+        "summary": clean_desc,
+        "metric": "مورد تقني معتمد"
+    }
+
+def ai_classify_and_summarize(title, content, links):
+    """
+    3-Tier Resilient Fallback Architecture:
+    - Tier 1: Google Gemini 1.5 Flash (via native REST)
+    - Tier 2: Groq Llama 3.3 (via native REST)
+    - Tier 3: Deterministic Rule-Based Engine (Zero-AI fallback)
+    """
+    gemini_key = os.environ.get("GEMINI_API_KEY", "").strip()
+    groq_key = os.environ.get("GROQ_API_KEY", "").strip()
+
+    prompt = f"""أنت خبير في تقنيات القرآن الكريم مفتوحة المصدر لمجتمع إتقان.
+المطلوب تحليل الموضوع التالي وتصنيفه وتلخيصه بدقة:
+العنوان: {title}
+المحتوى: {content[:1000]}
+الروابط المستخرجة: {[l['url'] for l in links]}
+
+أجب بصيغة JSON فقط بهذا الشكل:
+{{
+  "category": "ai" | "audio" | "fonts" | "tools" | "research" | "workshops",
+  "summary": "ملخص فني دقيق من سطرين يوضح فائدة هذا المورد للمطورين والباحثين",
+  "metric": "وصف تقني موجز مثل: نموذج مفتوح المصدر أو حزمة تسجيلات صوتية"
+}}"""
+
+    # --- Tier 1: Google Gemini API ---
+    if gemini_key:
+        try:
+            gemini_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={gemini_key}"
+            req_data = {
+                "contents": [{"parts": [{"text": prompt}]}],
+                "generationConfig": {"temperature": 0.2, "responseMimeType": "application/json"}
+            }
+            req = urllib.request.Request(
+                gemini_url,
+                data=json.dumps(req_data).encode("utf-8"),
+                headers={"Content-Type": "application/json"}
+            )
+            with urllib.request.urlopen(req, timeout=10) as resp:
+                res_json = json.loads(resp.read().decode("utf-8"))
+                text = res_json['candidates'][0]['content']['parts'][0]['text']
+                data = json.loads(text)
+                cat = data.get("category", "tools")
+                if cat not in ["ai", "audio", "fonts", "tools", "research", "workshops"]:
+                    cat = "tools"
+                icon_map = {"ai": "👳‍♂️", "audio": "🔊", "fonts": "✒️", "tools": "💻", "research": "📚", "workshops": "📺"}
+                print(f"    [AI Tier 1: Gemini] Successfully categorized as '{cat}'")
+                return {
+                    "category": cat,
+                    "icon": icon_map.get(cat, "💻"),
+                    "summary": data.get("summary", ""),
+                    "metric": data.get("metric", "مورد تقني موثق")
+                }
+        except Exception as e:
+            print(f"    [Notice] Gemini Tier 1 failed or rate-limited: {e}. Switching to Tier 2...", file=sys.stderr)
+
+    # --- Tier 2: Groq Cloud API (Llama-3.3-70b-versatile) ---
+    if groq_key:
+        try:
+            groq_url = "https://api.groq.com/openai/v1/chat/completions"
+            req_data = {
+                "model": "llama-3.3-70b-versatile",
+                "messages": [
+                    {"role": "system", "content": "You output JSON only."},
+                    {"role": "user", "content": prompt}
+                ],
+                "response_format": {"type": "json_object"},
+                "temperature": 0.2
+            }
+            req = urllib.request.Request(
+                groq_url,
+                data=json.dumps(req_data).encode("utf-8"),
+                headers={
+                    "Content-Type": "application/json",
+                    "Authorization": f"Bearer {groq_key}"
+                }
+            )
+            with urllib.request.urlopen(req, timeout=10) as resp:
+                res_json = json.loads(resp.read().decode("utf-8"))
+                text = res_json['choices'][0]['message']['content']
+                data = json.loads(text)
+                cat = data.get("category", "tools")
+                if cat not in ["ai", "audio", "fonts", "tools", "research", "workshops"]:
+                    cat = "tools"
+                icon_map = {"ai": "👳‍♂️", "audio": "🔊", "fonts": "✒️", "tools": "💻", "research": "📚", "workshops": "📺"}
+                print(f"    [AI Tier 2: Groq] Successfully categorized via Llama 3.3 as '{cat}'")
+                return {
+                    "category": cat,
+                    "icon": icon_map.get(cat, "💻"),
+                    "summary": data.get("summary", ""),
+                    "metric": data.get("metric", "مورد تقني موثق")
+                }
+        except Exception as e:
+            print(f"    [Notice] Groq Tier 2 failed: {e}. Switching to Tier 3 Rule-Engine...", file=sys.stderr)
+
+    # --- Tier 3: Deterministic Rule-Based Fallback (Zero-AI) ---
+    return rule_based_classify_and_summarize(title, content)
+
 def scan_and_update():
     existing = load_existing()
     # Index by discussionNum for fast upserting
@@ -130,7 +270,6 @@ def scan_and_update():
     print("Stage 1: Scanning latest community replies and comments for resource links...")
     posts_payload = api_get(f"{BASE_POSTS_API}?sort=-createdAt&page[limit]=50&include=discussion,user")
     if posts_payload and "data" in posts_payload:
-        included = {item['id']: item for item in posts_payload.get('included', [])}
         for post in posts_payload.get("data", []):
             content = post.get("attributes", {}).get("contentHtml", "")
             links = extract_links_from_text(content)
@@ -155,7 +294,6 @@ def scan_and_update():
                         updated_links_count += 1
                         print(f"  [⟳] Auto-mined new link for #{disc_id} ({target_item.get('title')[:30]}): {l['url']}")
                 if added_any:
-                    # Update metric
                     target_item["metric"] = f"{len(target_item['links'])} مصادر وروابط مباشرة"
 
     # -------------------------------------------------------------
@@ -205,50 +343,26 @@ def scan_and_update():
                 user_rel = disc.get("relationships", {}).get("user", {}).get("data", {})
                 author_name = users_by_id.get(user_rel.get("id") if user_rel else None) or "عضو في مجتمع إتقان"
 
-                title_and_text = (title + " " + content).lower()
-                category = "tools"
-                icon = "💻"
-                
-                if any(w in title_and_text for w in ["huggingface.co/models", "نموذج", "whisper", "zipformer", "tajweedformer", "تسميع"]):
-                    category = "ai"
-                    icon = "👳‍♂️"
-                elif any(w in title_and_text for w in ["archive.org", "حزمة صوت", "تسجيلات", "تلاوات", "corpus", "dataset"]):
-                    category = "audio"
-                    icon = "🔊"
-                elif any(w in title_and_text for w in ["خط", "رسم عثماني", "مصحف", "ttf", "woff2", "svg"]):
-                    category = "fonts"
-                    icon = "✒️"
-                elif any(w in title_and_text for w in ["arxiv", "paper", "ورقة بحثية", "دراسة", "معيار"]):
-                    category = "research"
-                    icon = "📚"
-                elif any(w in title_and_text for w in ["ورشة", "محاضرة", "لقاء تقني", "شرح عملي", "youtube"]):
-                    category = "workshops"
-                    icon = "📺"
-
-                clean_desc = re.sub(r'<[^>]+>', ' ', content)
-                clean_desc = re.sub(r'\s+', ' ', clean_desc).strip()
-                if len(clean_desc) > 175:
-                    clean_desc = clean_desc[:172] + "..."
-                if not clean_desc:
-                    clean_desc = f"مورد تقني معتمد مستخرج من أطروحات المجتمع: {title}"
+                # Classify and summarize using the Resilient Fallback Engine
+                analysis = ai_classify_and_summarize(title, content, links)
 
                 new_item = {
                     "id": len(existing) + 1,
                     "title": title,
-                    "category": category,
-                    "icon": icon,
+                    "category": analysis.get("category", "tools"),
+                    "icon": analysis.get("icon", "💻"),
                     "license": "مفتوح المصدر",
-                    "metric": f"{len(links)} روابط فحص وتحميل مباشرة",
+                    "metric": analysis.get("metric", f"{len(links)} روابط فحص وتحميل مباشرة"),
                     "author": author_name,
                     "discussionUrl": f"https://community.itqan.dev/d/{disc_id}",
                     "discussionNum": disc_id,
-                    "description": clean_desc,
+                    "description": analysis.get("summary", ""),
                     "links": links[:12]
                 }
                 existing.append(new_item)
                 existing_by_num[disc_id] = new_item
                 new_count += 1
-                print(f"  [+] Curated and added: {title} (#{disc_id}) -> {category}")
+                print(f"  [+] Curated and added: {title} (#{disc_id}) -> {new_item['category']}")
 
     if new_count > 0 or updated_links_count > 0:
         save_resources(existing)
