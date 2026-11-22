@@ -3,7 +3,7 @@
     "id": 1,
     "title": "نموذج TajweedFormer V4 لتصحيح التجويد على هاتف المتعلم (Edge AI)",
     "category": "ai",
-    "icon": "🧠",
+    "icon": "👳‍♂️",
     "license": "وقفي مجاني للأبد",
     "metric": "يعمل On-Device محلياً بالكامل",
     "author": "Quran Lab (@muno459)",
@@ -32,7 +32,7 @@
     "id": 2,
     "title": "نموذج Zipformer V3 المفتوح للتعرف الصوتي على التلاوة والتجويد",
     "category": "ai",
-    "icon": "🧠",
+    "icon": "👳‍♂️",
     "license": "رخصة أباتشي 2.0 مفتوحة",
     "metric": "يكتب الصوت صوتاً صوتاً (Phonemes)",
     "author": "Quran Lab (@muno459)",
@@ -56,7 +56,7 @@
     "id": 3,
     "title": "المعلم القرآني (Quran Muaalem): نظام ونموذج كشف أخطاء التلاوة",
     "category": "ai",
-    "icon": "🧠",
+    "icon": "👳‍♂️",
     "license": "مفتوح المصدر (GPL-3.0)",
     "metric": "كشف اللحن الجلي وتصحيح الكلمات",
     "author": "طارق منصور (@iphoneislam)",
@@ -80,7 +80,7 @@
     "id": 4,
     "title": "نموذج SAWT V4 لترميم ومعالجة التلاوات الصوتية بجودة 48kHz",
     "category": "ai",
-    "icon": "🧠",
+    "icon": "👳‍♂️",
     "license": "مفتوح المصدر للأبحاث",
     "metric": "دقة فائقة Super-Resolution 48kHz",
     "author": "Quran Lab (@muno459)",
@@ -104,7 +104,7 @@
     "id": 5,
     "title": "نموذج Tarteel Whisper للتعرف الصوتي على الآيات القرآنية",
     "category": "ai",
-    "icon": "🧠",
+    "icon": "👳‍♂️",
     "license": "مفتوح المصدر (MIT)",
     "metric": "Fine-Tuned على آلاف التلاوات",
     "author": "فريق ترتيل بالتعاون مع المجتمع",
@@ -128,7 +128,7 @@
     "id": 6,
     "title": "محرك BurhanAI المفتوح للتحقق من المخرجات القرآنية ومنع الهلوسة",
     "category": "ai",
-    "icon": "🧠",
+    "icon": "👳‍♂️",
     "license": "مفتوح المصدر (Apache-2.0)",
     "metric": "التحقق المرجعي الصارم للنصوص",
     "author": "فريق برهان والباحثين",
@@ -152,7 +152,7 @@
     "id": 7,
     "title": "نموذج FastConformer Quran CTC ONNX للتعرف السريع",
     "category": "ai",
-    "icon": "🧠",
+    "icon": "👳‍♂️",
     "license": "مفتوح المصدر",
     "metric": "استدلال فائق السرعة عبر ONNX",
     "author": "مساهمو تقنيات التسميع",
@@ -176,7 +176,7 @@
     "id": 8,
     "title": "نظام AraS2P لتجزئة التلاوة القرآنية إلى فونيمات صوتية دقيقة",
     "category": "ai",
-    "icon": "🧠",
+    "icon": "👳‍♂️",
     "license": "أبحاث مفتوحة المصدر",
     "metric": "تفكيك النطق إلى وحدات صوتية أساسية",
     "author": "مختبر الصوتيات القرآنية",
@@ -195,7 +195,7 @@
     "id": 9,
     "title": "أداة التسميع المباشرة فوق Muaalem لمصحف السراج",
     "category": "ai",
-    "icon": "🧠",
+    "icon": "👳‍♂️",
     "license": "مفتوح المصدر",
     "metric": "واجهة ويب وتطبيق مدمج لكشف اللحن",
     "author": "خالد طه ومطورو مصحف السراج",
@@ -219,7 +219,7 @@
     "id": 10,
     "title": "نموذج Cohere Quranic Evaluation للتحقق الصوتي والنصي",
     "category": "ai",
-    "icon": "🧠",
+    "icon": "👳‍♂️",
     "license": "مفتوح المصدر للأغراض التعليمية",
     "metric": "تقييم مقارن بين نماذج ASR",
     "author": "مهندسو مجتمع إتقان",
@@ -240,36 +240,51 @@
     "category": "audio",
     "icon": "🔊",
     "license": "بيانات بحثية مفتوحة للجميع",
-    "metric": "أكثر من 95,000 مقطع صوتي للمتعلمين",
+    "metric": "أكثر من 95,000 مقطع صوتي + 8 مصادر مباشرة",
     "author": "أحمد التميمي (@Ahmed_Al_Tamimi)",
     "discussionUrl": "https://community.itqan.dev/d/930",
     "discussionNum": "930",
-    "description": "مجموعة شاملة وموثقة لمصادر التسجيلات الصوتية للمتعلمين الحقيقيين على هواتفهم، مع فرز يدوي وآلي لمواضع أخطاء الغنة والمدود لتدريب واختبار وتدقيق نماذج التسميع.",
+    "description": "المجموعة المرجعية الشاملة لمصادر تسجيلات المتعلمين الحقيقيين على هواتفهم: تشمل 5,044 مقطعاً صحيحاً و 14,892 مقطعاً فيه خطأ مصنفة آلياً، و 71 ألف تلاوة من IqraEval، و 1,330 مقطع أخطاء معلّمة، ومجموعة QDAT لأحكام التجويد، وتلاوات القرّاء المحترفين لبيانات «المعلم».",
     "links": [
       {
-        "name": "نسخة «قارئ القرآن» المراجعة (19,936 مقطعاً)",
+        "name": "نسخة «قارئ القرآن» المعالجة والمصنفة (19,936 مقطعاً)",
         "url": "https://archive.org/details/qari-al-quran-reprocessed-corpus",
         "src": "Archive.org"
       },
       {
-        "name": "تسجيلات ترتيل v1 الأصلية (25,000 مقطع)",
+        "name": "تسجيلات ترتيل v1 المحفوظة على أرشيف الإنترنت",
         "url": "https://archive.org/details/quran-speech-dataset",
         "src": "Archive.org"
       },
       {
-        "name": "بيانات تدريب IqraEval (71,000 تلاوة)",
+        "name": "مشروع DeepSpeech-Quran (طارق الديب)",
+        "url": "https://github.com/tarekeldeeb/DeepSpeech-Quran",
+        "src": "GitHub"
+      },
+      {
+        "name": "بيانات تدريب IqraEval (71,000 تلاوة صحيحة)",
         "url": "https://huggingface.co/datasets/IqraEval/Iqra_train",
         "src": "HuggingFace"
       },
       {
-        "name": "بيانات أخطاء IqraExtra (1,330 مقطع)",
+        "name": "بيانات أخطاء IqraExtra (1,330 مقطعاً معلّماً)",
         "url": "https://huggingface.co/datasets/IqraEval/Iqra_Extra_IS26",
         "src": "HuggingFace"
       },
       {
-        "name": "مجموعة QDAT لأحكام التجويد (1,505 تسجيل)",
+        "name": "مجموعة QDAT لأحكام التجويد (1,505 تسجيلات)",
         "url": "https://huggingface.co/datasets/obadx/qdat",
         "src": "HuggingFace"
+      },
+      {
+        "name": "بيانات «المعلم» الموسومة (muaalem-annotated-v3)",
+        "url": "https://huggingface.co/datasets/obadx/muaalem-annotated-v3",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "بوابة تلاوات القرّاء المحترفين (EveryAyah)",
+        "url": "https://everyayah.com/data/",
+        "src": "Audio Portal"
       }
     ]
   },

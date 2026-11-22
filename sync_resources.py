@@ -174,14 +174,14 @@ def scan_and_update():
                 # Classify category
                 title_and_text = (title + " " + content).lower()
                 category = "tools"
-                icon = "⚙️"
+                icon = "💻"
                 
                 if any(w in title_and_text for w in ["huggingface.co/models", "نموذج", "whisper", "zipformer", "tajweedformer", "asr"]):
                     category = "ai"
-                    icon = "🤖"
+                    icon = "👳‍♂️"
                 elif any(w in title_and_text for w in ["archive.org", "حزمة صوت", "تسجيلات", "تلاوات", "corpus", "dataset"]):
                     category = "audio"
-                    icon = "🎙️"
+                    icon = "🔊"
                 elif any(w in title_and_text for w in ["خط", "رسم عثماني", "مصحف", "ttf", "woff2", "svg"]):
                     category = "fonts"
                     icon = "✒️"
@@ -190,7 +190,7 @@ def scan_and_update():
                     icon = "📚"
                 elif any(w in title_and_text for w in ["ورشة", "محاضرة", "لقاء تقني", "شرح عملي", "youtube"]):
                     category = "workshops"
-                    icon = "🎬"
+                    icon = "📺"
 
                 clean_desc = re.sub(r'<[^>]+>', ' ', content)
                 clean_desc = re.sub(r'\s+', ' ', clean_desc).strip()
@@ -210,7 +210,7 @@ def scan_and_update():
                     "discussionUrl": f"https://community.itqan.dev/d/{disc_id}",
                     "discussionNum": disc_id,
                     "description": clean_desc,
-                    "links": links[:5]
+                    "links": links[:12]
                 }
                 existing.append(new_item)
                 existing_ids.add(disc_id)
