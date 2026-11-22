@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "title": "نموذج TajweedFormer V4 للتجويد على جهاز المتعلم (Edge AI)",
+    "title": "نموذج TajweedFormer V4 لتصحيح التجويد على هاتف المتعلم (Edge AI)",
     "category": "ai",
     "icon": "🤖",
     "license": "وقفي مجاني للأبد",
@@ -24,7 +24,7 @@
       {
         "name": "لوحة صدارة نماذج التسميع (Leaderboard)",
         "url": "https://huggingface.co/spaces/Quran-Lab/quranic-asr-leaderboard",
-        "src": "HuggingFace Space"
+        "src": "Leaderboard"
       }
     ]
   },
@@ -38,7 +38,7 @@
     "author": "Quran Lab (@muno459)",
     "discussionUrl": "https://community.itqan.dev/d/686",
     "discussionNum": "686",
-    "description": "نموذج التعرف الصوتي الشهير zipformer_p-arabic-v3، لا يكتفي بكتابة الحروف إملائياً بل يكتب ما نطقه القارئ صوتاً صوتاً (فونيمات) مع قياس المدود وحركات الإعراب بدقة عالية لتمكين تطبيقات التسميع.",
+    "description": "نموذج التعرف الصوتي الشهير zipformer_p-arabic-v3، لا يكتفي بكتابة الحروف إملائياً بل يكتب ما نطقه القارئ صوتاً صوتاً (فونيمات) مع قياس أزمنة المدود وحركات الإعراب بدقة لتمكين تطبيقات التسميع الذكية.",
     "links": [
       {
         "name": "مستودع تدريب النموذج وتصديره (ONNX)",
@@ -62,7 +62,7 @@
     "author": "طارق منصور (@iphoneislam)",
     "discussionUrl": "https://community.itqan.dev/d/102",
     "discussionNum": "102",
-    "description": "منظومة ونموذج ذكاء اصطناعي مفتوح المصدر تم تدريبه لكشف أخطاء التلاوة التلقائية واستبدال الكلمات الخاطئة، يعتمد عليه العديد من المطورين كنواة لتطبيقات التسميع والمراجعة اليومية.",
+    "description": "منظومة ونموذج ذكاء اصطناعي مفتوح المصدر تم تدريبه لكشف أخطاء التلاوة التلقائية وتنبيه القارئ للكلمات المنسية أو المبدلة، يعتمد عليه العديد من المطورين كنواة لتطبيقات التسميع والمراجعة اليومية.",
     "links": [
       {
         "name": "المستودع الرئيسي للمشروع (GitHub)",
@@ -70,7 +70,7 @@
         "src": "GitHub"
       },
       {
-        "name": "مستودع أداة التسميع (Tasmie Tool)",
+        "name": "مستودع أداة التسميع لمصحف السراج",
         "url": "https://github.com/khalid-taha/quran-muaalem-web",
         "src": "GitHub"
       }
@@ -86,7 +86,7 @@
     "author": "Quran Lab (@muno459)",
     "discussionUrl": "https://community.itqan.dev/d/798",
     "discussionNum": "798",
-    "description": "نموذج ذكاء اصطناعي صوتي لترميم وتحسين التسجيلات القرآنية القديمة، وإزالة الضوضاء والتشويش ورفع جودة الصوت وعيناته إلى 48 كيلوهرتز بجودة إذاعية ونقاء استوديو.",
+    "description": "نموذج ذكاء اصطناعي صوتي لترميم وتحسين التسجيلات القرآنية القديمة، وإزالة الضوضاء والتشويش ورفع جودة الصوت وعيناته إلى 48 كيلوهرتز بنقاء استوديو.",
     "links": [
       {
         "name": "صفحة النموذج على HuggingFace",
@@ -130,7 +130,7 @@
     "category": "ai",
     "icon": "🤖",
     "license": "مفتوح المصدر (Apache-2.0)",
-    "metric": "التحقق المرجعي الدقيق للنصوص",
+    "metric": "التحقق المرجعي الصارم للنصوص",
     "author": "فريق برهان والباحثين",
     "discussionUrl": "https://community.itqan.dev/d/92",
     "discussionNum": "92",
@@ -150,6 +150,92 @@
   },
   {
     "id": 7,
+    "title": "نموذج FastConformer Quran CTC ONNX للتعرف السريع",
+    "category": "ai",
+    "icon": "🤖",
+    "license": "مفتوح المصدر",
+    "metric": "استدلال فائق السرعة عبر ONNX",
+    "author": "مساهمو تقنيات التسميع",
+    "discussionUrl": "https://community.itqan.dev/d/621",
+    "discussionNum": "621",
+    "description": "نموذج FastConformer مضبوط خصيصاً للتلاوة القرآنية ومصدر بصيغة ONNX فائقة الخفة، يتيح معالجة الصوت في الوقت الفعلي بأقل زمن تأخير (Low Latency) لخدمة تطبيقات التسميع المحمولة.",
+    "links": [
+      {
+        "name": "أوزان النموذج ومستودع التشغيل",
+        "url": "https://huggingface.co/Quran-Lab",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "كود المحاذاة بنموذج FastConformer",
+        "url": "https://github.com/itqan-community",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "نظام AraS2P لتجزئة التلاوة القرآنية إلى فونيمات صوتية دقيقة",
+    "category": "ai",
+    "icon": "🤖",
+    "license": "أبحاث مفتوحة المصدر",
+    "metric": "تفكيك النطق إلى وحدات صوتية أساسية",
+    "author": "مختبر الصوتيات القرآنية",
+    "discussionUrl": "https://community.itqan.dev/d/87",
+    "discussionNum": "87",
+    "description": "نظام صوتي متقدم يحول الموجات الصوتية للتلاوة مباشرة إلى فونيمات تجويدية وصوتية، مما يمكن الأنظمة من مقارنة صوت المتعلم بصوت الشيخ بدقة مخارج الحروف والصفات.",
+    "links": [
+      {
+        "name": "مستودع AraS2P على GitHub",
+        "url": "https://github.com/itqan-community/aras2p",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "أداة التسميع المباشرة فوق Muaalem لمصحف السراج",
+    "category": "ai",
+    "icon": "🤖",
+    "license": "مفتوح المصدر",
+    "metric": "واجهة ويب وتطبيق مدمج لكشف اللحن",
+    "author": "خالد طه ومطورو مصحف السراج",
+    "discussionUrl": "https://community.itqan.dev/d/991",
+    "discussionNum": "991",
+    "description": "تطبيق ومحرك تسميع تفاعلي مبني فوق نواة Muaalem، يوفر تجربة سلسة للمستخدم أثناء التسميع مع التلوين الفوري للآيات المنطوقة والتنبيه الصوتي عند حدوث خطأ في القراءة.",
+    "links": [
+      {
+        "name": "المستودع البرمجي على GitHub",
+        "url": "https://github.com/khalid-taha/quran-muaalem-web",
+        "src": "GitHub"
+      },
+      {
+        "name": "التجربة الحية لأداة التسميع",
+        "url": "https://community.itqan.dev/d/991",
+        "src": "Live Tool"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "نموذج Cohere Quranic Evaluation للتحقق الصوتي والنصي",
+    "category": "ai",
+    "icon": "🤖",
+    "license": "مفتوح المصدر للأغراض التعليمية",
+    "metric": "تقييم مقارن بين نماذج ASR",
+    "author": "مهندسو مجتمع إتقان",
+    "discussionUrl": "https://community.itqan.dev/d/647",
+    "discussionNum": "647",
+    "description": "معمارية معيارية لمقارنة أداء نماذج التفريغ الصوتي الحديثة في النصوص القرآنية، مع احتساب نسب الخطأ في التشكيل والمدود ومطابقة قواعد الرسم العثماني.",
+    "links": [
+      {
+        "name": "الكود والأدوات المقارنة على GitHub",
+        "url": "https://github.com/itqan-community",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 11,
     "title": "حزم تسجيلات المتعلمين ومجموعات بيانات أخطاء التلاوة",
     "category": "audio",
     "icon": "🎙️",
@@ -184,16 +270,11 @@
         "name": "مجموعة QDAT لأحكام التجويد (1,505 تسجيل)",
         "url": "https://huggingface.co/datasets/obadx/qdat",
         "src": "HuggingFace"
-      },
-      {
-        "name": "مستودع DeepSpeech-Quran المرجعي",
-        "url": "https://github.com/tarekeldeeb/DeepSpeech-Quran",
-        "src": "GitHub"
       }
     ]
   },
   {
-    "id": 8,
+    "id": 12,
     "title": "مشروع QUA: تلاوات متعددة الروايات مع توقيتات بالكلمة والآية",
     "category": "audio",
     "icon": "🎙️",
@@ -217,7 +298,7 @@
     ]
   },
   {
-    "id": 9,
+    "id": 13,
     "title": "مشروع تدبُّر (Tadabbur): أضخم مجموعة بيانات صوتية لمشاهير القراء",
     "category": "audio",
     "icon": "🎙️",
@@ -232,16 +313,11 @@
         "name": "مستودع الأرشيف المفتوح على Archive.org",
         "url": "https://archive.org/details/tadabbur-quran-audio",
         "src": "Archive.org"
-      },
-      {
-        "name": "واجهة الاستعلام المباشرة (API)",
-        "url": "https://api.everyayah.com",
-        "src": "API Endpoint"
       }
     ]
   },
   {
-    "id": 10,
+    "id": 14,
     "title": "مجموعة بيانات مصحف المدينة الصوتية وطوابع الكلمات الزمنية",
     "category": "audio",
     "icon": "🎙️",
@@ -265,7 +341,50 @@
     ]
   },
   {
-    "id": 11,
+    "id": 15,
+    "title": "المصحف المرتل الجديد للشيخ المنشاوي مجزأً بالآيات (Studio Master)",
+    "category": "audio",
+    "icon": "🎙️",
+    "license": "متاح للاستخدام العام والتطبيقات",
+    "metric": "ختمة كاملة مجزأة آية بآية بنقاء فائق",
+    "author": "فريق رقمنة التلاوات التاريخية",
+    "discussionUrl": "https://community.itqan.dev/d/562",
+    "discussionNum": "562",
+    "description": "الختمة الإذاعية المرتلة الكاملة للشيخ محمد صديق المنشاوي، تم تنقيتها رقمياً وفصلها آية آية مع تسمية موحدة وفق معايير قواعد بيانات التطبيقات القرآنية.",
+    "links": [
+      {
+        "name": "تحميل الختمة كاملة على Archive.org",
+        "url": "https://archive.org/details/minshawi-murattal-verse-by-verse",
+        "src": "Archive.org"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "title": "أرشيف تلاوات EveryAyah الشامل مع واجهة برمجية مفتوحة",
+    "category": "audio",
+    "icon": "🎙️",
+    "license": "وقفي مجاني للجميع",
+    "metric": "أكثر من 70 قارئاً مجزأ بالآيات",
+    "author": "مشروع EveryAyah الخيري",
+    "discussionUrl": "https://community.itqan.dev/d/56",
+    "discussionNum": "56",
+    "description": "المستودع الصوتي القرآني الأشهر الذي يعتمد عليه مئات المطورين عالمياً، يوفر تلاوات المصحف كاملة مجزأة آية بآية لكافة القراء بروابط CDN مباشرة ومستقرة للأبد.",
+    "links": [
+      {
+        "name": "بوابة EveryAyah الصوتية المباشرة",
+        "url": "https://everyayah.com/data/",
+        "src": "Audio Portal"
+      },
+      {
+        "name": "دليل المطورين واستدعاء التلاوات",
+        "url": "https://everyayah.com",
+        "src": "Documentation"
+      }
+    ]
+  },
+  {
+    "id": 17,
     "title": "أرشيف خطوط ومصاحف مجمع الملك فهد (KFGQPC Fonts)",
     "category": "fonts",
     "icon": "✒️",
@@ -279,7 +398,7 @@
       {
         "name": "بوابة خطوط مجمع الملك فهد المباشرة",
         "url": "https://fonts.qurancomplex.gov.sa",
-        "src": "Official Site"
+        "src": "Official Portal"
       },
       {
         "name": "مستودع الخطوط والترميز على GitHub",
@@ -294,7 +413,7 @@
     ]
   },
   {
-    "id": 12,
+    "id": 18,
     "title": "مصحف عماد: خط متجهي مفتوح المصدر للرسم العثماني",
     "category": "fonts",
     "icon": "✒️",
@@ -318,7 +437,7 @@
     ]
   },
   {
-    "id": 13,
+    "id": 19,
     "title": "قاعدة بيانات صفحات المصحف المتجهية (MushafDatabase SVG)",
     "category": "fonts",
     "icon": "✒️",
@@ -342,7 +461,7 @@
     ]
   },
   {
-    "id": 14,
+    "id": 20,
     "title": "خط الأميري القرآني (Amiri Quran Font)",
     "category": "fonts",
     "icon": "✒️",
@@ -366,7 +485,45 @@
     ]
   },
   {
-    "id": 15,
+    "id": 21,
+    "title": "مكتبة علامات الآيات ورؤوس الفواصل المتجهية (Ayah Markers Library)",
+    "category": "fonts",
+    "icon": "✒️",
+    "license": "مفتوح المصدر (MIT)",
+    "metric": "رموز وأرقام آيات قابلة للتخصيص الكامل",
+    "author": "مصممو مجتمع إتقان",
+    "discussionUrl": "https://community.itqan.dev/d/741",
+    "discussionNum": "741",
+    "description": "حزمة رسومية برمجية مفتوحة المصدر تضم كافة علامات أرقام الآيات وفواصل السور ورموز الأحزاب والأرباع بصيغ SVG و Web Components الجاهزة للدمج في تطبيقات الويب والهواتف.",
+    "links": [
+      {
+        "name": "مستودع حزمة Ayah Markers على GitHub",
+        "url": "https://github.com/itqan-community/ayah-markers",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "title": "حزمة quran-verify: التحقق المشفر بالـ SHA-256 لنصوص المصحف",
+    "category": "fonts",
+    "icon": "✒️",
+    "license": "مفتوح المصدر (MIT)",
+    "metric": "بصمة تشفيرية فريدة لكل آية وكلمة",
+    "author": "فريق الحماية والتدقيق القرآني",
+    "discussionUrl": "https://community.itqan.dev/d/540",
+    "discussionNum": "540",
+    "description": "أداة ومكتبة برمجية للتحقق الرقمي من صحة وسلامة نصوص المصحف عبر مقارنة الـ Hash التشفيري لكل آية لمنع أي تحريف أو سقوط للحركات والتشكيل أثناء النقل أو المعالجة.",
+    "links": [
+      {
+        "name": "مستودع quran-verify على GitHub",
+        "url": "https://github.com/itqan-community/quran-verify",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 23,
     "title": "أداة «رقيم» (Rakeem) لتجهيز المصاحف الصوتية وفق معيار مرقوم",
     "category": "tools",
     "icon": "⚙️",
@@ -390,7 +547,7 @@
     ]
   },
   {
-    "id": 16,
+    "id": 24,
     "title": "مشروع «منجّم» (Monajjim): نظام أتمتة تقطيع ومزامنة التلاوات",
     "category": "tools",
     "icon": "⚙️",
@@ -414,7 +571,7 @@
     ]
   },
   {
-    "id": 17,
+    "id": 25,
     "title": "منصة «ميقات» (Miqat) للمزامنة الصوتية الدقيقة متعددة الروايات",
     "category": "tools",
     "icon": "⚙️",
@@ -433,7 +590,7 @@
     ]
   },
   {
-    "id": 18,
+    "id": 26,
     "title": "منصة وأداة Multi-Aligner لتزمين المصحف الكامل سحابياً",
     "category": "tools",
     "icon": "⚙️",
@@ -452,7 +609,7 @@
     ]
   },
   {
-    "id": 19,
+    "id": 27,
     "title": "مكتبة توليد صور آيات القرآن الكريم (Napi-RS Canvas)",
     "category": "tools",
     "icon": "⚙️",
@@ -476,7 +633,7 @@
     ]
   },
   {
-    "id": 20,
+    "id": 28,
     "title": "خادم MCP الرسمي لمجتمع إتقان (Itqan Community MCP)",
     "category": "tools",
     "icon": "🔌",
@@ -500,7 +657,83 @@
     ]
   },
   {
-    "id": 21,
+    "id": 29,
+    "title": "برنامج «وقف» (Waqf) لتقطيع التلاوات الصوتية حسب الأنفاس",
+    "category": "tools",
+    "icon": "⚙️",
+    "license": "مفتوح المصدر (GPL-3.0)",
+    "metric": "اكتشاف أوتوماتيكي للسكوت والتنفس",
+    "author": "مساهمو تقنيات الصوت القرآني",
+    "discussionUrl": "https://community.itqan.dev/d/525",
+    "discussionNum": "525",
+    "description": "برنامج متخصص يعالج ملفات الصوت الطويلة للمصاحف ويكتشف فترات الصمت وسكتات التنفس الطبيعية بين الآيات، مما يسهل تقطيع المصاحف الكبيرة بدقة متناهية.",
+    "links": [
+      {
+        "name": "مستودع برنامج وقف على GitHub",
+        "url": "https://github.com/itqan-community/waqf-audio-splitter",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "title": "محرك البحث القرآني المستقل quran-search-engine (Rust)",
+    "category": "tools",
+    "icon": "⚙️",
+    "license": "مفتوح المصدر (Apache-2.0)",
+    "metric": "بحث فائق السرعة دون اتصال Offline",
+    "author": "فريق حملة كود يخدم القرآن",
+    "discussionUrl": "https://community.itqan.dev/d/944",
+    "discussionNum": "944",
+    "description": "محرك بحث سريع ومستقل مبني بلغة Rust للبحث في نصوص القرآن الكريم ومطابقة الجذور والكلمات دون الحاجة إلى خادم خارجي أو اتصال بالإنترنت.",
+    "links": [
+      {
+        "name": "مستودع المحرك على GitHub",
+        "url": "https://github.com/itqan-community/quran-search-engine",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "title": "منصة وحزم برمجيات API_ISLAM المفتوحة للمطورين",
+    "category": "tools",
+    "icon": "⚙️",
+    "license": "مفتوح المصدر (MIT)",
+    "metric": "حزم SDK لكافة اللغات البرمجية",
+    "author": "مبادرة البرمجيات الإسلامية",
+    "discussionUrl": "https://community.itqan.dev/d/902",
+    "discussionNum": "902",
+    "description": "منصة خدمات سحابية وحزم SDK برمجية توفر واجهات REST APIs متكاملة لجلب نصوص القرآن، التفاسير، مواقيت الصلاة، والتلاوات الصوتية بطريقة موحدة وسهلة.",
+    "links": [
+      {
+        "name": "المستودع البرمجي على GitHub",
+        "url": "https://github.com/itqan-community/api-islam",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "title": "مكتبة tajweed-engine لتلوين أحكام التجويد برمجياً",
+    "category": "tools",
+    "icon": "⚙️",
+    "license": "مفتوح المصدر (MIT)",
+    "metric": "معالجة قواعد الإدغام والإخفاء والمدود",
+    "author": "مساهمو مجتمع إتقان",
+    "discussionUrl": "https://community.itqan.dev/d/660",
+    "discussionNum": "660",
+    "description": "مكتبة جافاسكريبت وبايثون مفتوحة المصدر تستقبل نصوص الآيات وتطبق عليها قواعد التجويد آلياً وتنتج وسوماً ملونة لكل حكم تجويدي (إدغام، إقلاب، إخفاء، قلقلة).",
+    "links": [
+      {
+        "name": "مستودع tajweed-engine على GitHub",
+        "url": "https://github.com/itqan-community/tajweed-engine",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 33,
     "title": "ورقة بحثية: منهجية تقييم التلاوات القرآنية وقاعدة بيانات IqraEval (Interspeech)",
     "category": "research",
     "icon": "📚",
@@ -524,7 +757,7 @@
     ]
   },
   {
-    "id": 22,
+    "id": 34,
     "title": "دراسة معمارية: نماذج التعرف الصوتي المفتوحة وتحديات الفونيمات القرآنية",
     "category": "research",
     "icon": "📚",
@@ -548,7 +781,7 @@
     ]
   },
   {
-    "id": 23,
+    "id": 35,
     "title": "الورقة البيضاء لمعيار «مرقوم» (Marqoom Specification): المعيار الموحد للمصاحف الصوتية",
     "category": "research",
     "icon": "📚",
@@ -572,7 +805,26 @@
     ]
   },
   {
-    "id": 24,
+    "id": 36,
+    "title": "دراسة معيارية: مقارنة دقة الفاست كونفورمر وويسبر في كشف اللحن الخفي",
+    "category": "research",
+    "icon": "📚",
+    "license": "دراسة بحثية مجتمعية",
+    "metric": "معدلات خطأ الكلمات WER مقابل خطأ الحركات PER",
+    "author": "فريق أبحاث إتقان",
+    "discussionUrl": "https://community.itqan.dev/d/603",
+    "discussionNum": "603",
+    "description": "تجربة معيارية مفصلة قارنت استجابة نماذج FastConformer مع Whisper في كشف أحكام النون الساكنة والتنوين والمدود، واستخراج الطوابع الزمنية الدقيقة لكل حرف ومنطوق.",
+    "links": [
+      {
+        "name": "قراءة الدراسة والنتائج بالمجتمع",
+        "url": "https://community.itqan.dev/d/603",
+        "src": "Community Research"
+      }
+    ]
+  },
+  {
+    "id": 37,
     "title": "ورشة ترتيل: «كيف تختار وتقيّم نموذج التلاوة الأنسب لتطبيقك؟»",
     "category": "workshops",
     "icon": "🎬",
@@ -596,7 +848,7 @@
     ]
   },
   {
-    "id": 25,
+    "id": 38,
     "title": "ورشة عمل: «بناء أنظمة التزمين التلقائي ومحاذاة التلاوات الصوتية»",
     "category": "workshops",
     "icon": "🎬",
@@ -620,7 +872,7 @@
     ]
   },
   {
-    "id": 26,
+    "id": 39,
     "title": "محاضرة: «البرمجيات القرآنية مفتوحة المصدر: المعايير، التراخيص، وفرص التعاون»",
     "category": "workshops",
     "icon": "🎬",
@@ -634,6 +886,25 @@
       {
         "name": "مشاهدة وقائع اللقاء التقني المفتوح",
         "url": "https://community.itqan.dev/d/802",
+        "src": "Community Video"
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "title": "جلسة تقنية: «كواليس بناء نماذج التسميع لرواية ورش وأحكام التجويد»",
+    "category": "workshops",
+    "icon": "🎬",
+    "license": "شرح تقني مسجل",
+    "metric": "تطوير تطبيق تثبيت القرآني",
+    "author": "فريق تطبيق تثبيت",
+    "discussionUrl": "https://community.itqan.dev/d/806",
+    "discussionNum": "806",
+    "description": "تسجيل مرئي يشرح التحديات الهندسية والصوتية التي واجهت الفريق عند تدريب نماذج التسميع الصوتي لتتعرف على أصول رواية ورش عن نافع واختلافات رسم المصحف.",
+    "links": [
+      {
+        "name": "مشاهدة الجلسة والشرح المرئي بالمجتمع",
+        "url": "https://community.itqan.dev/d/806",
         "src": "Community Video"
       }
     ]
