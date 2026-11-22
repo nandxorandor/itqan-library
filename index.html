@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>مكتبة إتقان — دليل الموارد والبيانات القرآنية المفتوحة (Itqan Library)</title>
-  <meta name="description" content="دليل رقمي متخصص وموثق يجمع نماذج الذكاء الاصطناعي، حزم التسجيلات الصوتية، خطوط المصحف بالرسم العثماني، الأدوات البرمجية، الأبحاث المنشورة، والورش التقنية من مجتمع إتقان.">
+  <meta name="description" content="دليل رقمي متخصص وموثق يجمع نماذج تسميع القرآن، حزم التسجيلات الصوتية، خطوط المصحف بالرسم العثماني، الأدوات البرمجية، الأبحاث المنشورة، والورش التقنية من مجتمع إتقان.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
@@ -151,7 +151,7 @@
     .hub-hero h1 { font-size: 1.85rem; font-weight: 800; margin-bottom: 8px; }
     .hub-hero p { font-size: 1rem; opacity: 0.92; max-width: 820px; line-height: 1.7; }
 
-    /* Folder Categories Tabs */
+    /* Folder Categories Tabs (Quick Selectors) */
     .folders-grid {
       display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 12px; margin-bottom: 24px;
     }
@@ -165,11 +165,147 @@
     .folder-card h3 { font-size: 0.92rem; font-weight: 700; color: #0f172a; margin-bottom: 2px; }
     .folder-card span { font-size: 0.78rem; color: var(--text-muted); }
 
-    /* Clean Uniform Resource Card */
-    .resources-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+    /* Section Control Header */
+    .sections-control-bar {
+      display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;
+      padding: 0 4px;
+    }
+    .control-bar-title {
+      font-size: 0.95rem; font-weight: 800; color: #334155; display: flex; align-items: center; gap: 8px;
+    }
+    .control-actions-btns { display: flex; gap: 8px; }
+    .btn-toggle-all {
+      background: #ffffff; border: 1px solid #cbd5e1; color: #475569; padding: 4px 12px;
+      border-radius: 6px; font-size: 0.78rem; font-weight: 700; cursor: pointer; transition: 0.15s;
+    }
+    .btn-toggle-all:hover { background: var(--primary-light); color: var(--primary); border-color: var(--primary-border); }
 
+    /* ========================================================
+       ACCORDION SECTION BANNERS (COLLAPSED BY DEFAULT)
+       ======================================================== */
+    .sections-container { display: flex; flex-direction: column; gap: 14px; }
+
+    .section-accordion {
+      background: var(--surface);
+      border: 1.5px solid var(--surface-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    }
+    .section-accordion:hover {
+      border-color: #cbd5e1;
+    }
+    .section-accordion.expanded {
+      border-color: var(--primary);
+      box-shadow: 0 4px 18px rgba(13, 109, 91, 0.1);
+    }
+
+    /* The Clickable Section Banner */
+    .section-banner {
+      padding: 16px 22px;
+      background: #ffffff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      transition: background 0.2s ease;
+    }
+    .section-banner:hover {
+      background: #f8faf9;
+    }
+    .section-accordion.expanded .section-banner {
+      background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+      border-bottom: 1.5px solid #bbf7d0;
+    }
+
+    .section-banner-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .section-banner-icon {
+      font-size: 26px;
+      width: 48px;
+      height: 48px;
+      background: #f1f5f3;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+    }
+    .section-accordion.expanded .section-banner-icon {
+      background: #ffffff;
+      transform: scale(1.08);
+      box-shadow: 0 2px 8px rgba(13, 109, 91, 0.15);
+    }
+    .section-banner-text { display: flex; flex-direction: column; gap: 2px; }
+    .section-banner-title {
+      font-size: 1.16rem;
+      font-weight: 800;
+      color: #0f172a;
+    }
+    .section-accordion.expanded .section-banner-title {
+      color: var(--primary);
+    }
+    .section-banner-desc {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+    }
+
+    .section-banner-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-count-pill {
+      background: #f1f5f9;
+      color: #334155;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 20px;
+      border: 1px solid #e2e8e5;
+    }
+    .section-accordion.expanded .section-count-pill {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+    .section-arrow {
+      font-size: 0.82rem;
+      color: #94a3b8;
+      transition: transform 0.25s ease, color 0.2s ease;
+      display: inline-block;
+    }
+    .section-accordion.expanded .section-arrow {
+      transform: rotate(180deg);
+      color: var(--primary);
+    }
+
+    /* Section Content (Collapsed by default!) */
+    .section-content {
+      display: none;
+      padding: 22px;
+      background: #fafcfb;
+    }
+    .section-accordion.expanded .section-content {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      animation: expandFade 0.25s ease-out;
+    }
+    @keyframes expandFade {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Clean Uniform Resource Card Inside Section */
     .resource-card {
-      background: var(--surface); border: 1px solid var(--surface-border); border-radius: var(--radius-md);
+      background: #ffffff; border: 1px solid var(--surface-border); border-radius: var(--radius-md);
       padding: 22px 24px; transition: border 0.2s, box-shadow 0.2s;
     }
     .resource-card:hover { border-color: var(--primary-border); box-shadow: var(--shadow-md); }
@@ -392,51 +528,51 @@
         </p>
       </div>
 
-      <!-- Categories Folders (6 Curated Sections) -->
+      <!-- Categories Folders (Quick Jump Selectors) -->
       <div class="folders-grid">
-        <div class="folder-card selected" onclick="selectCat('all', this)">
+        <div class="folder-card" id="folder-btn-all" onclick="toggleAllSections()">
           <div class="folder-icon">📁</div>
           <div>
             <h3>جميع الموارد</h3>
             <span id="allCount">جاري التحميل...</span>
           </div>
         </div>
-        <div class="folder-card" onclick="selectCat('ai', this)">
+        <div class="folder-card" id="folder-btn-ai" onclick="selectSectionFromFolder('ai')">
           <div class="folder-icon">👳‍♂️</div>
           <div>
             <h3>نماذج تسميع القرآن</h3>
             <span id="aiCount">جاري التحميل...</span>
           </div>
         </div>
-        <div class="folder-card" onclick="selectCat('audio', this)">
+        <div class="folder-card" id="folder-btn-audio" onclick="selectSectionFromFolder('audio')">
           <div class="folder-icon">🔊</div>
           <div>
             <h3>حزم البيانات والصوتيات</h3>
             <span id="audioCount">جاري التحميل...</span>
           </div>
         </div>
-        <div class="folder-card" onclick="selectCat('fonts', this)">
+        <div class="folder-card" id="folder-btn-fonts" onclick="selectSectionFromFolder('fonts')">
           <div class="folder-icon">✒️</div>
           <div>
             <h3>الخطوط والمصاحف</h3>
             <span id="fontsCount">جاري التحميل...</span>
           </div>
         </div>
-        <div class="folder-card" onclick="selectCat('tools', this)">
+        <div class="folder-card" id="folder-btn-tools" onclick="selectSectionFromFolder('tools')">
           <div class="folder-icon">💻</div>
           <div>
             <h3>البرمجيات والأدوات</h3>
             <span id="toolsCount">جاري التحميل...</span>
           </div>
         </div>
-        <div class="folder-card" onclick="selectCat('research', this)">
+        <div class="folder-card" id="folder-btn-research" onclick="selectSectionFromFolder('research')">
           <div class="folder-icon">📚</div>
           <div>
             <h3>الأبحاث والدراسات</h3>
             <span id="researchCount">جاري التحميل...</span>
           </div>
         </div>
-        <div class="folder-card" onclick="selectCat('workshops', this)">
+        <div class="folder-card" id="folder-btn-workshops" onclick="selectSectionFromFolder('workshops')">
           <div class="folder-icon">📺</div>
           <div>
             <h3>الورش والمحاضرات</h3>
@@ -445,10 +581,23 @@
         </div>
       </div>
 
-      <!-- Resources List -->
-      <div class="resources-grid" id="resourcesList">
+      <!-- Sections Control Bar -->
+      <div class="sections-control-bar">
+        <div class="control-bar-title">
+          <span>📂</span>
+          <span>أقسام المكتبة المعتمدة (اضغط على شريط أي قسم لتوسيعه):</span>
+        </div>
+        <div class="control-actions-btns">
+          <button class="btn-toggle-all" onclick="expandAllSections()">⮟ توسيع الكل</button>
+          <button class="btn-toggle-all" onclick="collapseAllSections()">⮝ طي الكل</button>
+        </div>
+      </div>
+
+      <!-- Accordion Sections Container (COLLAPSED BY DEFAULT) -->
+      <div class="sections-container" id="sectionsContainer">
+        <!-- Rendered dynamically via JavaScript -->
         <div style="background:#fff; padding:40px; text-align:center; border-radius:12px; color:#64748b;">
-          ⏳ جاري جلب الموارد وقوائم التحميل المباشرة...
+          ⏳ جاري تجهيز أقسام المكتبة المنظمة...
         </div>
       </div>
 
@@ -493,8 +642,18 @@
 
   <script>
     let allResources = [];
-    let activeCat = 'all';
     let searchQuery = '';
+    let currentOpenSection = null; // ALL SECTIONS COLLAPSED BY DEFAULT!
+
+    // Defined Categories Configuration
+    const CATEGORIES = [
+      { id: 'ai', title: 'نماذج تسميع القرآن', icon: '👳‍♂️', desc: 'أوزان ونماذج الذكاء الاصطناعي لكشف أخطاء التلاوة والتجويد' },
+      { id: 'audio', title: 'حزم البيانات والصوتيات', icon: '🔊', desc: 'تسجيلات المتعلمين ومجموعات الصوت الموثقة والمجزأة بالآيات' },
+      { id: 'fonts', title: 'الخطوط والمصاحف', icon: '✒️', desc: 'خطوط مجمع الملك فهد ومصاحف SVG المتجهية وعلامات الآيات' },
+      { id: 'tools', title: 'البرمجيات والأدوات', icon: '💻', desc: 'أدوات المزامنة التلقائية ومحركات البحث ومكتبات التجويد البرمجية' },
+      { id: 'research', title: 'الأبحاث والدراسات', icon: '📚', desc: 'أوراق علمية محكّمة ودراسات معمارية ومعايير المصاحف الصوتية' },
+      { id: 'workshops', title: 'الورش والمحاضرات', icon: '📺', desc: 'ورش تدريبية وشروحات عملية مسجلة لمطوري التقنيات القرآنية' }
+    ];
 
     // Load resources from external JSON file with cache-busting
     async function loadData() {
@@ -507,26 +666,21 @@
         console.warn('Using embedded fallback data:', err);
       }
       updateCounts();
-      render();
+      renderSections();
     }
 
     function updateCounts() {
       const total = allResources.length;
-      const aiCount = allResources.filter(x => x.category === 'ai').length;
-      const audioCount = allResources.filter(x => x.category === 'audio').length;
-      const fontsCount = allResources.filter(x => x.category === 'fonts').length;
-      const toolsCount = allResources.filter(x => x.category === 'tools').length;
-      const researchCount = allResources.filter(x => x.category === 'research').length;
-      const workshopsCount = allResources.filter(x => x.category === 'workshops').length;
-
       document.getElementById('resourcesCountBadge').innerText = total;
       document.getElementById('allCount').innerText = `${total} مورد`;
-      document.getElementById('aiCount').innerText = `${aiCount} نماذج تسميع`;
-      document.getElementById('audioCount').innerText = `${audioCount} حزم`;
-      document.getElementById('fontsCount').innerText = `${fontsCount} خطوط`;
-      document.getElementById('toolsCount').innerText = `${toolsCount} أدوات`;
-      document.getElementById('researchCount').innerText = `${researchCount} أبحاث`;
-      document.getElementById('workshopsCount').innerText = `${workshopsCount} ورش`;
+      
+      CATEGORIES.forEach(cat => {
+        const cnt = allResources.filter(x => x.category === cat.id).length;
+        const el = document.getElementById(`${cat.id}Count`);
+        if (el) {
+          el.innerText = `${cnt} ${cat.id === 'ai' ? 'نماذج' : cat.id === 'audio' ? 'حزم' : cat.id === 'fonts' ? 'خطوط' : cat.id === 'tools' ? 'أدوات' : cat.id === 'research' ? 'أبحاث' : 'ورش'}`;
+        }
+      });
       
       const statusMsg = document.getElementById('scanStatusMsg');
       if (statusMsg) {
@@ -534,96 +688,194 @@
       }
     }
 
-    function render() {
-      const container = document.getElementById('resourcesList');
+    function renderSections() {
+      const container = document.getElementById('sectionsContainer');
       container.innerHTML = '';
 
-      const filtered = allResources.filter(it => {
-        const catMatch = (activeCat === 'all' || it.category === activeCat);
-        const searchMatch = (!searchQuery || 
-          (it.title && it.title.toLowerCase().includes(searchQuery)) ||
-          (it.description && it.description.toLowerCase().includes(searchQuery)) ||
-          (it.links && it.links.some(l => l.name && l.name.toLowerCase().includes(searchQuery)))
-        );
-        return catMatch && searchMatch;
-      });
+      let totalMatching = 0;
 
-      if (filtered.length === 0) {
-        container.innerHTML = `<div style="background:#fff; padding:40px; text-align:center; border-radius:12px; color:#64748b;">لا توجد موارد مطابقة للبحث في هذا القسم.</div>`;
-        return;
-      }
+      CATEGORIES.forEach(cat => {
+        // Filter items for this category matching current search
+        const catItems = allResources.filter(it => {
+          if (it.category !== cat.id) return false;
+          if (!searchQuery) return true;
+          return (
+            (it.title && it.title.toLowerCase().includes(searchQuery)) ||
+            (it.description && it.description.toLowerCase().includes(searchQuery)) ||
+            (it.links && it.links.some(l => l.name && l.name.toLowerCase().includes(searchQuery)))
+          );
+        });
 
-      filtered.forEach(item => {
-        const el = document.createElement('div');
-        el.className = 'resource-card';
+        // If searching and this section has no matches, skip it
+        if (searchQuery && catItems.length === 0) return;
 
-        // Render direct download action buttons
-        const linksHtml = (item.links && item.links.length > 0) ? item.links.map(l => `
-          <a href="${l.url}" target="_blank" class="btn-direct-download">
-            <span class="source-badge">${l.src || 'Link'}</span>
-            <span>${l.name}</span>
-            <span style="font-size:12px; opacity:0.6;">↗</span>
-          </a>
-        `).join('') : '<span style="color:#94a3b8; font-size:0.85rem;">راجع تفاصيل الموضوع في الرابط أدناه</span>';
+        totalMatching += catItems.length;
 
-        const mainLink = (item.links && item.links[0]) ? item.links[0].url : item.discussionUrl;
+        // Create Section Accordion element
+        const secDiv = document.createElement('div');
+        secDiv.className = 'section-accordion';
+        secDiv.id = `section-box-${cat.id}`;
 
-        el.innerHTML = `
-          <div class="card-top">
-            <div class="card-title-group">
-              <div class="card-icon">${item.icon || '📦'}</div>
-              <div>
-                <a href="${mainLink}" target="_blank" class="card-title">${item.title}</a>
+        // Auto-expand if searching, otherwise obey currentOpenSection
+        const isExpanded = searchQuery ? true : (currentOpenSection === cat.id);
+        if (isExpanded) {
+          secDiv.classList.add('expanded');
+        }
+
+        // Render Cards HTML for this section
+        const cardsHtml = catItems.map(item => {
+          const linksHtml = (item.links && item.links.length > 0) ? item.links.map(l => `
+            <a href="${l.url}" target="_blank" class="btn-direct-download">
+              <span class="source-badge">${l.src || 'Link'}</span>
+              <span>${l.name}</span>
+              <span style="font-size:12px; opacity:0.6;">↗</span>
+            </a>
+          `).join('') : '<span style="color:#94a3b8; font-size:0.85rem;">راجع تفاصيل الموضوع في الرابط أدناه</span>';
+
+          const mainLink = (item.links && item.links[0]) ? item.links[0].url : item.discussionUrl;
+
+          return `
+            <div class="resource-card">
+              <div class="card-top">
+                <div class="card-title-group">
+                  <div class="card-icon">${item.icon || cat.icon}</div>
+                  <div>
+                    <a href="${mainLink}" target="_blank" class="card-title">${item.title}</a>
+                  </div>
+                </div>
+                <div class="card-badges">
+                  <span class="badge badge-license">${item.license || 'مفتوح المصدر'}</span>
+                  <span class="badge badge-metric">${item.metric || 'مورد موثق'}</span>
+                </div>
+              </div>
+
+              <p class="card-desc">${item.description}</p>
+
+              <div class="links-container">
+                <div class="links-header-bar">
+                  <div class="links-title">
+                    <span>📥</span>
+                    <span>روابط التحميل والمصادر المباشرة لهذا المورد:</span>
+                  </div>
+                  <div class="verified-badge">
+                    <span>⚡ روابط مباشرة وموثوقة</span>
+                  </div>
+                </div>
+                <div class="links-buttons-grid">
+                  ${linksHtml}
+                </div>
+              </div>
+
+              <div class="card-footer">
+                <div class="card-meta">
+                  <span class="card-author">👤 الناشر: ${item.author}</span>
+                </div>
+                <div class="card-actions">
+                  <a href="${item.discussionUrl}" target="_blank" class="btn-discussion-link">
+                    💬 مناقشة الموضوع في المجتمع (#${item.discussionNum})
+                  </a>
+                </div>
               </div>
             </div>
-            <div class="card-badges">
-              <span class="badge badge-license">${item.license || 'مفتوح المصدر'}</span>
-              <span class="badge badge-metric">${item.metric || 'مورد موثق'}</span>
+          `;
+        }).join('');
+
+        secDiv.innerHTML = `
+          <div class="section-banner" onclick="toggleSectionBanner('${cat.id}')">
+            <div class="section-banner-right">
+              <span class="section-banner-icon">${cat.icon}</span>
+              <div class="section-banner-text">
+                <h2 class="section-banner-title">${cat.title}</h2>
+                <span class="section-banner-desc">${cat.desc}</span>
+              </div>
+            </div>
+            <div class="section-banner-left">
+              <span class="section-count-pill">${catItems.length} مورد معتمد</span>
+              <span class="section-arrow">▼</span>
             </div>
           </div>
-
-          <p class="card-desc">${item.description}</p>
-
-          <div class="links-container">
-            <div class="links-header-bar">
-              <div class="links-title">
-                <span>📥</span>
-                <span>روابط التحميل والمصادر المباشرة لهذا المورد:</span>
-              </div>
-              <div class="verified-badge">
-                <span>⚡ روابط مباشرة وموثوقة</span>
-              </div>
-            </div>
-            <div class="links-buttons-grid">
-              ${linksHtml}
-            </div>
-          </div>
-
-          <div class="card-footer">
-            <div class="card-meta">
-              <span class="card-author">👤 الناشر: ${item.author}</span>
-            </div>
-            <div class="card-actions">
-              <a href="${item.discussionUrl}" target="_blank" class="btn-discussion-link">
-                💬 مناقشة الموضوع في المجتمع (#${item.discussionNum})
-              </a>
-            </div>
+          <div class="section-content" id="section-content-${cat.id}">
+            ${cardsHtml}
           </div>
         `;
-        container.appendChild(el);
+
+        container.appendChild(secDiv);
       });
+
+      if (totalMatching === 0) {
+        container.innerHTML = `<div style="background:#fff; padding:40px; text-align:center; border-radius:12px; color:#64748b;">لا توجد موارد مطابقة لكلمة البحث الحالية.</div>`;
+      }
     }
 
-    function selectCat(cat, el) {
-      activeCat = cat;
+    // ACCORDION TOGGLE: Only ONE section open at a time, any other folds automatically!
+    function toggleSectionBanner(catId) {
+      if (currentOpenSection === catId) {
+        // If clicking the already open section, fold it!
+        currentOpenSection = null;
+        updateFolderHighlights(null);
+      } else {
+        // Automatically fold any other opened section, and expand this one!
+        currentOpenSection = catId;
+        updateFolderHighlights(catId);
+      }
+      renderSections();
+
+      // Smoothly scroll to the expanded section if opened
+      if (currentOpenSection) {
+        setTimeout(() => {
+          const target = document.getElementById(`section-box-${catId}`);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        }, 50);
+      }
+    }
+
+    // Shortcut from top Folder Cards
+    function selectSectionFromFolder(catId) {
+      currentOpenSection = catId;
+      updateFolderHighlights(catId);
+      renderSections();
+      setTimeout(() => {
+        const target = document.getElementById(`section-box-${catId}`);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 50);
+    }
+
+    function toggleAllSections() {
+      if (currentOpenSection === 'ALL') {
+        collapseAllSections();
+      } else {
+        expandAllSections();
+      }
+    }
+
+    function expandAllSections() {
+      currentOpenSection = 'ALL';
       document.querySelectorAll('.folder-card').forEach(c => c.classList.remove('selected'));
-      el.classList.add('selected');
-      render();
+      document.getElementById('folder-btn-all').classList.add('selected');
+      document.querySelectorAll('.section-accordion').forEach(sec => sec.classList.add('expanded'));
+    }
+
+    function collapseAllSections() {
+      currentOpenSection = null;
+      document.querySelectorAll('.folder-card').forEach(c => c.classList.remove('selected'));
+      document.querySelectorAll('.section-accordion').forEach(sec => sec.classList.remove('expanded'));
+    }
+
+    function updateFolderHighlights(catId) {
+      document.querySelectorAll('.folder-card').forEach(c => c.classList.remove('selected'));
+      if (catId) {
+        const btn = document.getElementById(`folder-btn-${catId}`);
+        if (btn) btn.classList.add('selected');
+      }
     }
 
     function filterResources() {
       searchQuery = document.getElementById('searchInput').value.trim().toLowerCase();
-      render();
+      renderSections();
     }
 
     function openSyncModal() {
