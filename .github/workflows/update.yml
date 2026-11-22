@@ -2,8 +2,8 @@ name: Auto-Sync Itqan Resources
 
 on:
   schedule:
-    # Run every Friday at midnight UTC
-    - cron: '0 0 * * 5'
+    # Run every day at midnight UTC (00:00 UTC)
+    - cron: '0 0 * * *'
   workflow_dispatch: # Allows manual one-click trigger from GitHub Actions UI
 
 permissions:

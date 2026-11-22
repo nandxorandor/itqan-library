@@ -7,7 +7,7 @@
   <meta name="description" content="دليل مجتمعي موثق يجمع نماذج الذكاء الاصطناعي، حزم التسجيلات الصوتية، خطوط المصحف بالرسم العثماني، وأدوات المزامنة التقنية من مجتمع إتقان.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Amiri:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Amiri:wght@700&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #0d6d5b;
@@ -37,7 +37,7 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      height: 64px;
+      height: 70px;
       display: flex;
       align-items: center;
       padding: 0 24px;
@@ -45,14 +45,20 @@
       box-shadow: var(--shadow-sm);
     }
     .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--primary); }
-    .brand-logo {
-      width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, var(--primary), #115e59);
-      display: flex; align-items: center; justify-content: center; color: white; font-family: 'Amiri', serif; font-size: 22px; font-weight: 700;
+    .brand-logo-img {
+      height: 44px; width: auto; object-fit: contain; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.08));
     }
-    .brand-title { font-size: 1.25rem; font-weight: 800; color: #0f172a; }
-    .brand-badge { background: var(--primary-light); color: var(--primary); font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 6px; }
+    .brand-text-block { display: flex; flex-direction: column; gap: 2px; }
+    .brand-title-wrap { display: flex; align-items: baseline; gap: 8px; }
+    .brand-title { font-size: 1.35rem; font-weight: 900; color: #0d6d5b; letter-spacing: -0.3px; }
+    .brand-subtitle { font-size: 0.88rem; font-weight: 700; color: #334155; }
+    .brand-badge {
+      background: var(--primary-light); color: var(--primary); font-size: 0.72rem;
+      font-weight: 800; padding: 1px 8px; border-radius: 4px; align-self: flex-start;
+      border: 1px solid var(--primary-border);
+    }
 
-    .nav-search { flex: 1; max-width: 480px; margin: 0 20px; position: relative; }
+    .nav-search { flex: 1; max-width: 460px; margin: 0 20px; position: relative; }
     .nav-search input {
       width: 100%; background: #f1f5f3; border: 1px solid transparent; padding: 10px 42px 10px 16px;
       border-radius: 9999px; font-size: 0.95rem; outline: none; transition: all 0.2s;
@@ -67,7 +73,7 @@
       background: linear-gradient(135deg, #0d6d5b, #047857);
       color: #ffffff;
       border: none;
-      padding: 8px 16px;
+      padding: 9px 18px;
       border-radius: 8px;
       font-weight: 800;
       font-size: 0.88rem;
@@ -75,13 +81,13 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      box-shadow: 0 2px 6px rgba(13,109,91,0.25);
+      box-shadow: 0 2px 8px rgba(13,109,91,0.28);
       transition: all 0.2s;
     }
     .btn-update-hub:hover {
       background: linear-gradient(135deg, #0a5647, #065f46);
       transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(13,109,91,0.35);
+      box-shadow: 0 4px 14px rgba(13,109,91,0.4);
     }
     .btn-update-hub span.btn-pulse {
       display: inline-block; width: 8px; height: 8px; background: #34d399; border-radius: 50%;
@@ -94,11 +100,11 @@
     }
 
     .btn-github {
-      background: #0f172a; color: #fff; padding: 7px 14px; border-radius: 6px; font-weight: 700;
+      background: #0f172a; color: #fff; padding: 8px 14px; border-radius: 6px; font-weight: 700;
       font-size: 0.85rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
     }
     .btn-outline-header {
-      background: #ffffff; border: 1px solid #cbd5e1; color: #334155; padding: 7px 14px;
+      background: #ffffff; border: 1px solid #cbd5e1; color: #334155; padding: 8px 14px;
       border-radius: 6px; font-weight: 700; font-size: 0.85rem; text-decoration: none;
     }
 
@@ -128,7 +134,7 @@
     }
     .sync-btn-small {
       margin-top: 10px; width: 100%; background: #f8fafc; border: 1px solid #cbd5e1;
-      padding: 6px 12px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; color: #334155; cursor: pointer;
+      padding: 7px 12px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; color: #334155; cursor: pointer;
     }
     .sync-btn-small:hover { background: var(--primary-light); color: var(--primary); border-color: var(--primary-border); }
 
@@ -185,73 +191,131 @@
 
     .card-desc { color: #334155; font-size: 0.96rem; line-height: 1.7; margin-bottom: 16px; }
 
-    /* The Unified Direct Download Buttons */
+    /* THE HIGH-VISIBILITY DOWNLOAD BOX (EMERALD HIGHLIGHT CONTAINER) */
     .links-container {
-      background: #f8fafc; border: 1px solid #e2e8f0; border-radius: var(--radius-sm);
-      padding: 14px 16px; margin-bottom: 16px;
+      background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+      border: 1.5px solid #86efac;
+      border-right: 6px solid #0d6d5b;
+      border-radius: var(--radius-sm);
+      padding: 16px 20px;
+      margin: 16px 0;
+      box-shadow: 0 2px 6px rgba(13, 109, 91, 0.08);
     }
     .links-header {
-      font-size: 0.82rem; font-weight: 800; color: #475569; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;
+      font-size: 0.96rem;
+      font-weight: 800;
+      color: #064e3b;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .header-icon { font-size: 1.25rem; }
+    .header-title-text { color: #064e3b; font-weight: 800; }
+    .header-highlight-pill {
+      background: #10b981;
+      color: #ffffff;
+      font-size: 0.76rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.3px;
+      box-shadow: 0 1px 3px rgba(16, 185, 129, 0.3);
     }
     .links-buttons-grid { display: flex; flex-wrap: wrap; gap: 10px; }
 
     .btn-direct-download {
-      background: #ffffff; border: 1.5px solid #cbd5e1; color: #0f172a; padding: 8px 14px;
-      border-radius: 8px; font-size: 0.85rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.15s ease;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+      background: #ffffff;
+      border: 1.5px solid #a7f3d0;
+      color: #065f46;
+      padding: 9px 15px;
+      border-radius: 8px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.18s ease;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
     .btn-direct-download:hover {
-      border-color: var(--primary); background: var(--primary); color: #ffffff; transform: translateY(-1px); box-shadow: 0 4px 10px rgba(13,109,91,0.2);
+      border-color: #0d6d5b;
+      background: #0d6d5b;
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(13, 109, 91, 0.25);
     }
-    .btn-direct-download:hover .source-badge { background: rgba(255,255,255,0.25); color: #ffffff; }
+    .btn-direct-download .source-badge {
+      font-size: 0.72rem;
+      background: #dcfce7;
+      color: #166534;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-weight: 800;
+    }
+    .btn-direct-download:hover .source-badge {
+      background: rgba(255,255,255,0.25);
+      color: #ffffff;
+    }
 
-    .source-badge { font-size: 0.72rem; background: #f1f5f9; color: #475569; padding: 2px 6px; border-radius: 4px; font-weight: 800; }
-
-    /* Card Footer */
+    /* Footer Meta */
     .card-footer {
-      display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #f1f5f9;
-      padding-top: 14px; font-size: 0.86rem; color: var(--text-muted);
+      display: flex; align-items: center; justify-content: space-between;
+      border-top: 1px solid #f1f5f9; padding-top: 14px; font-size: 0.84rem; color: var(--text-muted);
     }
-    .card-author { font-weight: 700; color: #1e293b; }
+    .card-meta { display: flex; gap: 16px; align-items: center; }
+    .card-author { font-weight: 700; color: #334155; }
     .btn-discussion-link {
-      background: #ffffff; border: 1px solid #cbd5e1; color: #334155; padding: 7px 14px;
-      border-radius: 6px; font-weight: 700; font-size: 0.84rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: 0.15s;
+      color: var(--primary); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;
     }
-    .btn-discussion-link:hover { background: #f1f5f9; color: var(--primary); border-color: var(--primary-border); }
+    .btn-discussion-link:hover { text-decoration: underline; }
 
-    /* Scanner / Update Modal */
+    /* Modal for Update / Scan */
     .modal-overlay {
-      display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.6);
-      backdrop-filter: blur(4px); z-index: 100; align-items: center; justify-content: center; padding: 20px;
+      position: fixed; inset: 0; background: rgba(15, 23, 42, 0.6);
+      display: none; align-items: center; justify-content: center; z-index: 100;
+      backdrop-filter: blur(4px);
     }
     .modal-box {
-      background: #ffffff; border-radius: var(--radius-lg); max-width: 580px; width: 100%;
-      padding: 28px; box-shadow: var(--shadow-lg); text-align: center;
+      background: #ffffff; border-radius: var(--radius-lg); width: 92%; max-width: 580px;
+      padding: 28px; box-shadow: var(--shadow-lg); text-align: right;
     }
-    .modal-box h2 { font-size: 1.4rem; color: #0f172a; margin-bottom: 8px; font-weight: 800; }
-    .scan-steps {
-      background: #f8fafc; border: 1px solid #e2e8f0; border-radius: var(--radius-md);
-      padding: 16px; margin: 20px 0; text-align: right; font-size: 0.9rem; line-height: 1.8;
+    .modal-box h2 { font-size: 1.35rem; color: #0f172a; margin-bottom: 8px; font-weight: 800; }
+    .scan-steps { margin: 20px 0; display: flex; flex-direction: column; gap: 12px; }
+    .scan-step-item {
+      display: flex; align-items: center; gap: 10px; font-size: 0.92rem; color: #334155;
+      padding: 10px 14px; background: #f8faf9; border-radius: 8px; border: 1px solid #e2e8e5;
     }
-    .scan-step-item { display: flex; align-items: center; gap: 10px; color: #334155; }
-    .scan-step-item.done { color: #15803d; font-weight: 700; }
+    .scan-step-item.done { border-color: #bbf7d0; background: #f0fdf4; color: #166534; font-weight: 700; }
+
+    @media (max-width: 900px) {
+      .container { flex-direction: column; }
+      aside.sidebar { width: 100%; }
+      header.navbar { padding: 0 16px; }
+      .nav-search { display: none; }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Top Navbar -->
+  <!-- Navbar -->
   <header class="navbar">
-    <a href="#" class="brand">
-      <div class="brand-logo">إ</div>
-      <div>
-        <span class="brand-title">مكتبة إتقان</span>
-        <span class="brand-badge">Itqan Library</span>
+    <a href="https://community.itqan.dev" class="brand">
+      <img src="https://community.itqan.dev/assets/logo-hppso2lt.png" alt="شعار إتقان" class="brand-logo-img">
+      <div class="brand-text-block">
+        <div class="brand-title-wrap">
+          <span class="brand-title">إتقان</span>
+          <span class="brand-subtitle">| مكتبة الموارد المفتوحة</span>
+        </div>
+        <span class="brand-badge">Itqan Resource Hub</span>
       </div>
     </a>
 
     <div class="nav-search">
       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-      <input type="text" id="searchInput" placeholder="ابحث في الموارد: ترتيل، تجويد، صوتيات، خطوط، رقيم..." onkeyup="filterResources()">
+      <input type="text" id="searchInput" placeholder="ابحث في الموارد: ترتيل، تجويد، صوتيات، خطوط، رقيم، Whisper..." onkeyup="filterResources()">
     </div>
 
     <div class="nav-actions">
@@ -276,7 +340,7 @@
       <div class="sidebar-menu">
         <a class="menu-item active-hub" href="#hub">
           <div class="menu-left"><span>🗂️</span><span>مستودع الموارد</span></div>
-          <span class="menu-badge" id="resourcesCountBadge">16</span>
+          <span class="menu-badge" id="resourcesCountBadge">--</span>
         </a>
         <a class="menu-item" href="https://community.itqan.dev/t/projects-collabs" target="_blank">
           <div class="menu-left"><span>🤝</span><span>المشاريع والتعاون</span></div>
@@ -294,61 +358,83 @@
 
       <div class="sync-card">
         <div style="font-weight:700; color:#0f172a; margin-bottom:4px;">
-          <span class="live-dot"></span> الماسح الذكي التلقائي
+          <span>مزامنة سحابية مؤتمتة</span>
+          <span class="live-dot"></span>
         </div>
         <p style="color:#64748b; font-size:0.8rem; line-height:1.5;">
-          مرتبط بخادم MCP الرسمي وأرشيف المجتمع.
+          تحديث آلي يومي عبر GitHub Actions يفحص أحدث أطروحات مجتمع إتقان وخادم MCP المفتوح.
         </p>
-        <button class="sync-btn-small" onclick="openSyncModal()">🔄 فحص الآن</button>
+        <button class="sync-btn-small" onclick="openSyncModal()">
+          <span>🔍 فحص المناقشات الجديدة</span>
+        </button>
       </div>
     </aside>
 
     <!-- Main Content -->
-    <main class="main-content">
-
+    <main class="main-content" id="hub">
+      
       <!-- Hero -->
       <div class="hub-hero">
         <div class="hero-badge-row">
-          <span class="hero-tag">🌟 مستودع الموارد والبيانات القرآنية المفتوحة</span>
-          <span class="hero-tag">مجتمع إتقان للتقنيات القرآنية</span>
+          <span class="hero-tag">🌟 مستودع الموارد المفتوحة</span>
+          <span class="hero-tag">محدث آلياً عبر خادم MCP</span>
         </div>
-        <h1>مكتبة إتقان للموارد والبيانات الرقمية</h1>
-        <p>فهرس مجتمعي مفتوح وموثّق يجمع روابط التنزيل المباشرة لحزم التسجيلات الصوتية، نماذج التسميع والذكاء الاصطناعي، خطوط الرسم العثماني، وأدوات المزامنة؛ مع ربط كل مورد بنقاشه الأصلي في المجتمع لتسهيل المتابعة والاستفادة.</p>
+        <h1>مكتبة مجتمع إتقان للموارد التقنية</h1>
+        <p>
+          دليل رقمي منظم ومصنف يجمع النماذج الذكية وحزم البيانات الصوتية ومكتبات الخطوط العثمانية وأدوات المزامنة، مع روابط تحميل مباشرة وموثوقة لخدمة مطوري ومصممي تقنيات القرآن الكريم.
+        </p>
       </div>
 
-      <!-- Folder Tabs -->
+      <!-- Categories Folders -->
       <div class="folders-grid">
         <div class="folder-card selected" onclick="selectCat('all', this)">
           <div class="folder-icon">📁</div>
-          <div><h3>جميع الموارد</h3><span id="allCount">عرض الكل</span></div>
+          <div>
+            <h3>جميع الموارد</h3>
+            <span id="allCount">جاري التحميل...</span>
+          </div>
         </div>
         <div class="folder-card" onclick="selectCat('audio', this)">
           <div class="folder-icon">🎙️</div>
-          <div><h3>حزم الصوتيات</h3><span id="audioCount">مجموعات</span></div>
+          <div>
+            <h3>حزم الصوتيات</h3>
+            <span id="audioCount">جاري التحميل...</span>
+          </div>
         </div>
         <div class="folder-card" onclick="selectCat('ai', this)">
           <div class="folder-icon">🤖</div>
-          <div><h3>نماذج التسميع والـ AI</h3><span id="aiCount">نماذج</span></div>
+          <div>
+            <h3>نماذج التسميع والـ AI</h3>
+            <span id="aiCount">جاري التحميل...</span>
+          </div>
         </div>
         <div class="folder-card" onclick="selectCat('fonts', this)">
           <div class="folder-icon">✒️</div>
-          <div><h3>الخطوط والرسم</h3><span id="fontsCount">خطوط ومختبر</span></div>
+          <div>
+            <h3>الخطوط والرسم</h3>
+            <span id="fontsCount">جاري التحميل...</span>
+          </div>
         </div>
         <div class="folder-card" onclick="selectCat('tools', this)">
           <div class="folder-icon">⚙️</div>
-          <div><h3>أدوات المزامنة</h3><span id="toolsCount">أدوات</span></div>
+          <div>
+            <h3>أدوات المزامنة</h3>
+            <span id="toolsCount">جاري التحميل...</span>
+          </div>
         </div>
       </div>
 
       <!-- Resources List -->
       <div class="resources-grid" id="resourcesList">
-        <!-- Rendered by JS -->
+        <div style="background:#fff; padding:40px; text-align:center; border-radius:12px; color:#64748b;">
+          ⏳ جاري جلب الموارد وقوائم التحميل المباشرة...
+        </div>
       </div>
 
     </main>
   </div>
 
-  <!-- Sync / Update Modal -->
+  <!-- Update / Sync Modal -->
   <div class="modal-overlay" id="syncModal" onclick="closeModalOnOut(event)">
     <div class="modal-box">
       <h2>🔄 تحديث ومزامنة موارد المجتمع</h2>
@@ -363,7 +449,7 @@
         </div>
         <div class="scan-step-item done">
           <span>✅</span>
-          <span>فحص أحدث 20 مناقشة في أقسام الموارد والذكاء الاصطناعي والصوتيات</span>
+          <span>فحص المناقشات في أقسام الذكاء الاصطناعي والصوتيات والموارد والخطوط</span>
         </div>
         <div class="scan-step-item done">
           <span>✅</span>
@@ -371,7 +457,7 @@
         </div>
         <div class="scan-step-item done">
           <span>✅</span>
-          <span id="scanStatusMsg">تم توثيق 16 مورداً وحزمة بيانات بنجاح!</span>
+          <span id="scanStatusMsg">تم توثيق كافة الموارد المفتوحة وتحديثها بنجاح!</span>
         </div>
       </div>
 
@@ -389,10 +475,10 @@
     let activeCat = 'all';
     let searchQuery = '';
 
-    // Load resources from external JSON file or fallback
+    // Load resources from external JSON file with cache-busting to ensure immediate updates
     async function loadData() {
       try {
-        const res = await fetch('resources.json');
+        const res = await fetch('resources.json?v=' + Date.now(), { cache: 'no-store' });
         if (res.ok) {
           allResources = await res.json();
         }
@@ -404,12 +490,23 @@
     }
 
     function updateCounts() {
-      document.getElementById('resourcesCountBadge').innerText = allResources.length;
-      document.getElementById('allCount').innerText = `${allResources.length} مورد`;
-      document.getElementById('audioCount').innerText = `${allResources.filter(x => x.category === 'audio').length} حزم`;
-      document.getElementById('aiCount').innerText = `${allResources.filter(x => x.category === 'ai').length} نماذج`;
-      document.getElementById('fontsCount').innerText = `${allResources.filter(x => x.category === 'fonts').length} خطوط`;
-      document.getElementById('toolsCount').innerText = `${allResources.filter(x => x.category === 'tools').length} أدوات`;
+      const total = allResources.length;
+      const aiCount = allResources.filter(x => x.category === 'ai').length;
+      const audioCount = allResources.filter(x => x.category === 'audio').length;
+      const fontsCount = allResources.filter(x => x.category === 'fonts').length;
+      const toolsCount = allResources.filter(x => x.category === 'tools').length;
+
+      document.getElementById('resourcesCountBadge').innerText = total;
+      document.getElementById('allCount').innerText = `${total} مورد`;
+      document.getElementById('aiCount').innerText = `${aiCount} نماذج`;
+      document.getElementById('audioCount').innerText = `${audioCount} حزم`;
+      document.getElementById('fontsCount').innerText = `${fontsCount} خطوط`;
+      document.getElementById('toolsCount').innerText = `${toolsCount} أدوات`;
+      
+      const statusMsg = document.getElementById('scanStatusMsg');
+      if (statusMsg) {
+        statusMsg.innerText = `تم توثيق ${total} مورداً وحزمة بيانات بنجاح!`;
+      }
     }
 
     function render() {
@@ -419,9 +516,9 @@
       const filtered = allResources.filter(it => {
         const catMatch = (activeCat === 'all' || it.category === activeCat);
         const searchMatch = (!searchQuery || 
-          it.title.toLowerCase().includes(searchQuery) ||
-          it.description.toLowerCase().includes(searchQuery) ||
-          (it.links && it.links.some(l => l.name.toLowerCase().includes(searchQuery)))
+          (it.title && it.title.toLowerCase().includes(searchQuery)) ||
+          (it.description && it.description.toLowerCase().includes(searchQuery)) ||
+          (it.links && it.links.some(l => l.name && l.name.toLowerCase().includes(searchQuery)))
         );
         return catMatch && searchMatch;
       });
@@ -440,7 +537,7 @@
           <a href="${l.url}" target="_blank" class="btn-direct-download">
             <span class="source-badge">${l.src || 'Link'}</span>
             <span>${l.name}</span>
-            <span style="font-size:12px; opacity:0.6;">↗</span>
+            <span style="font-size:12px; opacity:0.7;">↗</span>
           </a>
         `).join('') : '<span style="color:#94a3b8; font-size:0.85rem;">راجع تفاصيل الموضوع في الرابط أدناه</span>';
 
@@ -464,7 +561,9 @@
 
           <div class="links-container">
             <div class="links-header">
-              <span>📥 روابط التحميل والمصادر المباشرة لهذا المورد:</span>
+              <span class="header-icon">📥</span>
+              <span class="header-title-text">روابط التحميل والمصادر المباشرة لهذا المورد:</span>
+              <span class="header-highlight-pill">⚡ روابط مباشرة وموثوقة</span>
             </div>
             <div class="links-buttons-grid">
               ${linksHtml}
