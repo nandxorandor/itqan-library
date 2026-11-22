@@ -1,15 +1,9 @@
 #!/usr/bin/env python3
 """
 sync_resources.py
-Automated curated scanner for Itqan Library (مكتبة إتقان).
-Strictly extracts verified Quranic technical assets:
-- AI Models & Weights
-- Audio Datasets & Corpora
-- Fonts & Mushaf Typography
-- Open-Source Software & Tools
-- Published Research & Studies
-- Video Workshops & Tutorials
-Excludes general chatter, proposals, inquiries, and forum issues.
+Automated deep-mining scanner and updater for Itqan Library (مكتبة إتقان).
+Scans Itqan Community discussions AND replies/posts across all tags
+for new datasets, models, tools, and papers, and automatically upserts them into resources.json.
 """
 
 import json
@@ -20,7 +14,8 @@ import urllib.request
 import urllib.error
 
 RESOURCES_FILE = os.path.join(os.path.dirname(__file__), "resources.json")
-BASE_API = "https://community.itqan.dev/api/discussions"
+BASE_DISCUSSIONS_API = "https://community.itqan.dev/api/discussions"
+BASE_POSTS_API = "https://community.itqan.dev/api/posts"
 
 TECH_TAGS = [
     "", # General feed
@@ -35,7 +30,7 @@ TECH_TAGS = [
 EXCLUDE_TITLE_KEYWORDS = [
     "مقترح", "فكرة", "استطلاع", "رأي", "دعوة", "سؤال", "مشكلة", 
     "استفسار", "طلب مساعدة", "تحديت نفسي", "أحتاج مساعدة", "كيف تبني",
-    "خطأ في", "تحديث بخصوص", "شراكات واستثمار"
+    "شراكات واستثمار"
 ]
 
 EXCLUDE_LINK_PATTERNS = [
@@ -55,20 +50,16 @@ def save_resources(data):
         json.dump(data, f, ensure_ascii=False, indent=2)
     print(f"Successfully saved {len(data)} curated resources to {RESOURCES_FILE}")
 
-def fetch_discussions(tag="", offset=0, limit=50):
-    url = f"{BASE_API}?include=tags,firstPost,user&sort=-createdAt&page[limit]={limit}&page[offset]={offset}"
-    if tag:
-        url += f"&filter[tag]={tag}"
-        
+def api_get(url):
     req = urllib.request.Request(
         url,
-        headers={"User-Agent": "ItqanLibraryCurator/3.0 (+https://github.com/nandxorandor/itqan-library)"}
+        headers={"User-Agent": "ItqanLibraryCurator/3.5 (+https://github.com/nandxorandor/itqan-library)"}
     )
     try:
         with urllib.request.urlopen(req, timeout=15) as resp:
             return json.loads(resp.read().decode("utf-8"))
     except Exception as e:
-        print(f"Notice: Failed to fetch API for tag '{tag}': {e}", file=sys.stderr)
+        print(f"Notice: Failed to fetch API {url}: {e}", file=sys.stderr)
         return None
 
 def extract_links_from_text(text):
@@ -114,11 +105,10 @@ def extract_links_from_text(text):
         elif "youtube.com" in u or "youtu.be" in u:
             src = "فيديو مسجل"
             name = "مشاهدة الورشة المرئية"
-        elif "audio.qud.dev" in u or "vercel.app" in u or "api" in u:
-            src = "أداة ويب / API"
+        elif "audio.qud.dev" in u or "everyayah.com" in u or "api" in u:
+            src = "بوابة صوتية / API"
             name = u.replace("https://", "").replace("http://", "").split("/")[0]
         else:
-            # Skip ambiguous external links
             continue
 
         verified.append({"name": name, "url": u, "src": src})
@@ -126,13 +116,58 @@ def extract_links_from_text(text):
 
 def scan_and_update():
     existing = load_existing()
-    existing_ids = {str(item.get("discussionNum")) for item in existing if item.get("discussionNum")}
+    # Index by discussionNum for fast upserting
+    existing_by_num = {str(item.get("discussionNum")): item for item in existing if item.get("discussionNum")}
     
     print(f"Curated library currently contains {len(existing)} resources.")
     new_count = 0
+    updated_links_count = 0
 
+    # -------------------------------------------------------------
+    # Stage 1: Deep Post/Comment Mining (/api/posts)
+    # Catches links posted in replies and discussions in real-time
+    # -------------------------------------------------------------
+    print("Stage 1: Scanning latest community replies and comments for resource links...")
+    posts_payload = api_get(f"{BASE_POSTS_API}?sort=-createdAt&page[limit]=50&include=discussion,user")
+    if posts_payload and "data" in posts_payload:
+        included = {item['id']: item for item in posts_payload.get('included', [])}
+        for post in posts_payload.get("data", []):
+            content = post.get("attributes", {}).get("contentHtml", "")
+            links = extract_links_from_text(content)
+            if not links:
+                continue
+
+            disc_rel = post.get("relationships", {}).get("discussion", {}).get("data", {})
+            disc_id = str(disc_rel.get("id")) if disc_rel else None
+            if not disc_id:
+                continue
+
+            # Check if this discussion is already tracked in our catalog
+            if disc_id in existing_by_num:
+                target_item = existing_by_num[disc_id]
+                existing_urls = {l["url"] for l in target_item.get("links", [])}
+                added_any = False
+                for l in links:
+                    if l["url"] not in existing_urls:
+                        target_item.setdefault("links", []).append(l)
+                        existing_urls.add(l["url"])
+                        added_any = True
+                        updated_links_count += 1
+                        print(f"  [⟳] Auto-mined new link for #{disc_id} ({target_item.get('title')[:30]}): {l['url']}")
+                if added_any:
+                    # Update metric
+                    target_item["metric"] = f"{len(target_item['links'])} مصادر وروابط مباشرة"
+
+    # -------------------------------------------------------------
+    # Stage 2: Discussions Scanner (/api/discussions)
+    # Catches new technical topics across tags
+    # -------------------------------------------------------------
+    print("Stage 2: Scanning technical discussion topics across tags...")
     for tag in TECH_TAGS:
-        payload = fetch_discussions(tag=tag, offset=0, limit=50)
+        url = f"{BASE_DISCUSSIONS_API}?include=tags,firstPost,user&sort=-createdAt&page[limit]=50"
+        if tag:
+            url += f"&filter[tag]={tag}"
+        payload = api_get(url)
         if not payload or "data" not in payload:
             continue
             
@@ -149,7 +184,7 @@ def scan_and_update():
 
         for disc in discussions:
             disc_id = str(disc["id"])
-            if disc_id in existing_ids:
+            if disc_id in existing_by_num:
                 continue
 
             attrs = disc.get("attributes", {})
@@ -164,19 +199,17 @@ def scan_and_update():
             content = posts_by_id.get(first_post_id, "")
             
             links = extract_links_from_text(content)
-            # Require at least one verified repository, dataset, model, paper, or workshop
             has_gold_link = any(l["src"] in ["GitHub", "HuggingFace", "Archive.org", "ورقة علمية", "فيديو مسجل"] for l in links)
             
             if has_gold_link:
                 user_rel = disc.get("relationships", {}).get("user", {}).get("data", {})
                 author_name = users_by_id.get(user_rel.get("id") if user_rel else None) or "عضو في مجتمع إتقان"
 
-                # Classify category
                 title_and_text = (title + " " + content).lower()
                 category = "tools"
                 icon = "💻"
                 
-                if any(w in title_and_text for w in ["huggingface.co/models", "نموذج", "whisper", "zipformer", "tajweedformer", "asr"]):
+                if any(w in title_and_text for w in ["huggingface.co/models", "نموذج", "whisper", "zipformer", "tajweedformer", "تسميع"]):
                     category = "ai"
                     icon = "👳‍♂️"
                 elif any(w in title_and_text for w in ["archive.org", "حزمة صوت", "تسجيلات", "تلاوات", "corpus", "dataset"]):
@@ -213,13 +246,13 @@ def scan_and_update():
                     "links": links[:12]
                 }
                 existing.append(new_item)
-                existing_ids.add(disc_id)
+                existing_by_num[disc_id] = new_item
                 new_count += 1
                 print(f"  [+] Curated and added: {title} (#{disc_id}) -> {category}")
 
-    if new_count > 0:
+    if new_count > 0 or updated_links_count > 0:
         save_resources(existing)
-        print(f"Curation complete: Added {new_count} verified technical assets.")
+        print(f"Curation complete: Added {new_count} new assets, auto-mined {updated_links_count} new links into existing cards.")
     else:
         print("Curation complete: Library is fully up to date.")
 
