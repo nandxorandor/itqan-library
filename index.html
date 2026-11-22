@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مكتبة إتقان — دليل الموارد والبيانات القرآنية المفتوحة (Itqan Library)</title>
+  <meta name="description" content="دليل مجتمعي موثق يجمع نماذج الذكاء الاصطناعي، حزم التسجيلات الصوتية، خطوط المصحف بالرسم العثماني، وأدوات المزامنة التقنية من مجتمع إتقان.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Amiri:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0d6d5b;
+      --primary-hover: #0a5647;
+      --primary-light: #e6f3f0;
+      --primary-border: #b3ded5;
+      --surface: #ffffff;
+      --surface-border: #e2e8e5;
+      --bg: #f8faf9;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 12px rgba(13,109,91,0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Tajawal', sans-serif; }
+    body { background-color: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+
+    /* Header */
+    header.navbar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--surface-border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+      justify-content: space-between;
+      box-shadow: var(--shadow-sm);
+    }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--primary); }
+    .brand-logo {
+      width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, var(--primary), #115e59);
+      display: flex; align-items: center; justify-content: center; color: white; font-family: 'Amiri', serif; font-size: 22px; font-weight: 700;
+    }
+    .brand-title { font-size: 1.25rem; font-weight: 800; color: #0f172a; }
+    .brand-badge { background: var(--primary-light); color: var(--primary); font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 6px; }
+
+    .nav-search { flex: 1; max-width: 500px; margin: 0 24px; position: relative; }
+    .nav-search input {
+      width: 100%; background: #f1f5f3; border: 1px solid transparent; padding: 10px 42px 10px 16px;
+      border-radius: 9999px; font-size: 0.95rem; outline: none; transition: all 0.2s;
+    }
+    .nav-search input:focus { background: #fff; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(13,109,91,0.12); }
+    .nav-search svg { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: var(--text-muted); width: 18px; height: 18px; }
+
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+    .btn-github {
+      background: #0f172a; color: #fff; padding: 7px 14px; border-radius: 6px; font-weight: 700;
+      font-size: 0.85rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+    }
+    .btn-outline-header {
+      background: #ffffff; border: 1px solid #cbd5e1; color: #334155; padding: 7px 14px;
+      border-radius: 6px; font-weight: 700; font-size: 0.85rem; text-decoration: none;
+    }
+
+    /* Layout */
+    .container { max-width: 1360px; margin: 0 auto; padding: 24px 20px; display: flex; gap: 28px; }
+
+    /* Sidebar */
+    aside.sidebar { width: 260px; flex-shrink: 0; }
+    .sidebar-menu { background: var(--surface); border: 1px solid var(--surface-border); border-radius: var(--radius-md); padding: 8px; margin-bottom: 16px; }
+    .menu-item {
+      display: flex; align-items: center; justify-content: space-between; padding: 10px 14px;
+      border-radius: var(--radius-sm); text-decoration: none; color: var(--text); font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: 0.15s; margin-bottom: 2px;
+    }
+    .menu-item:hover { background: #f3f7f5; color: var(--primary); }
+    .menu-item.active-hub { background: var(--primary-light); color: var(--primary); font-weight: 800; border-right: 4px solid var(--primary); }
+    .menu-left { display: flex; align-items: center; gap: 10px; }
+    .menu-badge { background: #f1f5f3; color: var(--text-muted); font-size: 0.8rem; padding: 2px 7px; border-radius: 9999px; font-weight: 600; }
+    .menu-item.active-hub .menu-badge { background: var(--primary); color: white; }
+
+    .sync-card {
+      background: #ffffff; border: 1px solid var(--surface-border); border-radius: var(--radius-md);
+      padding: 16px; margin-top: 14px; text-align: center; font-size: 0.85rem;
+    }
+    .sync-card .live-dot {
+      display: inline-block; width: 8px; height: 8px; background: #22c55e; border-radius: 50%;
+      margin-left: 6px; box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.25);
+    }
+
+    /* Main Content */
+    main.main-content { flex: 1; min-width: 0; }
+    .hub-hero {
+      background: linear-gradient(135deg, #0d6d5b 0%, #064e42 100%); color: white;
+      border-radius: var(--radius-lg); padding: 26px 30px; margin-bottom: 24px; position: relative; overflow: hidden;
+    }
+    .hero-badge-row { display: flex; gap: 10px; margin-bottom: 10px; }
+    .hero-tag {
+      background: rgba(255,255,255,0.18); backdrop-filter: blur(4px); padding: 4px 12px;
+      border-radius: 9999px; font-size: 0.8rem; font-weight: 700;
+    }
+    .hub-hero h1 { font-size: 1.85rem; font-weight: 800; margin-bottom: 8px; }
+    .hub-hero p { font-size: 1rem; opacity: 0.92; max-width: 800px; line-height: 1.7; }
+
+    /* Folder Categories Tabs */
+    .folders-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; margin-bottom: 24px;
+    }
+    .folder-card {
+      background: var(--surface); border: 1px solid var(--surface-border); border-radius: var(--radius-md);
+      padding: 14px; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 12px;
+    }
+    .folder-card:hover, .folder-card.selected { border-color: var(--primary); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+    .folder-card.selected { background: var(--primary-light); border-width: 2px; }
+    .folder-icon { font-size: 24px; }
+    .folder-card h3 { font-size: 0.92rem; font-weight: 700; color: #0f172a; margin-bottom: 2px; }
+    .folder-card span { font-size: 0.78rem; color: var(--text-muted); }
+
+    /* Clean Uniform Resource Card */
+    .resources-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+
+    .resource-card {
+      background: var(--surface); border: 1px solid var(--surface-border); border-radius: var(--radius-md);
+      padding: 22px 24px; transition: border 0.2s, box-shadow 0.2s;
+    }
+    .resource-card:hover { border-color: var(--primary-border); box-shadow: var(--shadow-md); }
+
+    .card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 12px; }
+    .card-title-group { display: flex; align-items: center; gap: 12px; }
+    .card-icon {
+      width: 44px; height: 44px; border-radius: 10px; background: #f0fdf4; color: #166534;
+      display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0;
+    }
+    .card-title { font-size: 1.22rem; font-weight: 800; color: #0f172a; text-decoration: none; }
+    .card-title:hover { color: var(--primary); }
+
+    .card-badges { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+    .badge { font-size: 0.76rem; font-weight: 700; padding: 4px 10px; border-radius: 6px; }
+    .badge-license { background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; }
+    .badge-metric { background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; }
+
+    .card-desc { color: #334155; font-size: 0.96rem; line-height: 1.7; margin-bottom: 16px; }
+
+    /* The Unified Direct Download Buttons */
+    .links-container {
+      background: #f8fafc; border: 1px solid #e2e8f0; border-radius: var(--radius-sm);
+      padding: 14px 16px; margin-bottom: 16px;
+    }
+    .links-header {
+      font-size: 0.82rem; font-weight: 800; color: #475569; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;
+    }
+    .links-buttons-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+
+    .btn-direct-download {
+      background: #ffffff; border: 1.5px solid #cbd5e1; color: #0f172a; padding: 8px 14px;
+      border-radius: 8px; font-size: 0.85rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.15s ease;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    }
+    .btn-direct-download:hover {
+      border-color: var(--primary); background: var(--primary); color: #ffffff; transform: translateY(-1px); box-shadow: 0 4px 10px rgba(13,109,91,0.2);
+    }
+    .btn-direct-download:hover .source-badge { background: rgba(255,255,255,0.25); color: #ffffff; }
+
+    .source-badge { font-size: 0.72rem; background: #f1f5f9; color: #475569; padding: 2px 6px; border-radius: 4px; font-weight: 800; }
+
+    /* Card Footer */
+    .card-footer {
+      display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #f1f5f9;
+      padding-top: 14px; font-size: 0.86rem; color: var(--text-muted);
+    }
+    .card-author { font-weight: 700; color: #1e293b; }
+    .btn-discussion-link {
+      background: #ffffff; border: 1px solid #cbd5e1; color: #334155; padding: 7px 14px;
+      border-radius: 6px; font-weight: 700; font-size: 0.84rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: 0.15s;
+    }
+    .btn-discussion-link:hover { background: #f1f5f9; color: var(--primary); border-color: var(--primary-border); }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <header class="navbar">
+    <a href="#" class="brand">
+      <div class="brand-logo">إ</div>
+      <div>
+        <span class="brand-title">مكتبة إتقان</span>
+        <span class="brand-badge">Itqan Library</span>
+      </div>
+    </a>
+
+    <div class="nav-search">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+      <input type="text" id="searchInput" placeholder="ابحث في الموارد: ترتيل، تجويد، صوتيات، خطوط، رقيم..." onkeyup="filterResources()">
+    </div>
+
+    <div class="nav-actions">
+      <a href="https://community.itqan.dev" target="_blank" class="btn-outline-header">مجتمع إتقان ↗</a>
+      <a href="https://github.com/nandxorandor/itqan-library" target="_blank" class="btn-github">
+        <span>⭐ على GitHub</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Container -->
+  <div class="container">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-menu">
+        <a class="menu-item active-hub" href="#hub">
+          <div class="menu-left"><span>🗂️</span><span>مستودع الموارد</span></div>
+          <span class="menu-badge" id="resourcesCountBadge">16</span>
+        </a>
+        <a class="menu-item" href="https://community.itqan.dev/t/projects-collabs" target="_blank">
+          <div class="menu-left"><span>🤝</span><span>المشاريع والتعاون</span></div>
+          <span class="menu-badge">224</span>
+        </a>
+        <a class="menu-item" href="https://community.itqan.dev/t/tools-resources" target="_blank">
+          <div class="menu-left"><span>🛠️</span><span>الأدوات والموارد</span></div>
+          <span class="menu-badge">83</span>
+        </a>
+        <a class="menu-item" href="https://community.itqan.dev/t/tech-knowledge" target="_blank">
+          <div class="menu-left"><span>📚</span><span>المعرفة التقنية</span></div>
+          <span class="menu-badge">56</span>
+        </a>
+      </div>
+
+      <div class="sync-card">
+        <div style="font-weight:700; color:#0f172a; margin-bottom:4px;">
+          <span class="live-dot"></span> الماسح الذكي التلقائي
+        </div>
+        <p style="color:#64748b; font-size:0.8rem; line-height:1.5;">
+          يتم فحص وتحديث الموارد تلقائياً من مجتمع إتقان عبر خادم MCP والذكاء الاصطناعي.
+        </p>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+      <!-- Hero -->
+      <div class="hub-hero">
+        <div class="hero-badge-row">
+          <span class="hero-tag">🌟 مستودع الموارد والبيانات القرآنية المفتوحة</span>
+          <span class="hero-tag">مجتمع إتقان للتقنيات القرآنية</span>
+        </div>
+        <h1>مكتبة إتقان للموارد والبيانات الرقمية</h1>
+        <p>فهرس مجتمعي مفتوح وموثّق يجمع روابط التنزيل المباشرة لحزم التسجيلات الصوتية، نماذج التسميع والذكاء الاصطناعي، خطوط الرسم العثماني، وأدوات المزامنة؛ مع ربط كل مورد بنقاشه الأصلي في المجتمع لتسهيل المتابعة والاستفادة.</p>
+      </div>
+
+      <!-- Folder Tabs -->
+      <div class="folders-grid">
+        <div class="folder-card selected" onclick="selectCat('all', this)">
+          <div class="folder-icon">📁</div>
+          <div><h3>جميع الموارد</h3><span id="allCount">عرض الكل</span></div>
+        </div>
+        <div class="folder-card" onclick="selectCat('audio', this)">
+          <div class="folder-icon">🎙️</div>
+          <div><h3>حزم الصوتيات</h3><span id="audioCount">مجموعات</span></div>
+        </div>
+        <div class="folder-card" onclick="selectCat('ai', this)">
+          <div class="folder-icon">🤖</div>
+          <div><h3>نماذج التسميع والـ AI</h3><span id="aiCount">نماذج</span></div>
+        </div>
+        <div class="folder-card" onclick="selectCat('fonts', this)">
+          <div class="folder-icon">✒️</div>
+          <div><h3>الخطوط والرسم</h3><span id="fontsCount">خطوط ومختبر</span></div>
+        </div>
+        <div class="folder-card" onclick="selectCat('tools', this)">
+          <div class="folder-icon">⚙️</div>
+          <div><h3>أدوات المزامنة</h3><span id="toolsCount">أدوات</span></div>
+        </div>
+      </div>
+
+      <!-- Resources List -->
+      <div class="resources-grid" id="resourcesList">
+        <!-- Rendered by JS -->
+      </div>
+
+    </main>
+  </div>
+
+  <script>
+    let allResources = [];
+    let activeCat = 'all';
+    let searchQuery = '';
+
+    // Load resources from external JSON file or fallback
+    async function loadData() {
+      try {
+        const res = await fetch('resources.json');
+        if (res.ok) {
+          allResources = await res.json();
+        }
+      } catch (err) {
+        console.warn('Using embedded fallback data:', err);
+      }
+      updateCounts();
+      render();
+    }
+
+    function updateCounts() {
+      document.getElementById('resourcesCountBadge').innerText = allResources.length;
+      document.getElementById('allCount').innerText = `${allResources.length} مورد`;
+      document.getElementById('audioCount').innerText = `${allResources.filter(x => x.category === 'audio').length} حزم`;
+      document.getElementById('aiCount').innerText = `${allResources.filter(x => x.category === 'ai').length} نماذج`;
+      document.getElementById('fontsCount').innerText = `${allResources.filter(x => x.category === 'fonts').length} خطوط`;
+      document.getElementById('toolsCount').innerText = `${allResources.filter(x => x.category === 'tools').length} أدوات`;
+    }
+
+    function render() {
+      const container = document.getElementById('resourcesList');
+      container.innerHTML = '';
+
+      const filtered = allResources.filter(it => {
+        const catMatch = (activeCat === 'all' || it.category === activeCat);
+        const searchMatch = (!searchQuery || 
+          it.title.toLowerCase().includes(searchQuery) ||
+          it.description.toLowerCase().includes(searchQuery) ||
+          (it.links && it.links.some(l => l.name.toLowerCase().includes(searchQuery)))
+        );
+        return catMatch && searchMatch;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `<div style="background:#fff; padding:40px; text-align:center; border-radius:12px; color:#64748b;">لا توجد موارد مطابقة للبحث.</div>`;
+        return;
+      }
+
+      filtered.forEach(item => {
+        const el = document.createElement('div');
+        el.className = 'resource-card';
+
+        // Render each link as a bold, direct download action button
+        const linksHtml = (item.links && item.links.length > 0) ? item.links.map(l => `
+          <a href="${l.url}" target="_blank" class="btn-direct-download">
+            <span class="source-badge">${l.src || 'Link'}</span>
+            <span>${l.name}</span>
+            <span style="font-size:12px; opacity:0.6;">↗</span>
+          </a>
+        `).join('') : '<span style="color:#94a3b8; font-size:0.85rem;">راجع تفاصيل الموضوع في الرابط أدناه</span>';
+
+        const mainLink = (item.links && item.links[0]) ? item.links[0].url : item.discussionUrl;
+
+        el.innerHTML = `
+          <div class="card-top">
+            <div class="card-title-group">
+              <div class="card-icon">${item.icon || '📦'}</div>
+              <div>
+                <a href="${mainLink}" target="_blank" class="card-title">${item.title}</a>
+              </div>
+            </div>
+            <div class="card-badges">
+              <span class="badge badge-license">${item.license || 'مفتوح المصدر'}</span>
+              <span class="badge badge-metric">${item.metric || 'مورد موثق'}</span>
+            </div>
+          </div>
+
+          <p class="card-desc">${item.description}</p>
+
+          <div class="links-container">
+            <div class="links-header">
+              <span>📥 روابط التحميل والمصادر المباشرة لهذا المورد:</span>
+            </div>
+            <div class="links-buttons-grid">
+              ${linksHtml}
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div class="card-meta">
+              <span class="card-author">👤 الناشر: ${item.author}</span>
+            </div>
+            <div class="card-actions">
+              <a href="${item.discussionUrl}" target="_blank" class="btn-discussion-link">
+                💬 مناقشة الموضوع في المجتمع (#${item.discussionNum})
+              </a>
+            </div>
+          </div>
+        `;
+        container.appendChild(el);
+      });
+    }
+
+    function selectCat(cat, el) {
+      activeCat = cat;
+      document.querySelectorAll('.folder-card').forEach(c => c.classList.remove('selected'));
+      el.classList.add('selected');
+      render();
+    }
+
+    function filterResources() {
+      searchQuery = document.getElementById('searchInput').value.trim().toLowerCase();
+      render();
+    }
+
+    // Initialize
+    loadData();
+  </script>
+</body>
+</html>
