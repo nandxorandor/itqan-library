@@ -10,6 +10,7 @@
   <style>
     :root {
       --primary: #0d6d5b;
+      --primary-dark: #064e3b;
       --primary-light: #e6f4f1;
       --primary-hover: #0a5648;
       --primary-border: #99d5ca;
@@ -288,8 +289,8 @@
       background: linear-gradient(135deg, #0d6d5b 0%, #064e3b 100%);
       color: #ffffff;
       border-radius: var(--radius-lg);
-      padding: 32px 36px;
-      margin-bottom: 24px;
+      padding: 30px 34px;
+      margin-bottom: 22px;
       position: relative;
       overflow: hidden;
       box-shadow: var(--shadow-md);
@@ -307,7 +308,7 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       flex-wrap: wrap;
     }
     .hero-tag {
@@ -319,28 +320,28 @@
       font-weight: 700;
     }
     .hub-hero h1 {
-      font-size: 1.85rem;
+      font-size: 1.80rem;
       font-weight: 900;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       letter-spacing: -0.5px;
     }
     .hub-hero p {
-      font-size: 1.02rem;
+      font-size: 1.00rem;
       opacity: 0.95;
       max-width: 850px;
       line-height: 1.7;
     }
 
-    /* Top Folder Category Selectors (Primary Filters) */
+    /* Top Folder Category Selectors (Toggle to Select / Deselect) */
     .folders-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
       gap: 12px;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
     .folder-card {
       background: #ffffff;
-      border: 1px solid var(--surface-border);
+      border: 1.5px solid var(--surface-border);
       border-radius: var(--radius-md);
       padding: 16px 14px;
       display: flex;
@@ -350,16 +351,34 @@
       transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
       box-shadow: var(--shadow-sm);
       user-select: none;
+      position: relative;
     }
     .folder-card:hover {
       border-color: var(--primary-border);
       transform: translateY(-2px);
       box-shadow: var(--shadow-md);
     }
+    /* When a folder is active / selected */
     .folder-card.selected {
-      background: var(--primary-light);
+      background: #e6f4f1;
       border-color: var(--primary);
-      box-shadow: 0 0 0 2px var(--primary);
+      box-shadow: 0 0 0 3px rgba(13, 109, 91, 0.25);
+    }
+    .folder-card.selected::after {
+      content: "✓";
+      position: absolute;
+      top: 8px;
+      left: 10px;
+      font-size: 11px;
+      background: var(--primary);
+      color: #fff;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
     }
     .folder-icon {
       font-size: 28px;
@@ -380,16 +399,16 @@
       font-weight: 700;
     }
     .folder-card.selected h3 {
-      color: var(--primary);
+      color: var(--primary-dark);
     }
     .folder-card.selected span {
       color: #065f46;
       font-weight: 800;
     }
 
-    /* Cards List Header Bar */
+    /* Cards List Header Bar (Only visible when a folder is selected) */
     .cards-list-header {
-      display: flex;
+      display: none; /* Hidden until folder clicked */
       align-items: center;
       justify-content: space-between;
       background: #ffffff;
@@ -405,7 +424,7 @@
       gap: 10px;
     }
     .list-header-icon {
-      font-size: 22px;
+      font-size: 24px;
     }
     .list-header-title h2 {
       font-size: 1.18rem;
@@ -447,28 +466,115 @@
     .cards-container {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 14px;
     }
 
-    /* FOLDABLE RESOURCE CONTENT CARD */
+    /* Clean Empty State (When no folder is selected on page open) */
+    .empty-select-box {
+      background: #ffffff;
+      border: 2px dashed #cbd5e1;
+      border-radius: var(--radius-lg);
+      padding: 56px 24px;
+      text-align: center;
+      color: #475569;
+      margin-top: 10px;
+      transition: all 0.2s;
+    }
+    .empty-select-box .empty-icon {
+      font-size: 50px;
+      margin-bottom: 14px;
+      display: inline-block;
+      animation: float 2.5s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .empty-select-box h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+    .empty-select-box p {
+      font-size: 0.96rem;
+      color: #64748b;
+      max-width: 600px;
+      margin: 0 auto 20px auto;
+      line-height: 1.7;
+    }
+    .empty-hint-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      color: #334155;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    /* ========================================================
+       CONTENT CARDS: CLEAR DISTINCTION (OPENED VS NON-OPENED)
+       ======================================================== */
     .resource-card {
       background: #ffffff;
-      border: 1px solid var(--surface-border);
+      border: 1.5px solid #e2e8f0;
       border-radius: var(--radius-md);
       box-shadow: 0 1px 3px rgba(0,0,0,0.03);
-      transition: border-color 0.2s, box-shadow 0.2s;
+      transition: all 0.2s ease;
       overflow: hidden;
     }
-    .resource-card:hover {
-      border-color: var(--primary-border);
-      box-shadow: var(--shadow-sm);
+
+    /* NON-OPENED (FOLDED) CARD STATE */
+    .resource-card:not(.expanded) {
+      background: #ffffff;
+      border-color: #e2e8f0;
     }
-    .resource-card.expanded {
-      border-color: var(--primary);
-      box-shadow: 0 4px 16px rgba(13, 109, 91, 0.12);
+    .resource-card:not(.expanded):hover {
+      border-color: #94a3b8;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    }
+    .resource-card:not(.expanded) .card-header-bar {
+      background: #ffffff;
+    }
+    .resource-card:not(.expanded) .card-header-bar:hover {
+      background: #f8fafc;
     }
 
-    /* Clickable Header (Always Visible - Folded State) */
+    /* OPENED (EXPANDED) CARD STATE - DISTINCTIVELY DARKER & HIGHLIGHTED */
+    .resource-card.expanded {
+      border: 2px solid #0d6d5b;
+      border-right: 7px solid #0d6d5b;
+      box-shadow: 0 8px 24px rgba(13, 109, 91, 0.18);
+    }
+    .resource-card.expanded .card-header-bar {
+      background: #d1fae5; /* Distinctive Darker Emerald Mint */
+      border-bottom: 2px solid #a7f3d0;
+    }
+    .resource-card.expanded .card-title {
+      color: #064e3b;
+      font-weight: 900;
+    }
+    .resource-card.expanded .card-icon {
+      background: #0d6d5b;
+      color: #ffffff;
+      border-color: #064e3b;
+    }
+    .resource-card.expanded .btn-card-toggle {
+      background: #0d6d5b;
+      color: #ffffff;
+      border-color: #064e3b;
+      font-weight: 800;
+      box-shadow: 0 2px 6px rgba(13, 109, 91, 0.35);
+    }
+    .resource-card.expanded .toggle-arrow {
+      transform: rotate(180deg);
+    }
+
+    /* Card Header Bar (Sub-Banner) */
     .card-header-bar {
       display: flex;
       align-items: center;
@@ -476,16 +582,8 @@
       padding: 16px 20px;
       cursor: pointer;
       user-select: none;
-      background: #ffffff;
       transition: background 0.15s ease;
       gap: 16px;
-    }
-    .card-header-bar:hover {
-      background: #f8fbf9;
-    }
-    .resource-card.expanded .card-header-bar {
-      background: #f2f9f6;
-      border-bottom: 1px solid #d1fae5;
     }
 
     .card-header-right {
@@ -507,6 +605,7 @@
       font-size: 22px;
       flex-shrink: 0;
       border: 1px solid #dcfce7;
+      transition: all 0.2s;
     }
     .card-title-col {
       display: flex;
@@ -518,13 +617,10 @@
       font-size: 1.12rem;
       font-weight: 800;
       color: #0f172a;
-      text-decoration: none;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-    }
-    .resource-card:hover .card-title {
-      color: var(--primary);
+      transition: color 0.15s;
     }
     .card-badges-row {
       display: flex;
@@ -552,7 +648,7 @@
       font-size: 0.74rem;
       font-weight: 800;
       color: #0d6d5b;
-      background: #e6f4f1;
+      background: #ffffff;
       padding: 2px 8px;
       border-radius: 6px;
       border: 1px solid #bbf7d0;
@@ -587,23 +683,15 @@
       background: #dcfce7;
       border-color: #86efac;
     }
-    .resource-card.expanded .btn-card-toggle {
-      background: #0d6d5b;
-      color: #ffffff;
-      border-color: #0d6d5b;
-    }
     .toggle-arrow {
       font-size: 0.75rem;
       transition: transform 0.2s ease;
-    }
-    .resource-card.expanded .toggle-arrow {
-      transform: rotate(180deg);
     }
 
     /* Card Collapsible Body (Hidden by default, unfolds when active) */
     .card-collapsible-body {
       display: none;
-      padding: 20px 24px 22px 24px;
+      padding: 22px 24px 24px 24px;
       background: #fafcfb;
     }
     .resource-card.expanded .card-collapsible-body {
@@ -618,8 +706,8 @@
     .card-desc {
       color: #334155;
       font-size: 0.96rem;
-      line-height: 1.7;
-      margin-bottom: 16px;
+      line-height: 1.75;
+      margin-bottom: 18px;
     }
 
     /* High-Visibility Direct Download Box */
@@ -772,7 +860,7 @@
 
     <div class="nav-search">
       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-      <input type="text" id="searchInput" placeholder="ابحث في الموارد الموثقة: نماذج، حزم صوتية، خطوط، أدوات، أبحاث..." onkeyup="filterResources()">
+      <input type="text" id="searchInput" placeholder="ابحث في الموارد الموثقة: نماذج، حزم صوتية، خطوط، أدوات، أبحاث..." onkeyup="handleSearch()">
     </div>
 
     <div class="nav-actions">
@@ -842,51 +930,51 @@
         </p>
       </div>
 
-      <!-- Categories Folders (Primary Filter Tabs) -->
+      <!-- Categories Folders (CLICK TO SELECT, CLICK AGAIN TO DESELECT) -->
       <div class="folders-grid">
-        <div class="folder-card selected" id="folder-btn-all" onclick="selectCategory('all')">
+        <div class="folder-card" id="folder-btn-all" onclick="toggleCategoryFolder('all')">
           <div class="folder-icon">📁</div>
           <div>
             <h3>جميع الموارد</h3>
             <span id="allCount">جاري التحميل...</span>
           </div>
         </div>
-        <div class="folder-card" id="folder-btn-ai" onclick="selectCategory('ai')">
+        <div class="folder-card" id="folder-btn-ai" onclick="toggleCategoryFolder('ai')">
           <div class="folder-icon">👳‍♂️</div>
           <div>
             <h3>نماذج تسميع القرآن</h3>
             <span id="aiCount">جاري التحميل...</span>
           </div>
         </div>
-        <div class="folder-card" id="folder-btn-audio" onclick="selectCategory('audio')">
+        <div class="folder-card" id="folder-btn-audio" onclick="toggleCategoryFolder('audio')">
           <div class="folder-icon">🔊</div>
           <div>
             <h3>حزم البيانات والصوتيات</h3>
             <span id="audioCount">جاري التحميل...</span>
           </div>
         </div>
-        <div class="folder-card" id="folder-btn-fonts" onclick="selectCategory('fonts')">
+        <div class="folder-card" id="folder-btn-fonts" onclick="toggleCategoryFolder('fonts')">
           <div class="folder-icon">✒️</div>
           <div>
             <h3>الخطوط والمصاحف</h3>
             <span id="fontsCount">جاري التحميل...</span>
           </div>
         </div>
-        <div class="folder-card" id="folder-btn-tools" onclick="selectCategory('tools')">
+        <div class="folder-card" id="folder-btn-tools" onclick="toggleCategoryFolder('tools')">
           <div class="folder-icon">💻</div>
           <div>
             <h3>البرمجيات والأدوات</h3>
             <span id="toolsCount">جاري التحميل...</span>
           </div>
         </div>
-        <div class="folder-card" id="folder-btn-research" onclick="selectCategory('research')">
+        <div class="folder-card" id="folder-btn-research" onclick="toggleCategoryFolder('research')">
           <div class="folder-icon">📚</div>
           <div>
             <h3>الأبحاث والدراسات</h3>
             <span id="researchCount">جاري التحميل...</span>
           </div>
         </div>
-        <div class="folder-card" id="folder-btn-workshops" onclick="selectCategory('workshops')">
+        <div class="folder-card" id="folder-btn-workshops" onclick="toggleCategoryFolder('workshops')">
           <div class="folder-icon">📺</div>
           <div>
             <h3>الورش والمحاضرات</h3>
@@ -895,25 +983,23 @@
         </div>
       </div>
 
-      <!-- Cards List Header Bar -->
-      <div class="cards-list-header">
+      <!-- Cards List Header Bar (Appears when a folder is selected) -->
+      <div class="cards-list-header" id="cardsListHeader">
         <div class="list-header-title">
           <span class="list-header-icon" id="currentCategoryIcon">📁</span>
-          <h2 id="currentCategoryTitle">جميع الموارد المعتمدة</h2>
-          <span class="list-header-pill" id="currentCategoryBadge">40 مورد</span>
+          <h2 id="currentCategoryTitle">الموارد المعتمدة</h2>
+          <span class="list-header-pill" id="currentCategoryBadge">--</span>
         </div>
         <div class="control-actions-btns">
           <button class="btn-toggle-all" onclick="expandAllCards()">⮟ توسيع جميع البطاقات</button>
           <button class="btn-toggle-all" onclick="collapseAllCards()">⮝ طي الكل</button>
+          <button class="btn-toggle-all" onclick="deselectCurrentFolder()" style="background:#fee2e2; border-color:#fca5a5; color:#991b1b;">✕ إغلاق القسم</button>
         </div>
       </div>
 
-      <!-- Resource Cards List (ALL CARDS FOLDED BY DEFAULT) -->
+      <!-- Resource Cards / Empty State Container -->
       <div class="cards-container" id="cardsContainer">
-        <!-- Rendered dynamically via JavaScript -->
-        <div style="background:#fff; padding:40px; text-align:center; border-radius:12px; color:#64748b;">
-          ⏳ جاري تحميل وتجهيز بطاقات الموارد الموثقة...
-        </div>
+        <!-- Rendered dynamically -->
       </div>
 
     </main>
@@ -956,7 +1042,7 @@
   </div>
 
   <script>
-    // Embedded Fallback Data (ensures 100% offline and file:// reliability)
+    // Embedded Fallback Data (100% offline and file:// reliability)
     const EMBEDDED_RESOURCES = [
   {
     "id": 1,
@@ -1886,9 +1972,9 @@
 ];
 
     let allResources = EMBEDDED_RESOURCES;
-    let selectedCategory = 'all';
+    let selectedCategory = null; // NOTHING SHOWN INITIALLY UNLESS USER SELECTS A FOLDER!
     let searchQuery = '';
-    let openedCardId = null; // ALL CONTENT CARDS FOLDED BY DEFAULT!
+    let openedCardId = null;     // ALL CARDS FOLDED BY DEFAULT
 
     // Defined Categories Configuration
     const CATEGORIES = [
@@ -1900,7 +1986,7 @@
       { id: 'workshops', title: 'الورش والمحاضرات', icon: '📺', label: 'ورش' }
     ];
 
-    // Load resources from external JSON file with cache-busting
+    // Load data from external JSON with cache-busting
     async function loadData() {
       try {
         const res = await fetch('resources.json?v=' + Date.now(), { cache: 'no-store' });
@@ -1914,7 +2000,7 @@
         console.warn('Using embedded fallback data:', err);
       }
       updateCounts();
-      renderCards();
+      renderInitialView();
     }
 
     function updateCounts() {
@@ -1936,17 +2022,54 @@
       }
     }
 
-    // Top Category Filter Selection
-    function selectCategory(catId) {
-      selectedCategory = catId;
-      openedCardId = null; // Reset cards to folded on category switch!
+    // Initial View on Page Open: Clean screen with zero cards until a folder is chosen
+    function renderInitialView() {
+      if (!selectedCategory && !searchQuery) {
+        document.getElementById('cardsListHeader').style.display = 'none';
+        document.querySelectorAll('.folder-card').forEach(c => c.classList.remove('selected'));
+        const container = document.getElementById('cardsContainer');
+        container.innerHTML = `
+          <div class="empty-select-box">
+            <span class="empty-icon">📂</span>
+            <h3>مكتبة إتقان مهيأة لتصفح الموارد</h3>
+            <p>
+              اضغط على أي قسم من المجلدات أعلاه لاستعراض موارده المعتمدة، وعند الضغط على نفس القسم مرة أخرى سيتم إلغاء تحديده لتبقى الشاشة نظيفة ومريحة.
+            </p>
+            <div class="empty-hint-pill">
+              <span>💡 تلميح: اضغط على أحد المجلدات أعلاه للبدء</span>
+            </div>
+          </div>
+        `;
+      } else {
+        renderCards();
+      }
+    }
 
-      // Update folder selection UI
+    // CLICK FOLDER TO SELECT, CLICK SAME FOLDER TO DESELECT
+    function toggleCategoryFolder(catId) {
+      if (selectedCategory === catId) {
+        // Deselect folder: page becomes clean again!
+        selectedCategory = null;
+        openedCardId = null;
+        searchQuery = '';
+        document.getElementById('searchInput').value = '';
+        renderInitialView();
+        return;
+      }
+
+      // Select new folder
+      selectedCategory = catId;
+      openedCardId = null; // Fold all cards initially
+
+      // Highlight selected folder
       document.querySelectorAll('.folder-card').forEach(c => c.classList.remove('selected'));
       const activeBtn = document.getElementById(`folder-btn-${catId}`);
       if (activeBtn) activeBtn.classList.add('selected');
 
-      // Update List Header
+      // Update and show Header Bar
+      const headerBar = document.getElementById('cardsListHeader');
+      headerBar.style.display = 'flex';
+
       const headerIcon = document.getElementById('currentCategoryIcon');
       const headerTitle = document.getElementById('currentCategoryTitle');
       const headerBadge = document.getElementById('currentCategoryBadge');
@@ -1968,14 +2091,45 @@
       renderCards();
     }
 
-    // RENDER CARDS (FOLDED BY DEFAULT)
+    function deselectCurrentFolder() {
+      selectedCategory = null;
+      openedCardId = null;
+      searchQuery = '';
+      document.getElementById('searchInput').value = '';
+      renderInitialView();
+    }
+
+    function handleSearch() {
+      searchQuery = document.getElementById('searchInput').value.trim().toLowerCase();
+      if (searchQuery && !selectedCategory) {
+        selectedCategory = 'all';
+        document.querySelectorAll('.folder-card').forEach(c => c.classList.remove('selected'));
+        document.getElementById('folder-btn-all').classList.add('selected');
+        document.getElementById('cardsListHeader').style.display = 'flex';
+        document.getElementById('currentCategoryIcon').innerText = '🔍';
+        document.getElementById('currentCategoryTitle').innerText = 'نتائج البحث';
+      }
+      if (!searchQuery && selectedCategory === 'all' && document.getElementById('currentCategoryTitle').innerText === 'نتائج البحث') {
+        selectedCategory = null;
+        renderInitialView();
+        return;
+      }
+      renderCards();
+    }
+
+    // RENDER CARDS (FOLDED BY DEFAULT, HIGHLIGHTED WHEN EXPANDED)
     function renderCards() {
+      if (!selectedCategory && !searchQuery) {
+        renderInitialView();
+        return;
+      }
+
       const container = document.getElementById('cardsContainer');
       container.innerHTML = '';
 
       // Filter by category and search
       const filtered = allResources.filter(it => {
-        if (selectedCategory !== 'all' && it.category !== selectedCategory) {
+        if (selectedCategory && selectedCategory !== 'all' && it.category !== selectedCategory) {
           return false;
         }
         if (!searchQuery) return true;
@@ -1988,11 +2142,17 @@
 
       if (filtered.length === 0) {
         container.innerHTML = `
-          <div style="background:#fff; padding:40px; text-align:center; border-radius:12px; color:#64748b; border: 1px solid var(--surface-border);">
-            🔍 لا توجد أصول تقنية مطابقة لهذا البحث أو التصنيف.
+          <div style="background:#fff; padding:40px; text-align:center; border-radius:12px; color:#64748b; border: 1.5px solid var(--surface-border);">
+            🔍 لا توجد أصول تقنية مطابقة في هذا القسم.
           </div>
         `;
         return;
+      }
+
+      // Update badge count in header
+      const headerBadge = document.getElementById('currentCategoryBadge');
+      if (headerBadge) {
+        headerBadge.innerText = `${filtered.length} مورد معتمد`;
       }
 
       filtered.forEach(item => {
@@ -2016,7 +2176,7 @@
         cardDiv.id = `card-${item.id}`;
 
         cardDiv.innerHTML = `
-          <!-- Clickable Header: Always visible, clicking toggles unfold/fold -->
+          <!-- Clickable Sub-Banner Header: Toggles unfold/fold -->
           <div class="card-header-bar" onclick="toggleCard(${item.id})">
             <div class="card-header-right">
               <div class="card-icon">${icon}</div>
@@ -2032,13 +2192,13 @@
             </div>
             <div class="card-header-left">
               <button class="btn-card-toggle" type="button">
-                <span>${isExpanded ? 'طي البطاقة' : 'عرض التفاصيل والروابط'}</span>
+                <span>${isExpanded ? 'طي التفاصيل' : 'عرض التفاصيل والروابط'}</span>
                 <span class="toggle-arrow">▼</span>
               </button>
             </div>
           </div>
 
-          <!-- Collapsible Body: Folded by default, unfolds when active -->
+          <!-- Collapsible Body: Distinctive light teal background, unfolds when active -->
           <div class="card-collapsible-body">
             <p class="card-desc">${item.description}</p>
             
@@ -2074,13 +2234,13 @@
       });
     }
 
-    // TOGGLE SINGLE CARD: Unfold clicked card, fold any previously open card!
+    // ACCORDION TOGGLE: Unfolds clicked card, folds any previously open card!
     function toggleCard(cardId) {
       if (openedCardId === cardId) {
         // If clicking the already open card, fold it back up!
         openedCardId = null;
       } else {
-        // Unfold clicked card and automatically fold any other open card!
+        // Unfold clicked card and fold any other opened card!
         openedCardId = cardId;
       }
       renderCards();
@@ -2096,21 +2256,15 @@
       }
     }
 
-    // Expand All / Collapse All Utility Buttons
     function expandAllCards() {
       document.querySelectorAll('.resource-card').forEach(c => c.classList.add('expanded'));
-      document.querySelectorAll('.btn-card-toggle span:first-child').forEach(s => s.innerText = 'طي البطاقة');
+      document.querySelectorAll('.btn-card-toggle span:first-child').forEach(s => s.innerText = 'طي التفاصيل');
     }
 
     function collapseAllCards() {
       openedCardId = null;
       document.querySelectorAll('.resource-card').forEach(c => c.classList.remove('expanded'));
       document.querySelectorAll('.btn-card-toggle span:first-child').forEach(s => s.innerText = 'عرض التفاصيل والروابط');
-    }
-
-    function filterResources() {
-      searchQuery = document.getElementById('searchInput').value.trim().toLowerCase();
-      renderCards();
     }
 
     function openSyncModal() {
