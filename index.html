@@ -3,330 +3,626 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>مكتبة إتقان — دليل الموارد والبيانات القرآنية المفتوحة (Itqan Library)</title>
-  <meta name="description" content="دليل رقمي متخصص وموثق يجمع نماذج تسميع القرآن، حزم التسجيلات الصوتية، خطوط المصحف بالرسم العثماني، الأدوات البرمجية، الأبحاث المنشورة، والورش التقنية من مجتمع إتقان.">
+  <title>مكتبة مجتمع إتقان للموارد والتقنيات القرآنية | Itqan Resource Hub</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #0d6d5b;
-      --primary-hover: #0a5647;
-      --primary-light: #e6f3f0;
-      --primary-border: #b3ded5;
-      --surface: #ffffff;
-      --surface-border: #e2e8e5;
-      --bg: #f8faf9;
-      --text: #1e293b;
+      --primary-light: #e6f4f1;
+      --primary-hover: #0a5648;
+      --primary-border: #99d5ca;
+      --bg-page: #f8faf9;
+      --text-main: #1e293b;
       --text-muted: #64748b;
+      --surface-card: #ffffff;
+      --surface-border: #e2e8f0;
       --radius-sm: 8px;
       --radius-md: 12px;
       --radius-lg: 16px;
-      --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
-      --shadow-md: 0 4px 12px rgba(13,109,91,0.08);
-      --shadow-lg: 0 10px 25px rgba(0,0,0,0.12);
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.07);
+      --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Tajawal', sans-serif; }
-    body { background-color: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Tajawal', -apple-system, BlinkMacSystemFont, sans-serif; }
+    body { background-color: var(--bg-page); color: var(--text-main); min-height: 100vh; line-height: 1.6; }
 
-    /* Header */
+    /* Navbar */
     header.navbar {
-      background: var(--surface);
+      background: #ffffff;
       border-bottom: 1px solid var(--surface-border);
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
       position: sticky;
       top: 0;
       z-index: 50;
-      height: 70px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+    }
+    .brand {
       display: flex;
       align-items: center;
-      padding: 0 24px;
-      justify-content: space-between;
-      box-shadow: var(--shadow-sm);
+      gap: 14px;
+      text-decoration: none;
     }
-    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--primary); }
     .brand-logo-img {
-      height: 44px; width: auto; object-fit: contain; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.08));
+      height: 44px;
+      width: auto;
+      object-fit: contain;
+      border-radius: 6px;
     }
-    .brand-text-block { display: flex; flex-direction: column; gap: 2px; }
-    .brand-title-wrap { display: flex; align-items: baseline; gap: 8px; }
-    .brand-title { font-size: 1.35rem; font-weight: 900; color: #0d6d5b; letter-spacing: -0.3px; }
-    .brand-subtitle { font-size: 0.88rem; font-weight: 700; color: #334155; }
+    .brand-text-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .brand-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .brand-title {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: #0f172a;
+      letter-spacing: -0.3px;
+    }
+    .brand-subtitle {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
     .brand-badge {
-      background: var(--primary-light); color: var(--primary); font-size: 0.72rem;
-      font-weight: 800; padding: 1px 8px; border-radius: 4px; align-self: flex-start;
-      border: 1px solid var(--primary-border);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      letter-spacing: 0.2px;
     }
 
-    .nav-search { flex: 1; max-width: 460px; margin: 0 20px; position: relative; }
+    .nav-search {
+      flex: 1;
+      max-width: 480px;
+      margin: 0 24px;
+      position: relative;
+    }
     .nav-search input {
-      width: 100%; background: #f1f5f3; border: 1px solid transparent; padding: 10px 42px 10px 16px;
-      border-radius: 9999px; font-size: 0.95rem; outline: none; transition: all 0.2s;
+      width: 100%;
+      background: #f1f5f9;
+      border: 1px solid transparent;
+      padding: 10px 42px 10px 16px;
+      border-radius: 9999px;
+      font-size: 0.92rem;
+      outline: none;
+      transition: all 0.2s;
     }
-    .nav-search input:focus { background: #fff; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(13,109,91,0.12); }
-    .nav-search svg { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: var(--text-muted); width: 18px; height: 18px; }
+    .nav-search input:focus {
+      background: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(13, 109, 91, 0.12);
+    }
+    .nav-search svg {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 18px;
+      color: #94a3b8;
+    }
 
-    .nav-actions { display: flex; align-items: center; gap: 10px; }
+    .nav-actions { display: flex; align-items: center; gap: 12px; }
 
     .btn-update-hub {
-      background: linear-gradient(135deg, #0d6d5b, #047857);
+      background: #0d6d5b;
       color: #ffffff;
       border: none;
       padding: 9px 18px;
-      border-radius: 8px;
-      font-weight: 800;
+      border-radius: 9999px;
+      font-weight: 700;
       font-size: 0.88rem;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      box-shadow: 0 2px 8px rgba(13,109,91,0.28);
       transition: all 0.2s;
+      box-shadow: 0 2px 6px rgba(13, 109, 91, 0.3);
     }
     .btn-update-hub:hover {
-      background: linear-gradient(135deg, #0a5647, #065f46);
+      background: #095244;
       transform: translateY(-1px);
-      box-shadow: 0 4px 14px rgba(13,109,91,0.4);
+      box-shadow: 0 4px 12px rgba(13, 109, 91, 0.35);
     }
-    .btn-update-hub span.btn-pulse {
-      display: inline-block; width: 8px; height: 8px; background: #34d399; border-radius: 50%;
-      animation: pulseDot 1.8s infinite;
+    .btn-pulse {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #34d399;
+      animation: pulse 1.6s infinite;
     }
-    @keyframes pulseDot {
-      0% { transform: scale(0.9); opacity: 0.8; }
-      50% { transform: scale(1.4); opacity: 1; }
-      100% { transform: scale(0.9); opacity: 0.8; }
+    @keyframes pulse {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7); }
+      70% { transform: scale(1.1); box-shadow: 0 0 0 6px rgba(52, 211, 153, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
+    }
+
+    .btn-outline-header {
+      border: 1px solid var(--surface-border);
+      background: #ffffff;
+      color: #334155;
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.88rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-outline-header:hover {
+      background: #f8fafc;
+      border-color: #cbd5e1;
     }
 
     .btn-github {
-      background: #0f172a; color: #fff; padding: 8px 14px; border-radius: 6px; font-weight: 700;
-      font-size: 0.85rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+      background: #0f172a;
+      color: #ffffff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.88rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
     }
-    .btn-outline-header {
-      background: #ffffff; border: 1px solid #cbd5e1; color: #334155; padding: 8px 14px;
-      border-radius: 6px; font-weight: 700; font-size: 0.85rem; text-decoration: none;
+    .btn-github:hover {
+      background: #1e293b;
+      transform: translateY(-1px);
     }
 
     /* Layout */
-    .container { max-width: 1360px; margin: 0 auto; padding: 24px 20px; display: flex; gap: 28px; }
+    .container {
+      max-width: 1400px;
+      margin: 28px auto;
+      padding: 0 24px;
+      display: flex;
+      gap: 28px;
+    }
 
     /* Sidebar */
-    aside.sidebar { width: 260px; flex-shrink: 0; }
-    .sidebar-menu { background: var(--surface); border: 1px solid var(--surface-border); border-radius: var(--radius-md); padding: 8px; margin-bottom: 16px; }
-    .menu-item {
-      display: flex; align-items: center; justify-content: space-between; padding: 10px 14px;
-      border-radius: var(--radius-sm); text-decoration: none; color: var(--text); font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: 0.15s; margin-bottom: 2px;
+    aside.sidebar {
+      width: 260px;
+      flex-shrink: 0;
     }
-    .menu-item:hover { background: #f3f7f5; color: var(--primary); }
-    .menu-item.active-hub { background: var(--primary-light); color: var(--primary); font-weight: 800; border-right: 4px solid var(--primary); }
-    .menu-left { display: flex; align-items: center; gap: 10px; }
-    .menu-badge { background: #f1f5f3; color: var(--text-muted); font-size: 0.8rem; padding: 2px 7px; border-radius: 9999px; font-weight: 600; }
-    .menu-item.active-hub .menu-badge { background: var(--primary); color: white; }
-
-    .sync-card {
-      background: #ffffff; border: 1px solid var(--surface-border); border-radius: var(--radius-md);
-      padding: 16px; margin-top: 14px; text-align: center; font-size: 0.85rem;
-    }
-    .sync-card .live-dot {
-      display: inline-block; width: 8px; height: 8px; background: #22c55e; border-radius: 50%;
-      margin-left: 6px; box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.25);
-    }
-    .sync-btn-small {
-      margin-top: 10px; width: 100%; background: #f8fafc; border: 1px solid #cbd5e1;
-      padding: 7px 12px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; color: #334155; cursor: pointer;
-    }
-    .sync-btn-small:hover { background: var(--primary-light); color: var(--primary); border-color: var(--primary-border); }
-
-    /* Main Content */
-    main.main-content { flex: 1; min-width: 0; }
-    .hub-hero {
-      background: linear-gradient(135deg, #0d6d5b 0%, #064e42 100%); color: white;
-      border-radius: var(--radius-lg); padding: 26px 30px; margin-bottom: 24px; position: relative; overflow: hidden;
-    }
-    .hero-badge-row { display: flex; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
-    .hero-tag {
-      background: rgba(255,255,255,0.18); backdrop-filter: blur(4px); padding: 4px 12px;
-      border-radius: 9999px; font-size: 0.8rem; font-weight: 700;
-    }
-    .hub-hero h1 { font-size: 1.85rem; font-weight: 800; margin-bottom: 8px; }
-    .hub-hero p { font-size: 1rem; opacity: 0.92; max-width: 820px; line-height: 1.7; }
-
-    /* Folder Categories Tabs (Quick Selectors) */
-    .folders-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 12px; margin-bottom: 24px;
-    }
-    .folder-card {
-      background: var(--surface); border: 1px solid var(--surface-border); border-radius: var(--radius-md);
-      padding: 14px; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 12px;
-    }
-    .folder-card:hover, .folder-card.selected { border-color: var(--primary); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
-    .folder-card.selected { background: var(--primary-light); border-width: 2px; }
-    .folder-icon { font-size: 24px; }
-    .folder-card h3 { font-size: 0.92rem; font-weight: 700; color: #0f172a; margin-bottom: 2px; }
-    .folder-card span { font-size: 0.78rem; color: var(--text-muted); }
-
-    /* Section Control Header */
-    .sections-control-bar {
-      display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;
-      padding: 0 4px;
-    }
-    .control-bar-title {
-      font-size: 0.95rem; font-weight: 800; color: #334155; display: flex; align-items: center; gap: 8px;
-    }
-    .control-actions-btns { display: flex; gap: 8px; }
-    .btn-toggle-all {
-      background: #ffffff; border: 1px solid #cbd5e1; color: #475569; padding: 4px 12px;
-      border-radius: 6px; font-size: 0.78rem; font-weight: 700; cursor: pointer; transition: 0.15s;
-    }
-    .btn-toggle-all:hover { background: var(--primary-light); color: var(--primary); border-color: var(--primary-border); }
-
-    /* ========================================================
-       ACCORDION SECTION BANNERS (COLLAPSED BY DEFAULT)
-       ======================================================== */
-    .sections-container { display: flex; flex-direction: column; gap: 14px; }
-
-    .section-accordion {
-      background: var(--surface);
-      border: 1.5px solid var(--surface-border);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
-    }
-    .section-accordion:hover {
-      border-color: #cbd5e1;
-    }
-    .section-accordion.expanded {
-      border-color: var(--primary);
-      box-shadow: 0 4px 18px rgba(13, 109, 91, 0.1);
-    }
-
-    /* The Clickable Section Banner */
-    .section-banner {
-      padding: 16px 22px;
+    .sidebar-menu {
       background: #ffffff;
-      cursor: pointer;
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius-md);
+      padding: 8px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+    .menu-item {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      user-select: none;
-      transition: background 0.2s ease;
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      color: #334155;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.94rem;
+      transition: all 0.15s;
+      margin-bottom: 4px;
     }
-    .section-banner:hover {
-      background: #f8faf9;
+    .menu-item:hover { background: #f8fafc; color: var(--primary); }
+    .menu-item.active-hub {
+      background: var(--primary-light);
+      color: var(--primary);
+      border-right: 4px solid var(--primary);
     }
-    .section-accordion.expanded .section-banner {
-      background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
-      border-bottom: 1.5px solid #bbf7d0;
+    .menu-left { display: flex; align-items: center; gap: 10px; }
+    .menu-badge {
+      background: #e2e8f0;
+      color: #475569;
+      font-size: 0.76rem;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      font-weight: 800;
+    }
+    .menu-item.active-hub .menu-badge {
+      background: var(--primary);
+      color: #ffffff;
     }
 
-    .section-banner-right {
+    .sync-card {
+      background: #ffffff;
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      font-size: 0.88rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .sync-btn-small {
       display: flex;
       align-items: center;
-      gap: 14px;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      color: #166534;
+      padding: 10px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 12px;
+      transition: all 0.2s;
     }
-    .section-banner-icon {
-      font-size: 26px;
-      width: 48px;
-      height: 48px;
-      background: #f1f5f3;
-      border-radius: 12px;
+    .sync-btn-small:hover {
+      background: #dcfce7;
+      border-color: #86efac;
+    }
+    .live-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+      margin-right: 6px;
+    }
+
+    /* Main Content */
+    main.main-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    /* Hero Banner */
+    .hub-hero {
+      background: linear-gradient(135deg, #0d6d5b 0%, #064e3b 100%);
+      color: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 32px 36px;
+      margin-bottom: 24px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+    .hub-hero::after {
+      content: "📖";
+      position: absolute;
+      left: 20px;
+      bottom: -20px;
+      font-size: 140px;
+      opacity: 0.10;
+      pointer-events: none;
+    }
+    .hero-badge-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .hero-tag {
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+    .hub-hero h1 {
+      font-size: 1.85rem;
+      font-weight: 900;
+      margin-bottom: 10px;
+      letter-spacing: -0.5px;
+    }
+    .hub-hero p {
+      font-size: 1.02rem;
+      opacity: 0.95;
+      max-width: 850px;
+      line-height: 1.7;
+    }
+
+    /* Top Folder Category Selectors (Primary Filters) */
+    .folders-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .folder-card {
+      background: #ffffff;
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius-md);
+      padding: 16px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: var(--shadow-sm);
+      user-select: none;
+    }
+    .folder-card:hover {
+      border-color: var(--primary-border);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .folder-card.selected {
+      background: var(--primary-light);
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px var(--primary);
+    }
+    .folder-icon {
+      font-size: 28px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      transition: transform 0.2s ease;
     }
-    .section-accordion.expanded .section-banner-icon {
+    .folder-card h3 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 2px;
+    }
+    .folder-card span {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 700;
+    }
+    .folder-card.selected h3 {
+      color: var(--primary);
+    }
+    .folder-card.selected span {
+      color: #065f46;
+      font-weight: 800;
+    }
+
+    /* Cards List Header Bar */
+    .cards-list-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       background: #ffffff;
-      transform: scale(1.08);
-      box-shadow: 0 2px 8px rgba(13, 109, 91, 0.15);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius-md);
+      padding: 14px 20px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow-sm);
     }
-    .section-banner-text { display: flex; flex-direction: column; gap: 2px; }
-    .section-banner-title {
-      font-size: 1.16rem;
+    .list-header-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .list-header-icon {
+      font-size: 22px;
+    }
+    .list-header-title h2 {
+      font-size: 1.18rem;
       font-weight: 800;
       color: #0f172a;
     }
-    .section-accordion.expanded .section-banner-title {
-      color: var(--primary);
-    }
-    .section-banner-desc {
-      font-size: 0.84rem;
-      color: var(--text-muted);
-    }
-
-    .section-banner-left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .section-count-pill {
+    .list-header-pill {
       background: #f1f5f9;
       color: #334155;
+      border: 1px solid #cbd5e1;
+      padding: 3px 12px;
+      border-radius: 9999px;
       font-size: 0.8rem;
       font-weight: 800;
-      padding: 5px 12px;
-      border-radius: 20px;
-      border: 1px solid #e2e8e5;
     }
-    .section-accordion.expanded .section-count-pill {
-      background: var(--primary);
-      color: #ffffff;
-      border-color: var(--primary);
+    .control-actions-btns {
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
-    .section-arrow {
-      font-size: 0.82rem;
-      color: #94a3b8;
-      transition: transform 0.25s ease, color 0.2s ease;
-      display: inline-block;
+    .btn-toggle-all {
+      background: #f8fafc;
+      border: 1px solid var(--surface-border);
+      color: #334155;
+      font-size: 0.84rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.15s ease;
     }
-    .section-accordion.expanded .section-arrow {
-      transform: rotate(180deg);
-      color: var(--primary);
+    .btn-toggle-all:hover {
+      background: #e2e8f0;
+      border-color: #cbd5e1;
+      color: #0f172a;
     }
 
-    /* Section Content (Collapsed by default!) */
-    .section-content {
-      display: none;
-      padding: 22px;
-      background: #fafcfb;
-    }
-    .section-accordion.expanded .section-content {
+    /* Content Cards Container */
+    .cards-container {
       display: flex;
       flex-direction: column;
-      gap: 18px;
-      animation: expandFade 0.25s ease-out;
+      gap: 12px;
     }
-    @keyframes expandFade {
-      from { opacity: 0; transform: translateY(-8px); }
+
+    /* FOLDABLE RESOURCE CONTENT CARD */
+    .resource-card {
+      background: #ffffff;
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius-md);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      overflow: hidden;
+    }
+    .resource-card:hover {
+      border-color: var(--primary-border);
+      box-shadow: var(--shadow-sm);
+    }
+    .resource-card.expanded {
+      border-color: var(--primary);
+      box-shadow: 0 4px 16px rgba(13, 109, 91, 0.12);
+    }
+
+    /* Clickable Header (Always Visible - Folded State) */
+    .card-header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      cursor: pointer;
+      user-select: none;
+      background: #ffffff;
+      transition: background 0.15s ease;
+      gap: 16px;
+    }
+    .card-header-bar:hover {
+      background: #f8fbf9;
+    }
+    .resource-card.expanded .card-header-bar {
+      background: #f2f9f6;
+      border-bottom: 1px solid #d1fae5;
+    }
+
+    .card-header-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex: 1;
+      min-width: 0;
+    }
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: #f0fdf4;
+      color: #166534;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+      border: 1px solid #dcfce7;
+    }
+    .card-title-col {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-width: 0;
+    }
+    .card-title {
+      font-size: 1.12rem;
+      font-weight: 800;
+      color: #0f172a;
+      text-decoration: none;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .resource-card:hover .card-title {
+      color: var(--primary);
+    }
+    .card-badges-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .badge {
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+    .badge-license {
+      background: #ecfdf5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+    }
+    .badge-metric {
+      background: #f1f5f9;
+      color: #334155;
+      border: 1px solid #cbd5e1;
+    }
+    .badge-links-count {
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: #0d6d5b;
+      background: #e6f4f1;
+      padding: 2px 8px;
+      border-radius: 6px;
+      border: 1px solid #bbf7d0;
+    }
+    .card-author-mini {
+      font-size: 0.76rem;
+      color: #64748b;
+      font-weight: 600;
+    }
+
+    .card-header-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .btn-card-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+    .btn-card-toggle:hover {
+      background: #dcfce7;
+      border-color: #86efac;
+    }
+    .resource-card.expanded .btn-card-toggle {
+      background: #0d6d5b;
+      color: #ffffff;
+      border-color: #0d6d5b;
+    }
+    .toggle-arrow {
+      font-size: 0.75rem;
+      transition: transform 0.2s ease;
+    }
+    .resource-card.expanded .toggle-arrow {
+      transform: rotate(180deg);
+    }
+
+    /* Card Collapsible Body (Hidden by default, unfolds when active) */
+    .card-collapsible-body {
+      display: none;
+      padding: 20px 24px 22px 24px;
+      background: #fafcfb;
+    }
+    .resource-card.expanded .card-collapsible-body {
+      display: block;
+      animation: unfoldFade 0.22s ease-out;
+    }
+    @keyframes unfoldFade {
+      from { opacity: 0; transform: translateY(-6px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Clean Uniform Resource Card Inside Section */
-    .resource-card {
-      background: #ffffff; border: 1px solid var(--surface-border); border-radius: var(--radius-md);
-      padding: 22px 24px; transition: border 0.2s, box-shadow 0.2s;
+    .card-desc {
+      color: #334155;
+      font-size: 0.96rem;
+      line-height: 1.7;
+      margin-bottom: 16px;
     }
-    .resource-card:hover { border-color: var(--primary-border); box-shadow: var(--shadow-md); }
 
-    .card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 12px; }
-    .card-title-group { display: flex; align-items: center; gap: 12px; }
-    .card-icon {
-      width: 44px; height: 44px; border-radius: 10px; background: #f0fdf4; color: #166534;
-      display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0;
-    }
-    .card-title { font-size: 1.22rem; font-weight: 800; color: #0f172a; text-decoration: none; }
-    .card-title:hover { color: var(--primary); }
-
-    .card-badges { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
-    .badge { font-size: 0.76rem; font-weight: 700; padding: 4px 10px; border-radius: 6px; }
-    .badge-license { background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; }
-    .badge-metric { background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; }
-
-    .card-desc { color: #334155; font-size: 0.96rem; line-height: 1.7; margin-bottom: 16px; }
-
-    /* THE HIGH-VISIBILITY DOWNLOAD BOX */
+    /* High-Visibility Direct Download Box */
     .links-container {
       background: #f8fbf9;
       border: 1px solid #d1fae5;
@@ -403,17 +699,33 @@
       border-color: transparent;
     }
 
-    /* Footer Meta */
+    /* Footer Meta Inside Expanded Body */
     .card-footer {
-      display: flex; align-items: center; justify-content: space-between;
-      border-top: 1px solid #f1f5f9; padding-top: 14px; font-size: 0.84rem; color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 14px;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      gap: 12px;
     }
     .card-meta { display: flex; gap: 16px; align-items: center; }
     .card-author { font-weight: 700; color: #334155; }
     .btn-discussion-link {
-      color: var(--primary); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.15s;
     }
-    .btn-discussion-link:hover { text-decoration: underline; }
+    .btn-discussion-link:hover {
+      text-decoration: underline;
+      color: var(--primary-hover);
+    }
 
     /* Modal for Update / Scan */
     .modal-overlay {
@@ -438,6 +750,8 @@
       aside.sidebar { width: 100%; }
       header.navbar { padding: 0 16px; }
       .nav-search { display: none; }
+      .card-header-bar { flex-direction: column; align-items: flex-start; }
+      .card-header-left { width: 100%; justify-content: flex-end; }
     }
   </style>
 </head>
@@ -462,7 +776,7 @@
     </div>
 
     <div class="nav-actions">
-      <!-- The Big Update Button -->
+      <!-- Update Hub Button -->
       <button class="btn-update-hub" onclick="openSyncModal()">
         <span class="btn-pulse"></span>
         <span>تحديث البيانات (Scan & Update)</span>
@@ -528,51 +842,51 @@
         </p>
       </div>
 
-      <!-- Categories Folders (Quick Jump Selectors) -->
+      <!-- Categories Folders (Primary Filter Tabs) -->
       <div class="folders-grid">
-        <div class="folder-card" id="folder-btn-all" onclick="toggleAllSections()">
+        <div class="folder-card selected" id="folder-btn-all" onclick="selectCategory('all')">
           <div class="folder-icon">📁</div>
           <div>
             <h3>جميع الموارد</h3>
             <span id="allCount">جاري التحميل...</span>
           </div>
         </div>
-        <div class="folder-card" id="folder-btn-ai" onclick="selectSectionFromFolder('ai')">
+        <div class="folder-card" id="folder-btn-ai" onclick="selectCategory('ai')">
           <div class="folder-icon">👳‍♂️</div>
           <div>
             <h3>نماذج تسميع القرآن</h3>
             <span id="aiCount">جاري التحميل...</span>
           </div>
         </div>
-        <div class="folder-card" id="folder-btn-audio" onclick="selectSectionFromFolder('audio')">
+        <div class="folder-card" id="folder-btn-audio" onclick="selectCategory('audio')">
           <div class="folder-icon">🔊</div>
           <div>
             <h3>حزم البيانات والصوتيات</h3>
             <span id="audioCount">جاري التحميل...</span>
           </div>
         </div>
-        <div class="folder-card" id="folder-btn-fonts" onclick="selectSectionFromFolder('fonts')">
+        <div class="folder-card" id="folder-btn-fonts" onclick="selectCategory('fonts')">
           <div class="folder-icon">✒️</div>
           <div>
             <h3>الخطوط والمصاحف</h3>
             <span id="fontsCount">جاري التحميل...</span>
           </div>
         </div>
-        <div class="folder-card" id="folder-btn-tools" onclick="selectSectionFromFolder('tools')">
+        <div class="folder-card" id="folder-btn-tools" onclick="selectCategory('tools')">
           <div class="folder-icon">💻</div>
           <div>
             <h3>البرمجيات والأدوات</h3>
             <span id="toolsCount">جاري التحميل...</span>
           </div>
         </div>
-        <div class="folder-card" id="folder-btn-research" onclick="selectSectionFromFolder('research')">
+        <div class="folder-card" id="folder-btn-research" onclick="selectCategory('research')">
           <div class="folder-icon">📚</div>
           <div>
             <h3>الأبحاث والدراسات</h3>
             <span id="researchCount">جاري التحميل...</span>
           </div>
         </div>
-        <div class="folder-card" id="folder-btn-workshops" onclick="selectSectionFromFolder('workshops')">
+        <div class="folder-card" id="folder-btn-workshops" onclick="selectCategory('workshops')">
           <div class="folder-icon">📺</div>
           <div>
             <h3>الورش والمحاضرات</h3>
@@ -581,23 +895,24 @@
         </div>
       </div>
 
-      <!-- Sections Control Bar -->
-      <div class="sections-control-bar">
-        <div class="control-bar-title">
-          <span>📂</span>
-          <span>أقسام المكتبة المعتمدة (اضغط على شريط أي قسم لتوسيعه):</span>
+      <!-- Cards List Header Bar -->
+      <div class="cards-list-header">
+        <div class="list-header-title">
+          <span class="list-header-icon" id="currentCategoryIcon">📁</span>
+          <h2 id="currentCategoryTitle">جميع الموارد المعتمدة</h2>
+          <span class="list-header-pill" id="currentCategoryBadge">40 مورد</span>
         </div>
         <div class="control-actions-btns">
-          <button class="btn-toggle-all" onclick="expandAllSections()">⮟ توسيع الكل</button>
-          <button class="btn-toggle-all" onclick="collapseAllSections()">⮝ طي الكل</button>
+          <button class="btn-toggle-all" onclick="expandAllCards()">⮟ توسيع جميع البطاقات</button>
+          <button class="btn-toggle-all" onclick="collapseAllCards()">⮝ طي الكل</button>
         </div>
       </div>
 
-      <!-- Accordion Sections Container (COLLAPSED BY DEFAULT) -->
-      <div class="sections-container" id="sectionsContainer">
+      <!-- Resource Cards List (ALL CARDS FOLDED BY DEFAULT) -->
+      <div class="cards-container" id="cardsContainer">
         <!-- Rendered dynamically via JavaScript -->
         <div style="background:#fff; padding:40px; text-align:center; border-radius:12px; color:#64748b;">
-          ⏳ جاري تجهيز أقسام المكتبة المنظمة...
+          ⏳ جاري تحميل وتجهيز بطاقات الموارد الموثقة...
         </div>
       </div>
 
@@ -641,18 +956,948 @@
   </div>
 
   <script>
-    let allResources = [];
+    // Embedded Fallback Data (ensures 100% offline and file:// reliability)
+    const EMBEDDED_RESOURCES = [
+  {
+    "id": 1,
+    "title": "نموذج TajweedFormer V4 لتصحيح التجويد على هاتف المتعلم (Edge AI)",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "وقفي مجاني للأبد",
+    "metric": "يعمل On-Device محلياً بالكامل",
+    "author": "Quran Lab (@muno459)",
+    "discussionUrl": "https://community.itqan.dev/d/979",
+    "discussionNum": "979",
+    "description": "أحدث نموذج ذكاء اصطناعي مفتوح ومجاني مخصص لكشف وتصحيح أحكام التجويد برواية حفص عن عاصم، يعمل بالكامل محلياً على هاتف المتعلم بحجم خفيف ودقة فائقة دون الحاجة لأي اتصال بالإنترنت.",
+    "links": [
+      {
+        "name": "أوزان النماذج على HuggingFace",
+        "url": "https://huggingface.co/Quran-Lab",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "مستودع الكود والمكتبة على GitHub",
+        "url": "https://github.com/quranlab",
+        "src": "GitHub"
+      },
+      {
+        "name": "لوحة صدارة نماذج التسميع (Leaderboard)",
+        "url": "https://huggingface.co/spaces/Quran-Lab/quranic-asr-leaderboard",
+        "src": "Leaderboard"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "نموذج Zipformer V3 المفتوح للتعرف الصوتي على التلاوة والتجويد",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "رخصة أباتشي 2.0 مفتوحة",
+    "metric": "يكتب الصوت صوتاً صوتاً (Phonemes)",
+    "author": "Quran Lab (@muno459)",
+    "discussionUrl": "https://community.itqan.dev/d/686",
+    "discussionNum": "686",
+    "description": "نموذج التعرف الصوتي الشهير zipformer_p-arabic-v3، لا يكتفي بكتابة الحروف إملائياً بل يكتب ما نطقه القارئ صوتاً صوتاً (فونيمات) مع قياس أزمنة المدود وحركات الإعراب بدقة لتمكين تطبيقات التسميع الذكية.",
+    "links": [
+      {
+        "name": "مستودع تدريب النموذج وتصديره (ONNX)",
+        "url": "https://github.com/quranlab/zipformer-arabic",
+        "src": "GitHub"
+      },
+      {
+        "name": "تحميل أوزان النموذج على HuggingFace",
+        "url": "https://huggingface.co/Quran-Lab/zipformer_p-arabic-v3",
+        "src": "HuggingFace"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "المعلم القرآني (Quran Muaalem): نظام ونموذج كشف أخطاء التلاوة",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر (GPL-3.0)",
+    "metric": "كشف اللحن الجلي وتصحيح الكلمات",
+    "author": "طارق منصور (@iphoneislam)",
+    "discussionUrl": "https://community.itqan.dev/d/102",
+    "discussionNum": "102",
+    "description": "منظومة ونموذج ذكاء اصطناعي مفتوح المصدر تم تدريبه لكشف أخطاء التلاوة التلقائية وتنبيه القارئ للكلمات المنسية أو المبدلة، يعتمد عليه العديد من المطورين كنواة لتطبيقات التسميع والمراجعة اليومية.",
+    "links": [
+      {
+        "name": "المستودع الرئيسي للمشروع (GitHub)",
+        "url": "https://github.com/iphoneislam/Quran-Muaalem",
+        "src": "GitHub"
+      },
+      {
+        "name": "مستودع أداة التسميع لمصحف السراج",
+        "url": "https://github.com/khalid-taha/quran-muaalem-web",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "نموذج SAWT V4 لترميم ومعالجة التلاوات الصوتية بجودة 48kHz",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر للأبحاث",
+    "metric": "دقة فائقة Super-Resolution 48kHz",
+    "author": "Quran Lab (@muno459)",
+    "discussionUrl": "https://community.itqan.dev/d/798",
+    "discussionNum": "798",
+    "description": "نموذج ذكاء اصطناعي صوتي لترميم وتحسين التسجيلات القرآنية القديمة، وإزالة الضوضاء والتشويش ورفع جودة الصوت وعيناته إلى 48 كيلوهرتز بنقاء استوديو.",
+    "links": [
+      {
+        "name": "صفحة النموذج على HuggingFace",
+        "url": "https://huggingface.co/Quran-Lab/sawt-v4",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "كود المعالجة والترميم على GitHub",
+        "url": "https://github.com/quranlab/sawt-restoration",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "نموذج Tarteel Whisper للتعرف الصوتي على الآيات القرآنية",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر (MIT)",
+    "metric": "Fine-Tuned على آلاف التلاوات",
+    "author": "فريق ترتيل بالتعاون مع المجتمع",
+    "discussionUrl": "https://community.itqan.dev/d/18",
+    "discussionNum": "18",
+    "description": "نسخة مضبوطة ومخصصة من نموذج OpenAI Whisper تم تدريبها خصيصاً على التلاوات القرآنية برواية حفص بمختلف المقامات والسرعات، مع تمييز دقيق لأرقام الآيات ورسم الكلمات.",
+    "links": [
+      {
+        "name": "أوزان النموذج على HuggingFace",
+        "url": "https://huggingface.co/tarteel-ai/whisper-base-ar-quran",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "مستودع الكود وواجهة الاستدلال",
+        "url": "https://github.com/tarteel-ai",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "محرك BurhanAI المفتوح للتحقق من المخرجات القرآنية ومنع الهلوسة",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر (Apache-2.0)",
+    "metric": "التحقق المرجعي الصارم للنصوص",
+    "author": "فريق برهان والباحثين",
+    "discussionUrl": "https://community.itqan.dev/d/92",
+    "discussionNum": "92",
+    "description": "معمارية برمجية مفتوحة المصدر مصممة لربط النماذج اللغوية الكبيرة (LLMs) بقواعد التحقق القرآني الصارمة لمنع هلوسة الآيات والتحقق من صحة الاستدلال ومطابقة الرسم العثماني.",
+    "links": [
+      {
+        "name": "مستودع BurhanAI على GitHub",
+        "url": "https://github.com/BurhanAI/burhan-core",
+        "src": "GitHub"
+      },
+      {
+        "name": "حزم بايثون الرسمية (PyPI)",
+        "url": "https://pypi.org/project/burhan-ai",
+        "src": "PyPI"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "نموذج FastConformer Quran CTC ONNX للتعرف السريع",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "استدلال فائق السرعة عبر ONNX",
+    "author": "مساهمو تقنيات التسميع",
+    "discussionUrl": "https://community.itqan.dev/d/621",
+    "discussionNum": "621",
+    "description": "نموذج FastConformer مضبوط خصيصاً للتلاوة القرآنية ومصدر بصيغة ONNX فائقة الخفة، يتيح معالجة الصوت في الوقت الفعلي بأقل زمن تأخير (Low Latency) لخدمة تطبيقات التسميع المحمولة.",
+    "links": [
+      {
+        "name": "أوزان النموذج ومستودع التشغيل",
+        "url": "https://huggingface.co/Quran-Lab",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "كود المحاذاة بنموذج FastConformer",
+        "url": "https://github.com/itqan-community",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "نظام AraS2P لتجزئة التلاوة القرآنية إلى فونيمات صوتية دقيقة",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "أبحاث مفتوحة المصدر",
+    "metric": "تفكيك النطق إلى وحدات صوتية أساسية",
+    "author": "مختبر الصوتيات القرآنية",
+    "discussionUrl": "https://community.itqan.dev/d/87",
+    "discussionNum": "87",
+    "description": "نظام صوتي متقدم يحول الموجات الصوتية للتلاوة مباشرة إلى فونيمات تجويدية وصوتية، مما يمكن الأنظمة من مقارنة صوت المتعلم بصوت الشيخ بدقة مخارج الحروف والصفات.",
+    "links": [
+      {
+        "name": "مستودع AraS2P على GitHub",
+        "url": "https://github.com/itqan-community/aras2p",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "أداة التسميع المباشرة فوق Muaalem لمصحف السراج",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "واجهة ويب وتطبيق مدمج لكشف اللحن",
+    "author": "خالد طه ومطورو مصحف السراج",
+    "discussionUrl": "https://community.itqan.dev/d/991",
+    "discussionNum": "991",
+    "description": "تطبيق ومحرك تسميع تفاعلي مبني فوق نواة Muaalem، يوفر تجربة سلسة للمستخدم أثناء التسميع مع التلوين الفوري للآيات المنطوقة والتنبيه الصوتي عند حدوث خطأ في القراءة.",
+    "links": [
+      {
+        "name": "المستودع البرمجي على GitHub",
+        "url": "https://github.com/khalid-taha/quran-muaalem-web",
+        "src": "GitHub"
+      },
+      {
+        "name": "التجربة الحية لأداة التسميع",
+        "url": "https://community.itqan.dev/d/991",
+        "src": "Live Tool"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "نموذج Cohere Quranic Evaluation للتحقق الصوتي والنصي",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر للأغراض التعليمية",
+    "metric": "تقييم مقارن بين نماذج ASR",
+    "author": "مهندسو مجتمع إتقان",
+    "discussionUrl": "https://community.itqan.dev/d/647",
+    "discussionNum": "647",
+    "description": "معمارية معيارية لمقارنة أداء نماذج التفريغ الصوتي الحديثة في النصوص القرآنية، مع احتساب نسب الخطأ في التشكيل والمدود ومطابقة قواعد الرسم العثماني.",
+    "links": [
+      {
+        "name": "الكود والأدوات المقارنة على GitHub",
+        "url": "https://github.com/itqan-community",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "حزم تسجيلات المتعلمين ومجموعات بيانات أخطاء التلاوة",
+    "category": "audio",
+    "icon": "🎙️",
+    "license": "بيانات بحثية مفتوحة للجميع",
+    "metric": "أكثر من 95,000 مقطع صوتي + 8 مصادر مباشرة",
+    "author": "أحمد التميمي (@Ahmed_Al_Tamimi)",
+    "discussionUrl": "https://community.itqan.dev/d/930",
+    "discussionNum": "930",
+    "description": "المجموعة المرجعية الشاملة لمصادر تسجيلات المتعلمين الحقيقيين على هواتفهم: تشمل 5,044 مقطعاً صحيحاً و 14,892 مقطعاً فيه خطأ مصنفة آلياً، و 71 ألف تلاوة من IqraEval، و 1,330 مقطع أخطاء معلّمة، ومجموعة QDAT لأحكام التجويد، وتلاوات القرّاء المحترفين لبيانات «المعلم».",
+    "links": [
+      {
+        "name": "نسخة «قارئ القرآن» المعالجة والمصنفة (19,936 مقطعاً)",
+        "url": "https://archive.org/details/qari-al-quran-reprocessed-corpus",
+        "src": "Archive.org"
+      },
+      {
+        "name": "تسجيلات ترتيل v1 المحفوظة على أرشيف الإنترنت",
+        "url": "https://archive.org/details/quran-speech-dataset",
+        "src": "Archive.org"
+      },
+      {
+        "name": "مشروع DeepSpeech-Quran (طارق الديب)",
+        "url": "https://github.com/tarekeldeeb/DeepSpeech-Quran",
+        "src": "GitHub"
+      },
+      {
+        "name": "بيانات تدريب IqraEval (71,000 تلاوة صحيحة)",
+        "url": "https://huggingface.co/datasets/IqraEval/Iqra_train",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "بيانات أخطاء IqraExtra (1,330 مقطعاً معلّماً)",
+        "url": "https://huggingface.co/datasets/IqraEval/Iqra_Extra_IS26",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "مجموعة QDAT لأحكام التجويد (1,505 تسجيلات)",
+        "url": "https://huggingface.co/datasets/obadx/qdat",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "بيانات «المعلم» الموسومة (muaalem-annotated-v3)",
+        "url": "https://huggingface.co/datasets/obadx/muaalem-annotated-v3",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "بوابة تلاوات القرّاء المحترفين (EveryAyah)",
+        "url": "https://everyayah.com/data/",
+        "src": "Audio Portal"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "مشروع QUA: تلاوات متعددة الروايات مع توقيتات بالكلمة والآية",
+    "category": "audio",
+    "icon": "🎙️",
+    "license": "مفتوح المصدر",
+    "metric": "روايات حفص وورش وشعبة وقالون",
+    "author": "عبدالله الرفاعي وشركاء إتقان",
+    "discussionUrl": "https://community.itqan.dev/d/792",
+    "discussionNum": "792",
+    "description": "مبادرة Qur'anic Universal Audio لتوحيد تسجيلات المصاحف بروايات متعددة ومزامنتها بملفات توقيت دقيقة على مستوى الكلمة والحرف، لتسهيل بناء تطبيقات المصاحف متعددة الروايات.",
+    "links": [
+      {
+        "name": "مستودع بيانات QUA على GitHub",
+        "url": "https://github.com/itqan-community/qua-audio-dataset",
+        "src": "GitHub"
+      },
+      {
+        "name": "ملفات التوقيت ومحاذاة الروايات",
+        "url": "https://huggingface.co/datasets/itqan/qua-alignments",
+        "src": "HuggingFace"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "title": "مشروع تدبُّر (Tadabbur): أضخم مجموعة بيانات صوتية لمشاهير القراء",
+    "category": "audio",
+    "icon": "🎙️",
+    "license": "بيانات وقفية عامة",
+    "metric": "عشرات المصاحف المرتلة الكاملة",
+    "author": "فريق مشروع تدبر القرآني",
+    "discussionUrl": "https://community.itqan.dev/d/402",
+    "discussionNum": "402",
+    "description": "أرشيف صوتي فائق الجودة يجمع تلاوات المصحف الكاملة لأبرز أئمة الحرمين ومشاهير القراء بصيغة MP3 نقية، مع معرّفات موحدة للآيات والسور لتسهيل البث الصوتي المباشر في التطبيقات.",
+    "links": [
+      {
+        "name": "مستودع الأرشيف المفتوح على Archive.org",
+        "url": "https://archive.org/details/tadabbur-quran-audio",
+        "src": "Archive.org"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "title": "مجموعة بيانات مصحف المدينة الصوتية وطوابع الكلمات الزمنية",
+    "category": "audio",
+    "icon": "🎙️",
+    "license": "مفتوح المصدر للاستخدام غير التجاري",
+    "metric": "طوابع زمنية دقيقة لـ 77,430 كلمة",
+    "author": "مبادرة البيانات المفتوحة",
+    "discussionUrl": "https://community.itqan.dev/d/968",
+    "discussionNum": "968",
+    "description": "بيانات التوقيت الدقيق على مستوى كل كلمة في القرآن الكريم، تم إنتاجها ومراجعتها يدويّاً للتلاوات التعليمية، مما يتيح تلوين الكلمة المنطوقة لحظة تلاوتها على صفحة المصحف.",
+    "links": [
+      {
+        "name": "ملفات التوقيت بتنسيق JSON و CSV",
+        "url": "https://github.com/itqan-community/quran-word-timestamps",
+        "src": "GitHub"
+      },
+      {
+        "name": "تحميل الحزم المضغوطة على Archive.org",
+        "url": "https://archive.org/details/quran-word-by-word-timestamps",
+        "src": "Archive.org"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "title": "المصحف المرتل الجديد للشيخ المنشاوي مجزأً بالآيات (Studio Master)",
+    "category": "audio",
+    "icon": "🎙️",
+    "license": "متاح للاستخدام العام والتطبيقات",
+    "metric": "ختمة كاملة مجزأة آية بآية بنقاء فائق",
+    "author": "فريق رقمنة التلاوات التاريخية",
+    "discussionUrl": "https://community.itqan.dev/d/562",
+    "discussionNum": "562",
+    "description": "الختمة الإذاعية المرتلة الكاملة للشيخ محمد صديق المنشاوي، تم تنقيتها رقمياً وفصلها آية آية مع تسمية موحدة وفق معايير قواعد بيانات التطبيقات القرآنية.",
+    "links": [
+      {
+        "name": "تحميل الختمة كاملة على Archive.org",
+        "url": "https://archive.org/details/minshawi-murattal-verse-by-verse",
+        "src": "Archive.org"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "title": "أرشيف تلاوات EveryAyah الشامل مع واجهة برمجية مفتوحة",
+    "category": "audio",
+    "icon": "🎙️",
+    "license": "وقفي مجاني للجميع",
+    "metric": "أكثر من 70 قارئاً مجزأ بالآيات",
+    "author": "مشروع EveryAyah الخيري",
+    "discussionUrl": "https://community.itqan.dev/d/56",
+    "discussionNum": "56",
+    "description": "المستودع الصوتي القرآني الأشهر الذي يعتمد عليه مئات المطورين عالمياً، يوفر تلاوات المصحف كاملة مجزأة آية بآية لكافة القراء بروابط CDN مباشرة ومستقرة للأبد.",
+    "links": [
+      {
+        "name": "بوابة EveryAyah الصوتية المباشرة",
+        "url": "https://everyayah.com/data/",
+        "src": "Audio Portal"
+      },
+      {
+        "name": "دليل المطورين واستدعاء التلاوات",
+        "url": "https://everyayah.com",
+        "src": "Documentation"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "title": "أرشيف خطوط ومصاحف مجمع الملك فهد (KFGQPC Fonts)",
+    "category": "fonts",
+    "icon": "✒️",
+    "license": "متاح مجاناً من مجمع الملك فهد",
+    "metric": "خطوط حفص وقالون والدوري وورش",
+    "author": "مجمع الملك فهد لطباعة المصحف الشريف",
+    "discussionUrl": "https://community.itqan.dev/d/772",
+    "discussionNum": "772",
+    "description": "الأرشيف الرقمي المجمع لحزم الخطوط الرسمية لمصحف المدينة النبوية، تشمل خطوط الرسم العثماني لكافة الروايات المعتمدة، مع حزم خطوط الصفحات الموزعة والمصحف المعياري الرقمي.",
+    "links": [
+      {
+        "name": "بوابة خطوط مجمع الملك فهد المباشرة",
+        "url": "https://fonts.qurancomplex.gov.sa",
+        "src": "Official Portal"
+      },
+      {
+        "name": "مستودع الخطوط والترميز على GitHub",
+        "url": "https://github.com/quran/quran.nd",
+        "src": "GitHub"
+      },
+      {
+        "name": "حزم خطوط الروايات على HuggingFace",
+        "url": "https://huggingface.co/datasets/itqan/kfgqpc-fonts",
+        "src": "HuggingFace"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "title": "مصحف عماد: خط متجهي مفتوح المصدر للرسم العثماني",
+    "category": "fonts",
+    "icon": "✒️",
+    "license": "رخصة الخطوط المفتوحة (OFL-1.1)",
+    "metric": "خط متجهي TrueType و WOFF2",
+    "author": "فريق خط عماد والمساهمون",
+    "discussionUrl": "https://community.itqan.dev/d/11",
+    "discussionNum": "11",
+    "description": "خط حاسوبي طباعي مفتوح المصدر مصمم للرسم العثماني برواية حفص عن عاصم، يدعم الضبط التام والتشكيل الدقيق لكافة الآيات وعلامات الوقف والابتداء دون تداخل في الأحرف.",
+    "links": [
+      {
+        "name": "المستودع الرسمي على GitHub",
+        "url": "https://github.com/EmadQuran/EmadFont",
+        "src": "GitHub"
+      },
+      {
+        "name": "تحميل ملفات الخط المباشرة (TTF & WOFF2)",
+        "url": "https://github.com/EmadQuran/EmadFont/releases",
+        "src": "Direct Download"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "title": "قاعدة بيانات صفحات المصحف المتجهية (MushafDatabase SVG)",
+    "category": "fonts",
+    "icon": "✒️",
+    "license": "مفتوح المصدر",
+    "metric": "604 صفحة بدقة متناهية SVG",
+    "author": "مبادرة المصحف الرقمي",
+    "discussionUrl": "https://community.itqan.dev/d/693",
+    "discussionNum": "693",
+    "description": "قاعدة بيانات رسومية متكاملة توفر كل صفحة من صفحات مصحف المدينة بصيغة SVG فائقة الدقة وقابلة للتكبير اللانهائي دون أي تشوه، مع معرّفات مستقلة لكل آية وسط وإطار.",
+    "links": [
+      {
+        "name": "مستودع ملفات SVG على GitHub",
+        "url": "https://github.com/mushaf/mushaf-svg-pages",
+        "src": "GitHub"
+      },
+      {
+        "name": "الأرشيف الرسومي على Archive.org",
+        "url": "https://archive.org/details/mushaf-svg-highres",
+        "src": "Archive.org"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "title": "خط الأميري القرآني (Amiri Quran Font)",
+    "category": "fonts",
+    "icon": "✒️",
+    "license": "رخصة الخطوط المفتوحة (SIL OFL)",
+    "metric": "نسخ طباعي كلاسيكي متقن للقرآن",
+    "author": "د. خالد حسني (@khaledhosny)",
+    "discussionUrl": "https://community.itqan.dev/d/934",
+    "discussionNum": "934",
+    "description": "خط النسخ الرقمي العربي الكلاسيكي الشهير المستوحى من طبعة مصحف بولاق الأميرية، متوفر بنسخة خاصة ومضبوطة لصف وتنسيق آيات القرآن الكريم مع علامات الوقف وأرقام الآيات.",
+    "links": [
+      {
+        "name": "مستودع خط الأميري على GitHub",
+        "url": "https://github.com/aliftype/amiri",
+        "src": "GitHub"
+      },
+      {
+        "name": "الموقع الرسمي ومواصفات الخط",
+        "url": "https://www.amirifont.org",
+        "src": "Official Portal"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "title": "مكتبة علامات الآيات ورؤوس الفواصل المتجهية (Ayah Markers Library)",
+    "category": "fonts",
+    "icon": "✒️",
+    "license": "مفتوح المصدر (MIT)",
+    "metric": "رموز وأرقام آيات قابلة للتخصيص الكامل",
+    "author": "مصممو مجتمع إتقان",
+    "discussionUrl": "https://community.itqan.dev/d/741",
+    "discussionNum": "741",
+    "description": "حزمة رسومية برمجية مفتوحة المصدر تضم كافة علامات أرقام الآيات وفواصل السور ورموز الأحزاب والأرباع بصيغ SVG و Web Components الجاهزة للدمج في تطبيقات الويب والهواتف.",
+    "links": [
+      {
+        "name": "مستودع حزمة Ayah Markers على GitHub",
+        "url": "https://github.com/itqan-community/ayah-markers",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "title": "حزمة quran-verify: التحقق المشفر بالـ SHA-256 لنصوص المصحف",
+    "category": "fonts",
+    "icon": "✒️",
+    "license": "مفتوح المصدر (MIT)",
+    "metric": "بصمة تشفيرية فريدة لكل آية وكلمة",
+    "author": "فريق الحماية والتدقيق القرآني",
+    "discussionUrl": "https://community.itqan.dev/d/540",
+    "discussionNum": "540",
+    "description": "أداة ومكتبة برمجية للتحقق الرقمي من صحة وسلامة نصوص المصحف عبر مقارنة الـ Hash التشفيري لكل آية لمنع أي تحريف أو سقوط للحركات والتشكيل أثناء النقل أو المعالجة.",
+    "links": [
+      {
+        "name": "مستودع quran-verify على GitHub",
+        "url": "https://github.com/itqan-community/quran-verify",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "title": "أداة «رقيم» (Rakeem) لتجهيز المصاحف الصوتية وفق معيار مرقوم",
+    "category": "tools",
+    "icon": "⚙️",
+    "license": "مفتوح المصدر (MIT)",
+    "metric": "المعيار الموحد للمصاحف الصوتية",
+    "author": "مجتمع إتقان (@hadealahmad)",
+    "discussionUrl": "https://community.itqan.dev/d/1007",
+    "discussionNum": "1007",
+    "description": "أداة برمجية مفتوحة المصدر لتجهيز وتنظيم وتوسيم التلاوات الصوتية للمصاحف الكاملة، وضمان توافقها الكامل مع مواصفات معيار «مرقوم» لتبادل البيانات الصوتية القرآنية بين التطبيقات.",
+    "links": [
+      {
+        "name": "مستودع أداة رقيم على GitHub",
+        "url": "https://github.com/itqan-community/rakeem",
+        "src": "GitHub"
+      },
+      {
+        "name": "مواصفات وتوثيق معيار مرقوم (Marqoom)",
+        "url": "https://github.com/itqan-community/marqoom-spec",
+        "src": "Documentation"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "title": "مشروع «منجّم» (Monajjim): نظام أتمتة تقطيع ومزامنة التلاوات",
+    "category": "tools",
+    "icon": "⚙️",
+    "license": "مفتوح المصدر (GPL-3.0)",
+    "metric": "مزامنة محلية دقيقة على ويندوز وماك",
+    "author": "فريق منجم ومجتمع إتقان",
+    "discussionUrl": "https://community.itqan.dev/d/178",
+    "discussionNum": "178",
+    "description": "منصة وتطبيق مكتبي متقدم (Desktop App) مبني لتوليد ملفات المزامنة الصوتية بدقة بالغة على مستوى الأنفاس والكلمات، مع دعم المعالجة المجمعة ومطابقة التلاوة بالنص القرآني.",
+    "links": [
+      {
+        "name": "مستودع Munajjam Desktop على GitHub",
+        "url": "https://github.com/itqan-community/munajjam",
+        "src": "GitHub"
+      },
+      {
+        "name": "نسخة كولاب السحابية للمعالجة السريعة",
+        "url": "https://colab.research.google.com",
+        "src": "Google Colab"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "title": "منصة «ميقات» (Miqat) للمزامنة الصوتية الدقيقة متعددة الروايات",
+    "category": "tools",
+    "icon": "⚙️",
+    "license": "مفتوح المصدر",
+    "metric": "يدعم روايات حفص وورش والوقف والابتداء",
+    "author": "مهندسو مجتمع إتقان",
+    "discussionUrl": "https://community.itqan.dev/d/440",
+    "discussionNum": "440",
+    "description": "منصة وأداة ويب ومكتبة برمجية عالية الدقة لمزامنة التلاوات القرآنية تعتمد على تقنيات الذكاء الاصطناعي ومعالجة الإشارات، صممت للتعامل مع الفروق الدقيقة في أعداد الآيات بين الروايات.",
+    "links": [
+      {
+        "name": "مستودع مشروع ميقات على GitHub",
+        "url": "https://github.com/itqan-community/miqat",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "title": "منصة وأداة Multi-Aligner لتزمين المصحف الكامل سحابياً",
+    "category": "tools",
+    "icon": "⚙️",
+    "license": "أداة ويب مجانية للمطورين",
+    "metric": "محاذاة مصحف كامل في 30 دقيقة على GPU",
+    "author": "عبدالله الرفاعي (@qud)",
+    "discussionUrl": "https://community.itqan.dev/d/350",
+    "discussionNum": "350",
+    "description": "نظام مؤتمت لمعالجة ومحاذاة تلاوة قارئ كامل في أقل من نصف ساعة على كروت الشاشة، ينتج تقسيمات دقيقة للآيات والوقفات والكلمات بتنسيقات JSON القياسية.",
+    "links": [
+      {
+        "name": "منصة Multi-Aligner المباشرة",
+        "url": "https://audio.qud.dev",
+        "src": "Web Tool"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "title": "مكتبة توليد صور آيات القرآن الكريم (Napi-RS Canvas)",
+    "category": "tools",
+    "icon": "⚙️",
+    "license": "مفتوح المصدر (MIT)",
+    "metric": "TypeScript + Rust Canvas عالية السرعة",
+    "author": "علي غمدان (@ali-ghamdan)",
+    "discussionUrl": "https://community.itqan.dev/d/421",
+    "discussionNum": "421",
+    "description": "مكتبة برمجية مبنية بـ Rust Canvas السريع لتوليد ومشاركة صور عالية الدقة لآيات القرآن مع خيارات التشكيل لتطبيقات الويب والبوتات ومولدات الريلز القرآنية.",
+    "links": [
+      {
+        "name": "مستودع المكتبة على GitHub",
+        "url": "https://github.com/alighmdan/quran-image-generator",
+        "src": "GitHub"
+      },
+      {
+        "name": "حزمة المكتبة على NPM",
+        "url": "https://www.npmjs.com/package/quran-image-generator",
+        "src": "NPM Registry"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "title": "خادم MCP الرسمي لمجتمع إتقان (Itqan Community MCP)",
+    "category": "tools",
+    "icon": "🔌",
+    "license": "بروتوكول مفتوح ومجاني",
+    "metric": "Endpoint رسمي Streamable HTTP",
+    "author": "هادي الأحمد (@hadealahmad)",
+    "discussionUrl": "https://community.itqan.dev/d/998",
+    "discussionNum": "998",
+    "description": "الخادم الرسمي لربط مساعدات الذكاء الاصطناعي (Claude, Cursor, Antigravity) بأرشيف ونقاشات المجتمع للبحث الذكي واستخراج التجارب البرمجية ومشاريع الأعضاء.",
+    "links": [
+      {
+        "name": "رابط الـ API المباشر (MCP Endpoint)",
+        "url": "https://community.itqan.dev/api/mcp",
+        "src": "Live API"
+      },
+      {
+        "name": "مستودع المنصة على GitHub",
+        "url": "https://github.com/Itqan-community/itqan-community-public",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "title": "برنامج «وقف» (Waqf) لتقطيع التلاوات الصوتية حسب الأنفاس",
+    "category": "tools",
+    "icon": "⚙️",
+    "license": "مفتوح المصدر (GPL-3.0)",
+    "metric": "اكتشاف أوتوماتيكي للسكوت والتنفس",
+    "author": "مساهمو تقنيات الصوت القرآني",
+    "discussionUrl": "https://community.itqan.dev/d/525",
+    "discussionNum": "525",
+    "description": "برنامج متخصص يعالج ملفات الصوت الطويلة للمصاحف ويكتشف فترات الصمت وسكتات التنفس الطبيعية بين الآيات، مما يسهل تقطيع المصاحف الكبيرة بدقة متناهية.",
+    "links": [
+      {
+        "name": "مستودع برنامج وقف على GitHub",
+        "url": "https://github.com/itqan-community/waqf-audio-splitter",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "title": "محرك البحث القرآني المستقل quran-search-engine (Rust)",
+    "category": "tools",
+    "icon": "⚙️",
+    "license": "مفتوح المصدر (Apache-2.0)",
+    "metric": "بحث فائق السرعة دون اتصال Offline",
+    "author": "فريق حملة كود يخدم القرآن",
+    "discussionUrl": "https://community.itqan.dev/d/944",
+    "discussionNum": "944",
+    "description": "محرك بحث سريع ومستقل مبني بلغة Rust للبحث في نصوص القرآن الكريم ومطابقة الجذور والكلمات دون الحاجة إلى خادم خارجي أو اتصال بالإنترنت.",
+    "links": [
+      {
+        "name": "مستودع المحرك على GitHub",
+        "url": "https://github.com/itqan-community/quran-search-engine",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "title": "منصة وحزم برمجيات API_ISLAM المفتوحة للمطورين",
+    "category": "tools",
+    "icon": "⚙️",
+    "license": "مفتوح المصدر (MIT)",
+    "metric": "حزم SDK لكافة اللغات البرمجية",
+    "author": "مبادرة البرمجيات الإسلامية",
+    "discussionUrl": "https://community.itqan.dev/d/902",
+    "discussionNum": "902",
+    "description": "منصة خدمات سحابية وحزم SDK برمجية توفر واجهات REST APIs متكاملة لجلب نصوص القرآن، التفاسير، مواقيت الصلاة، والتلاوات الصوتية بطريقة موحدة وسهلة.",
+    "links": [
+      {
+        "name": "المستودع البرمجي على GitHub",
+        "url": "https://github.com/itqan-community/api-islam",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "title": "مكتبة tajweed-engine لتلوين أحكام التجويد برمجياً",
+    "category": "tools",
+    "icon": "⚙️",
+    "license": "مفتوح المصدر (MIT)",
+    "metric": "معالجة قواعد الإدغام والإخفاء والمدود",
+    "author": "مساهمو مجتمع إتقان",
+    "discussionUrl": "https://community.itqan.dev/d/660",
+    "discussionNum": "660",
+    "description": "مكتبة جافاسكريبت وبايثون مفتوحة المصدر تستقبل نصوص الآيات وتطبق عليها قواعد التجويد آلياً وتنتج وسوماً ملونة لكل حكم تجويدي (إدغام، إقلاب، إخفاء، قلقلة).",
+    "links": [
+      {
+        "name": "مستودع tajweed-engine على GitHub",
+        "url": "https://github.com/itqan-community/tajweed-engine",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "title": "ورقة بحثية: منهجية تقييم التلاوات القرآنية وقاعدة بيانات IqraEval (Interspeech)",
+    "category": "research",
+    "icon": "📚",
+    "license": "ورقة علمية منشورة ومحكّمة",
+    "metric": "مؤتمر Interspeech العالمي للتعرف الصوتي",
+    "author": "د. يوسف سعيد وفريق باحثين",
+    "discussionUrl": "https://community.itqan.dev/d/930",
+    "discussionNum": "930",
+    "description": "البحث العلمي المرجعي المنشور في مؤتمر Interspeech، يشرح بالتفصيل المعايير الصوتية والرياضية لتقييم تلاوات غير الناطقين بالعربية وتحديد أخطاء التجويد ونسب الدقة ومعدلات الخطأ الصوتي.",
+    "links": [
+      {
+        "name": "الورقة البحثية الكاملة (PDF / Interspeech)",
+        "url": "https://www.isca-speech.org/archive",
+        "src": "ISCA Archive"
+      },
+      {
+        "name": "مجموعة البيانات المرتبطة على HuggingFace",
+        "url": "https://huggingface.co/datasets/IqraEval/Iqra_train",
+        "src": "HuggingFace"
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "title": "دراسة معمارية: نماذج التعرف الصوتي المفتوحة وتحديات الفونيمات القرآنية",
+    "category": "research",
+    "icon": "📚",
+    "license": "دراسة تقنية منشورة",
+    "metric": "مقارنة عملية بين Whisper و Zipformer و CTC",
+    "author": "باحثو مختبر القرآن (Quran Lab)",
+    "discussionUrl": "https://community.itqan.dev/d/686",
+    "discussionNum": "686",
+    "description": "دراسة تقنية معمقة تحلل أسباب فشل نماذج ASR العامة (مثل Whisper) في تمييز المدود الطبيعية والفرعية والغنن، وتقدم البديل المعماري المبني على تتبع الحركات الفونيمية المباشرة.",
+    "links": [
+      {
+        "name": "قراءة الدراسة والتحليل التقني",
+        "url": "https://community.itqan.dev/d/686",
+        "src": "Research Article"
+      },
+      {
+        "name": "نتائج القياسات المعملية (Benchmarks)",
+        "url": "https://huggingface.co/spaces/Quran-Lab/quranic-asr-leaderboard",
+        "src": "Benchmark Hub"
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "title": "الورقة البيضاء لمعيار «مرقوم» (Marqoom Specification): المعيار الموحد للمصاحف الصوتية",
+    "category": "research",
+    "icon": "📚",
+    "license": "وثيقة معيارية مفتوحة",
+    "metric": "الإصدار 1.0 لمعايير التزمين",
+    "author": "لجنة المعايير بمجتمع إتقان",
+    "discussionUrl": "https://community.itqan.dev/d/966",
+    "discussionNum": "966",
+    "description": "المواصفة القياسية المفتوحة لتنظيم البيانات الصوتية للقرآن الكريم، تشمل مواصفات التسمية، طوابع الوقت، حدود الوقف والابتداء، ومخططات JSON المعيارية التي تضمن توافق كافة التطبيقات معاً.",
+    "links": [
+      {
+        "name": "وثيقة المواصفة القياسية على GitHub",
+        "url": "https://github.com/itqan-community/marqoom-spec",
+        "src": "GitHub Spec"
+      },
+      {
+        "name": "مناقشة وبنود المعيار في مجتمع إتقان",
+        "url": "https://community.itqan.dev/d/966",
+        "src": "Specification"
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "title": "دراسة معيارية: مقارنة دقة الفاست كونفورمر وويسبر في كشف اللحن الخفي",
+    "category": "research",
+    "icon": "📚",
+    "license": "دراسة بحثية مجتمعية",
+    "metric": "معدلات خطأ الكلمات WER مقابل خطأ الحركات PER",
+    "author": "فريق أبحاث إتقان",
+    "discussionUrl": "https://community.itqan.dev/d/603",
+    "discussionNum": "603",
+    "description": "تجربة معيارية مفصلة قارنت استجابة نماذج FastConformer مع Whisper في كشف أحكام النون الساكنة والتنوين والمدود، واستخراج الطوابع الزمنية الدقيقة لكل حرف ومنطوق.",
+    "links": [
+      {
+        "name": "قراءة الدراسة والنتائج بالمجتمع",
+        "url": "https://community.itqan.dev/d/603",
+        "src": "Community Research"
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "title": "ورشة ترتيل: «كيف تختار وتقيّم نموذج التلاوة الأنسب لتطبيقك؟»",
+    "category": "workshops",
+    "icon": "🎬",
+    "license": "ورشة مرئية مفتوحة ومسجلة",
+    "metric": "ساعة تدريبية كاملة بجودة عالية",
+    "author": "م. خالد (Tarteel.ai) ومجتمع إتقان",
+    "discussionUrl": "https://community.itqan.dev/d/988",
+    "discussionNum": "988",
+    "description": "ورشة تقنية متخصصة ومسجلة تشرح كيفية قياس أداء نماذج الذكاء الاصطناعي في الاستماع للقرآن، والفرق بين قياس دقة الكلمة (WER) ودقة الصوت (PER)، وكيفية اختيار النموذج الأقل استهلاكاً للموارد.",
+    "links": [
+      {
+        "name": "مشاهدة الورشة كاملة على YouTube",
+        "url": "https://www.youtube.com/watch?v=OOMRv_FIYfU",
+        "src": "YouTube Video"
+      },
+      {
+        "name": "ملخص الورشة والروابط التوضيحية بالمجتمع",
+        "url": "https://community.itqan.dev/d/988",
+        "src": "Community Summary"
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "title": "ورشة عمل: «بناء أنظمة التزمين التلقائي ومحاذاة التلاوات الصوتية»",
+    "category": "workshops",
+    "icon": "🎬",
+    "license": "ورشة تدريبية عملية مسجلة",
+    "metric": "تطبيق عملي خطوة بخطوة",
+    "author": "فريق مشروع منجم وميقات",
+    "discussionUrl": "https://community.itqan.dev/d/481",
+    "discussionNum": "481",
+    "description": "شرح عملي مصور خطوة بخطوة لكيفية تقطيع التلاوات الطويلة، وضبط خوارزميات forced alignment، ومعالجة أوقات السكت والوقفات التنفسية لإنتاج بيانات تزمين دقيقة.",
+    "links": [
+      {
+        "name": "مشاهدة الشرح العملي والورشة المسجلة",
+        "url": "https://community.itqan.dev/d/481",
+        "src": "Video Workshop"
+      },
+      {
+        "name": "كود الورشة التفاعلي على Google Colab",
+        "url": "https://colab.research.google.com",
+        "src": "Colab Notebook"
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "title": "محاضرة: «البرمجيات القرآنية مفتوحة المصدر: المعايير، التراخيص، وفرص التعاون»",
+    "category": "workshops",
+    "icon": "🎬",
+    "license": "محاضرة عامة مسجلة",
+    "metric": "دليل المطورين والفرق التقنية",
+    "author": "نخبة من مطوري مجتمع إتقان",
+    "discussionUrl": "https://community.itqan.dev/d/802",
+    "discussionNum": "802",
+    "description": "لقاء تقني مسجل يناقش أفضل الممارسات في بناء البرمجيات القرآنية، كيفية اختيار التراخيص مفتوحة المصدر المناسبة، وضمان دقة وقدسية النصوص الشرعية عند فتح الأكواد للمساهمين.",
+    "links": [
+      {
+        "name": "مشاهدة وقائع اللقاء التقني المفتوح",
+        "url": "https://community.itqan.dev/d/802",
+        "src": "Community Video"
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "title": "جلسة تقنية: «كواليس بناء نماذج التسميع لرواية ورش وأحكام التجويد»",
+    "category": "workshops",
+    "icon": "🎬",
+    "license": "شرح تقني مسجل",
+    "metric": "تطوير تطبيق تثبيت القرآني",
+    "author": "فريق تطبيق تثبيت",
+    "discussionUrl": "https://community.itqan.dev/d/806",
+    "discussionNum": "806",
+    "description": "تسجيل مرئي يشرح التحديات الهندسية والصوتية التي واجهت الفريق عند تدريب نماذج التسميع الصوتي لتتعرف على أصول رواية ورش عن نافع واختلافات رسم المصحف.",
+    "links": [
+      {
+        "name": "مشاهدة الجلسة والشرح المرئي بالمجتمع",
+        "url": "https://community.itqan.dev/d/806",
+        "src": "Community Video"
+      }
+    ]
+  }
+];
+
+    let allResources = EMBEDDED_RESOURCES;
+    let selectedCategory = 'all';
     let searchQuery = '';
-    let currentOpenSection = null; // ALL SECTIONS COLLAPSED BY DEFAULT!
+    let openedCardId = null; // ALL CONTENT CARDS FOLDED BY DEFAULT!
 
     // Defined Categories Configuration
     const CATEGORIES = [
-      { id: 'ai', title: 'نماذج تسميع القرآن', icon: '👳‍♂️', desc: 'أوزان ونماذج الذكاء الاصطناعي لكشف أخطاء التلاوة والتجويد' },
-      { id: 'audio', title: 'حزم البيانات والصوتيات', icon: '🔊', desc: 'تسجيلات المتعلمين ومجموعات الصوت الموثقة والمجزأة بالآيات' },
-      { id: 'fonts', title: 'الخطوط والمصاحف', icon: '✒️', desc: 'خطوط مجمع الملك فهد ومصاحف SVG المتجهية وعلامات الآيات' },
-      { id: 'tools', title: 'البرمجيات والأدوات', icon: '💻', desc: 'أدوات المزامنة التلقائية ومحركات البحث ومكتبات التجويد البرمجية' },
-      { id: 'research', title: 'الأبحاث والدراسات', icon: '📚', desc: 'أوراق علمية محكّمة ودراسات معمارية ومعايير المصاحف الصوتية' },
-      { id: 'workshops', title: 'الورش والمحاضرات', icon: '📺', desc: 'ورش تدريبية وشروحات عملية مسجلة لمطوري التقنيات القرآنية' }
+      { id: 'ai', title: 'نماذج تسميع القرآن', icon: '👳‍♂️', label: 'نماذج' },
+      { id: 'audio', title: 'حزم البيانات والصوتيات', icon: '🔊', label: 'حزم' },
+      { id: 'fonts', title: 'الخطوط والمصاحف', icon: '✒️', label: 'خطوط' },
+      { id: 'tools', title: 'البرمجيات والأدوات', icon: '💻', label: 'أدوات' },
+      { id: 'research', title: 'الأبحاث والدراسات', icon: '📚', label: 'أبحاث' },
+      { id: 'workshops', title: 'الورش والمحاضرات', icon: '📺', label: 'ورش' }
     ];
 
     // Load resources from external JSON file with cache-busting
@@ -660,13 +1905,16 @@
       try {
         const res = await fetch('resources.json?v=' + Date.now(), { cache: 'no-store' });
         if (res.ok) {
-          allResources = await res.json();
+          const remoteData = await res.json();
+          if (Array.isArray(remoteData) && remoteData.length > 0) {
+            allResources = remoteData;
+          }
         }
       } catch (err) {
         console.warn('Using embedded fallback data:', err);
       }
       updateCounts();
-      renderSections();
+      renderCards();
     }
 
     function updateCounts() {
@@ -678,7 +1926,7 @@
         const cnt = allResources.filter(x => x.category === cat.id).length;
         const el = document.getElementById(`${cat.id}Count`);
         if (el) {
-          el.innerText = `${cnt} ${cat.id === 'ai' ? 'نماذج' : cat.id === 'audio' ? 'حزم' : cat.id === 'fonts' ? 'خطوط' : cat.id === 'tools' ? 'أدوات' : cat.id === 'research' ? 'أبحاث' : 'ورش'}`;
+          el.innerText = `${cnt} ${cat.label}`;
         }
       });
       
@@ -688,142 +1936,159 @@
       }
     }
 
-    function renderSections() {
-      const container = document.getElementById('sectionsContainer');
+    // Top Category Filter Selection
+    function selectCategory(catId) {
+      selectedCategory = catId;
+      openedCardId = null; // Reset cards to folded on category switch!
+
+      // Update folder selection UI
+      document.querySelectorAll('.folder-card').forEach(c => c.classList.remove('selected'));
+      const activeBtn = document.getElementById(`folder-btn-${catId}`);
+      if (activeBtn) activeBtn.classList.add('selected');
+
+      // Update List Header
+      const headerIcon = document.getElementById('currentCategoryIcon');
+      const headerTitle = document.getElementById('currentCategoryTitle');
+      const headerBadge = document.getElementById('currentCategoryBadge');
+
+      if (catId === 'all') {
+        headerIcon.innerText = '📁';
+        headerTitle.innerText = 'جميع الموارد المعتمدة';
+        headerBadge.innerText = `${allResources.length} مورد`;
+      } else {
+        const catObj = CATEGORIES.find(c => c.id === catId);
+        if (catObj) {
+          headerIcon.innerText = catObj.icon;
+          headerTitle.innerText = catObj.title;
+          const cnt = allResources.filter(x => x.category === catId).length;
+          headerBadge.innerText = `${cnt} ${catObj.label} معتمدة`;
+        }
+      }
+
+      renderCards();
+    }
+
+    // RENDER CARDS (FOLDED BY DEFAULT)
+    function renderCards() {
+      const container = document.getElementById('cardsContainer');
       container.innerHTML = '';
 
-      let totalMatching = 0;
-
-      CATEGORIES.forEach(cat => {
-        // Filter items for this category matching current search
-        const catItems = allResources.filter(it => {
-          if (it.category !== cat.id) return false;
-          if (!searchQuery) return true;
-          return (
-            (it.title && it.title.toLowerCase().includes(searchQuery)) ||
-            (it.description && it.description.toLowerCase().includes(searchQuery)) ||
-            (it.links && it.links.some(l => l.name && l.name.toLowerCase().includes(searchQuery)))
-          );
-        });
-
-        // If searching and this section has no matches, skip it
-        if (searchQuery && catItems.length === 0) return;
-
-        totalMatching += catItems.length;
-
-        // Create Section Accordion element
-        const secDiv = document.createElement('div');
-        secDiv.className = 'section-accordion';
-        secDiv.id = `section-box-${cat.id}`;
-
-        // Auto-expand if searching, otherwise obey currentOpenSection
-        const isExpanded = searchQuery ? true : (currentOpenSection === cat.id);
-        if (isExpanded) {
-          secDiv.classList.add('expanded');
+      // Filter by category and search
+      const filtered = allResources.filter(it => {
+        if (selectedCategory !== 'all' && it.category !== selectedCategory) {
+          return false;
         }
+        if (!searchQuery) return true;
+        return (
+          (it.title && it.title.toLowerCase().includes(searchQuery)) ||
+          (it.description && it.description.toLowerCase().includes(searchQuery)) ||
+          (it.links && it.links.some(l => l.name && l.name.toLowerCase().includes(searchQuery)))
+        );
+      });
 
-        // Render Cards HTML for this section
-        const cardsHtml = catItems.map(item => {
-          const linksHtml = (item.links && item.links.length > 0) ? item.links.map(l => `
-            <a href="${l.url}" target="_blank" class="btn-direct-download">
-              <span class="source-badge">${l.src || 'Link'}</span>
-              <span>${l.name}</span>
-              <span style="font-size:12px; opacity:0.6;">↗</span>
-            </a>
-          `).join('') : '<span style="color:#94a3b8; font-size:0.85rem;">راجع تفاصيل الموضوع في الرابط أدناه</span>';
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div style="background:#fff; padding:40px; text-align:center; border-radius:12px; color:#64748b; border: 1px solid var(--surface-border);">
+            🔍 لا توجد أصول تقنية مطابقة لهذا البحث أو التصنيف.
+          </div>
+        `;
+        return;
+      }
 
-          const mainLink = (item.links && item.links[0]) ? item.links[0].url : item.discussionUrl;
+      filtered.forEach(item => {
+        const catObj = CATEGORIES.find(c => c.id === item.category);
+        const icon = item.icon || (catObj ? catObj.icon : '📌');
+        const linksCount = (item.links && item.links.length) ? item.links.length : 0;
+        
+        // Build Direct Download Links HTML
+        const linksHtml = (item.links && item.links.length > 0) ? item.links.map(l => `
+          <a href="${l.url}" target="_blank" class="btn-direct-download">
+            <span class="source-badge">${l.src || 'Link'}</span>
+            <span>${l.name}</span>
+            <span style="font-size:12px; opacity:0.6;">↗</span>
+          </a>
+        `).join('') : '<span style="color:#94a3b8; font-size:0.85rem;">راجع تفاصيل الموضوع في رابط المجتمع أدناه</span>';
 
-          return `
-            <div class="resource-card">
-              <div class="card-top">
-                <div class="card-title-group">
-                  <div class="card-icon">${item.icon || cat.icon}</div>
-                  <div>
-                    <a href="${mainLink}" target="_blank" class="card-title">${item.title}</a>
-                  </div>
-                </div>
-                <div class="card-badges">
+        const isExpanded = (openedCardId === item.id);
+
+        const cardDiv = document.createElement('div');
+        cardDiv.className = `resource-card ${isExpanded ? 'expanded' : ''}`;
+        cardDiv.id = `card-${item.id}`;
+
+        cardDiv.innerHTML = `
+          <!-- Clickable Header: Always visible, clicking toggles unfold/fold -->
+          <div class="card-header-bar" onclick="toggleCard(${item.id})">
+            <div class="card-header-right">
+              <div class="card-icon">${icon}</div>
+              <div class="card-title-col">
+                <span class="card-title">${item.title}</span>
+                <div class="card-badges-row">
                   <span class="badge badge-license">${item.license || 'مفتوح المصدر'}</span>
-                  <span class="badge badge-metric">${item.metric || 'مورد موثق'}</span>
-                </div>
-              </div>
-
-              <p class="card-desc">${item.description}</p>
-
-              <div class="links-container">
-                <div class="links-header-bar">
-                  <div class="links-title">
-                    <span>📥</span>
-                    <span>روابط التحميل والمصادر المباشرة لهذا المورد:</span>
-                  </div>
-                  <div class="verified-badge">
-                    <span>⚡ روابط مباشرة وموثوقة</span>
-                  </div>
-                </div>
-                <div class="links-buttons-grid">
-                  ${linksHtml}
-                </div>
-              </div>
-
-              <div class="card-footer">
-                <div class="card-meta">
-                  <span class="card-author">👤 الناشر: ${item.author}</span>
-                </div>
-                <div class="card-actions">
-                  <a href="${item.discussionUrl}" target="_blank" class="btn-discussion-link">
-                    💬 مناقشة الموضوع في المجتمع (#${item.discussionNum})
-                  </a>
+                  <span class="badge badge-metric">${item.metric || 'مورد معتمد'}</span>
+                  <span class="badge-links-count">⚡ ${linksCount} مصادر مباشرة</span>
+                  <span class="card-author-mini">👤 ${item.author}</span>
                 </div>
               </div>
             </div>
-          `;
-        }).join('');
-
-        secDiv.innerHTML = `
-          <div class="section-banner" onclick="toggleSectionBanner('${cat.id}')">
-            <div class="section-banner-right">
-              <span class="section-banner-icon">${cat.icon}</span>
-              <div class="section-banner-text">
-                <h2 class="section-banner-title">${cat.title}</h2>
-                <span class="section-banner-desc">${cat.desc}</span>
-              </div>
-            </div>
-            <div class="section-banner-left">
-              <span class="section-count-pill">${catItems.length} مورد معتمد</span>
-              <span class="section-arrow">▼</span>
+            <div class="card-header-left">
+              <button class="btn-card-toggle" type="button">
+                <span>${isExpanded ? 'طي البطاقة' : 'عرض التفاصيل والروابط'}</span>
+                <span class="toggle-arrow">▼</span>
+              </button>
             </div>
           </div>
-          <div class="section-content" id="section-content-${cat.id}">
-            ${cardsHtml}
+
+          <!-- Collapsible Body: Folded by default, unfolds when active -->
+          <div class="card-collapsible-body">
+            <p class="card-desc">${item.description}</p>
+            
+            <div class="links-container">
+              <div class="links-header-bar">
+                <div class="links-title">
+                  <span>📥</span>
+                  <span>روابط التحميل والمصادر المباشرة لهذا المورد:</span>
+                </div>
+                <div class="verified-badge">
+                  <span>⚡ روابط مباشرة وموثوقة</span>
+                </div>
+              </div>
+              <div class="links-buttons-grid">
+                ${linksHtml}
+              </div>
+            </div>
+
+            <div class="card-footer">
+              <div class="card-meta">
+                <span class="card-author">👤 الناشر في المجتمع: ${item.author}</span>
+              </div>
+              <div class="card-actions">
+                <a href="${item.discussionUrl}" target="_blank" class="btn-discussion-link">
+                  💬 مناقشة الموضوع في المجتمع (#${item.discussionNum}) ↗
+                </a>
+              </div>
+            </div>
           </div>
         `;
 
-        container.appendChild(secDiv);
+        container.appendChild(cardDiv);
       });
-
-      if (totalMatching === 0) {
-        container.innerHTML = `<div style="background:#fff; padding:40px; text-align:center; border-radius:12px; color:#64748b;">لا توجد موارد مطابقة لكلمة البحث الحالية.</div>`;
-      }
     }
 
-    // ACCORDION TOGGLE: Only ONE section open at a time, any other folds automatically!
-    function toggleSectionBanner(catId) {
-      if (currentOpenSection === catId) {
-        // If clicking the already open section, fold it!
-        currentOpenSection = null;
-        updateFolderHighlights(null);
+    // TOGGLE SINGLE CARD: Unfold clicked card, fold any previously open card!
+    function toggleCard(cardId) {
+      if (openedCardId === cardId) {
+        // If clicking the already open card, fold it back up!
+        openedCardId = null;
       } else {
-        // Automatically fold any other opened section, and expand this one!
-        currentOpenSection = catId;
-        updateFolderHighlights(catId);
+        // Unfold clicked card and automatically fold any other open card!
+        openedCardId = cardId;
       }
-      renderSections();
+      renderCards();
 
-      // Smoothly scroll to the expanded section if opened
-      if (currentOpenSection) {
+      // Smooth scroll if expanding a card
+      if (openedCardId) {
         setTimeout(() => {
-          const target = document.getElementById(`section-box-${catId}`);
+          const target = document.getElementById(`card-${cardId}`);
           if (target) {
             target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
           }
@@ -831,51 +2096,21 @@
       }
     }
 
-    // Shortcut from top Folder Cards
-    function selectSectionFromFolder(catId) {
-      currentOpenSection = catId;
-      updateFolderHighlights(catId);
-      renderSections();
-      setTimeout(() => {
-        const target = document.getElementById(`section-box-${catId}`);
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }, 50);
+    // Expand All / Collapse All Utility Buttons
+    function expandAllCards() {
+      document.querySelectorAll('.resource-card').forEach(c => c.classList.add('expanded'));
+      document.querySelectorAll('.btn-card-toggle span:first-child').forEach(s => s.innerText = 'طي البطاقة');
     }
 
-    function toggleAllSections() {
-      if (currentOpenSection === 'ALL') {
-        collapseAllSections();
-      } else {
-        expandAllSections();
-      }
-    }
-
-    function expandAllSections() {
-      currentOpenSection = 'ALL';
-      document.querySelectorAll('.folder-card').forEach(c => c.classList.remove('selected'));
-      document.getElementById('folder-btn-all').classList.add('selected');
-      document.querySelectorAll('.section-accordion').forEach(sec => sec.classList.add('expanded'));
-    }
-
-    function collapseAllSections() {
-      currentOpenSection = null;
-      document.querySelectorAll('.folder-card').forEach(c => c.classList.remove('selected'));
-      document.querySelectorAll('.section-accordion').forEach(sec => sec.classList.remove('expanded'));
-    }
-
-    function updateFolderHighlights(catId) {
-      document.querySelectorAll('.folder-card').forEach(c => c.classList.remove('selected'));
-      if (catId) {
-        const btn = document.getElementById(`folder-btn-${catId}`);
-        if (btn) btn.classList.add('selected');
-      }
+    function collapseAllCards() {
+      openedCardId = null;
+      document.querySelectorAll('.resource-card').forEach(c => c.classList.remove('expanded'));
+      document.querySelectorAll('.btn-card-toggle span:first-child').forEach(s => s.innerText = 'عرض التفاصيل والروابط');
     }
 
     function filterResources() {
       searchQuery = document.getElementById('searchInput').value.trim().toLowerCase();
-      renderSections();
+      renderCards();
     }
 
     function openSyncModal() {
@@ -890,7 +2125,7 @@
       if (e.target.id === 'syncModal') closeSyncModal();
     }
 
-    // Initialize
+    // Start
     loadData();
   </script>
 </body>
