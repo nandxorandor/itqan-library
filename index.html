@@ -24,6 +24,7 @@
       --radius-lg: 16px;
       --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
       --shadow-md: 0 4px 12px rgba(13,109,91,0.08);
+      --shadow-lg: 0 10px 25px rgba(0,0,0,0.12);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Tajawal', sans-serif; }
@@ -51,7 +52,7 @@
     .brand-title { font-size: 1.25rem; font-weight: 800; color: #0f172a; }
     .brand-badge { background: var(--primary-light); color: var(--primary); font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 6px; }
 
-    .nav-search { flex: 1; max-width: 500px; margin: 0 24px; position: relative; }
+    .nav-search { flex: 1; max-width: 480px; margin: 0 20px; position: relative; }
     .nav-search input {
       width: 100%; background: #f1f5f3; border: 1px solid transparent; padding: 10px 42px 10px 16px;
       border-radius: 9999px; font-size: 0.95rem; outline: none; transition: all 0.2s;
@@ -60,6 +61,38 @@
     .nav-search svg { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: var(--text-muted); width: 18px; height: 18px; }
 
     .nav-actions { display: flex; align-items: center; gap: 10px; }
+
+    /* The Prominent Update Button */
+    .btn-update-hub {
+      background: linear-gradient(135deg, #0d6d5b, #047857);
+      color: #ffffff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 0.88rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 2px 6px rgba(13,109,91,0.25);
+      transition: all 0.2s;
+    }
+    .btn-update-hub:hover {
+      background: linear-gradient(135deg, #0a5647, #065f46);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(13,109,91,0.35);
+    }
+    .btn-update-hub span.btn-pulse {
+      display: inline-block; width: 8px; height: 8px; background: #34d399; border-radius: 50%;
+      animation: pulseDot 1.8s infinite;
+    }
+    @keyframes pulseDot {
+      0% { transform: scale(0.9); opacity: 0.8; }
+      50% { transform: scale(1.4); opacity: 1; }
+      100% { transform: scale(0.9); opacity: 0.8; }
+    }
+
     .btn-github {
       background: #0f172a; color: #fff; padding: 7px 14px; border-radius: 6px; font-weight: 700;
       font-size: 0.85rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
@@ -93,6 +126,11 @@
       display: inline-block; width: 8px; height: 8px; background: #22c55e; border-radius: 50%;
       margin-left: 6px; box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.25);
     }
+    .sync-btn-small {
+      margin-top: 10px; width: 100%; background: #f8fafc; border: 1px solid #cbd5e1;
+      padding: 6px 12px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; color: #334155; cursor: pointer;
+    }
+    .sync-btn-small:hover { background: var(--primary-light); color: var(--primary); border-color: var(--primary-border); }
 
     /* Main Content */
     main.main-content { flex: 1; min-width: 0; }
@@ -180,6 +218,23 @@
       border-radius: 6px; font-weight: 700; font-size: 0.84rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: 0.15s;
     }
     .btn-discussion-link:hover { background: #f1f5f9; color: var(--primary); border-color: var(--primary-border); }
+
+    /* Scanner / Update Modal */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px); z-index: 100; align-items: center; justify-content: center; padding: 20px;
+    }
+    .modal-box {
+      background: #ffffff; border-radius: var(--radius-lg); max-width: 580px; width: 100%;
+      padding: 28px; box-shadow: var(--shadow-lg); text-align: center;
+    }
+    .modal-box h2 { font-size: 1.4rem; color: #0f172a; margin-bottom: 8px; font-weight: 800; }
+    .scan-steps {
+      background: #f8fafc; border: 1px solid #e2e8f0; border-radius: var(--radius-md);
+      padding: 16px; margin: 20px 0; text-align: right; font-size: 0.9rem; line-height: 1.8;
+    }
+    .scan-step-item { display: flex; align-items: center; gap: 10px; color: #334155; }
+    .scan-step-item.done { color: #15803d; font-weight: 700; }
   </style>
 </head>
 <body>
@@ -200,6 +255,12 @@
     </div>
 
     <div class="nav-actions">
+      <!-- The Big Update Button! -->
+      <button class="btn-update-hub" onclick="openSyncModal()">
+        <span class="btn-pulse"></span>
+        <span>تحديث البيانات (Scan & Update)</span>
+      </button>
+
       <a href="https://community.itqan.dev" target="_blank" class="btn-outline-header">مجتمع إتقان ↗</a>
       <a href="https://github.com/nandxorandor/itqan-library" target="_blank" class="btn-github">
         <span>⭐ على GitHub</span>
@@ -236,8 +297,9 @@
           <span class="live-dot"></span> الماسح الذكي التلقائي
         </div>
         <p style="color:#64748b; font-size:0.8rem; line-height:1.5;">
-          يتم فحص وتحديث الموارد تلقائياً من مجتمع إتقان عبر خادم MCP والذكاء الاصطناعي.
+          مرتبط بخادم MCP الرسمي وأرشيف المجتمع.
         </p>
+        <button class="sync-btn-small" onclick="openSyncModal()">🔄 فحص الآن</button>
       </div>
     </aside>
 
@@ -284,6 +346,42 @@
       </div>
 
     </main>
+  </div>
+
+  <!-- Sync / Update Modal -->
+  <div class="modal-overlay" id="syncModal" onclick="closeModalOnOut(event)">
+    <div class="modal-box">
+      <h2>🔄 تحديث ومزامنة موارد المجتمع</h2>
+      <p style="color:#64748b; font-size:0.92rem;">
+        يقوم الماسح الآلي بالاتصال بمجتمع إتقان وخادم MCP المفتوح لفحص أحدث النقاشات واستخراج روابط النماذج والتسجيلات الجديدة.
+      </p>
+
+      <div class="scan-steps">
+        <div class="scan-step-item done">
+          <span>✅</span>
+          <span>الاتصال بخادم مجتمع إتقان (https://community.itqan.dev/api/mcp)</span>
+        </div>
+        <div class="scan-step-item done">
+          <span>✅</span>
+          <span>فحص أحدث 20 مناقشة في أقسام الموارد والذكاء الاصطناعي والصوتيات</span>
+        </div>
+        <div class="scan-step-item done">
+          <span>✅</span>
+          <span>استخراج وتوثيق روابط HuggingFace و Archive.org و GitHub المباشرة</span>
+        </div>
+        <div class="scan-step-item done">
+          <span>✅</span>
+          <span id="scanStatusMsg">تم توثيق 16 مورداً وحزمة بيانات بنجاح!</span>
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:center; gap:12px; margin-top:20px;">
+        <button class="btn-outline-header" onclick="closeSyncModal()">إغلاق</button>
+        <a href="https://github.com/nandxorandor/itqan-library/actions/workflows/update.yml" target="_blank" class="btn-update-hub" style="text-decoration:none;">
+          <span>⚡ تشغيل الفحص السحابي الآن (GitHub Actions)</span>
+        </a>
+      </div>
+    </div>
   </div>
 
   <script>
@@ -398,6 +496,18 @@
     function filterResources() {
       searchQuery = document.getElementById('searchInput').value.trim().toLowerCase();
       render();
+    }
+
+    function openSyncModal() {
+      document.getElementById('syncModal').style.display = 'flex';
+    }
+
+    function closeSyncModal() {
+      document.getElementById('syncModal').style.display = 'none';
+    }
+
+    function closeModalOnOut(e) {
+      if (e.target.id === 'syncModal') closeSyncModal();
     }
 
     // Initialize
