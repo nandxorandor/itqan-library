@@ -923,5 +923,1849 @@
         "src": "Community Video"
       }
     ]
+  },
+  {
+    "id": 41,
+    "title": "قالب مفتوح المصدر: ريلز قرآنية يومية تنشر تلقائيا على إنستغرام وفيسبوك وتيك توك",
+    "category": "tools",
+    "icon": "💻",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "F.A",
+    "discussionUrl": "https://community.itqan.dev/d/1003",
+    "discussionNum": "1003",
+    "description": "السلام عليكم ورحمة الله وبركاته، أشارككم مشروعًا أعمل عليه منذ أسابيع، وقد أتحتُه اليوم قالبًا مفتوح المصدر لمن أراد الاستفادة منه أو المساهمة فيه: 🔗 https://github.com/fad...",
+    "links": [
+      {
+        "name": "مستودع fadiabushabab-afk/quran-reels-template",
+        "url": "https://github.com/fadiabushabab-afk/quran-reels-template",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "title": "Quran Caption || Advanced Video Editor Especially For Quran Recitations",
+    "category": "fonts",
+    "icon": "✒️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "Iam-Muslim",
+    "discussionUrl": "https://community.itqan.dev/d/994",
+    "discussionNum": "994",
+    "description": "سلام عليكم إخواني من المشاريع الحلوة أوي المتاحة Open Source ومجاناً بالكامل وتقدر تغنيك عن برامج مشهورة زي Adobe Premiere أو CapCut في عمل فيديوهات القرآن العظيم هو برنامج...",
+    "links": [
+      {
+        "name": "مشاهدة الورشة المرئية",
+        "url": "https://www.youtube.com/@qurancaption/videos",
+        "src": "فيديو مسجل"
+      },
+      {
+        "name": "مستودع zonetecde/QuranCaption",
+        "url": "https://github.com/zonetecde/QuranCaption",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "title": "6 فرص لخدمة التقنيات القرآنية التقطتها من بودكاست  د.عبد الرحمن الشهري",
+    "category": "fonts",
+    "icon": "✒️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "علا صالح",
+    "discussionUrl": "https://community.itqan.dev/d/984",
+    "discussionNum": "984",
+    "description": "استمعت قبل أيام إلى حلقة مفيدة من بودكاست مع د. عبد الرحمن الشهري مدير مركز تفسير للدراسات القرآنية تحدث فيه عن أثر القرآن الكريم وإعجازه، ورحلته في تأسيس مشروعات تخدم القر...",
+    "links": [
+      {
+        "name": "مشاهدة الورشة المرئية",
+        "url": "https://www.youtube.com/watch?v=F06wXLJYZHc&amp;t=6737s",
+        "src": "فيديو مسجل"
+      },
+      {
+        "name": "مشاهدة الورشة المرئية",
+        "url": "https://www.youtube.com/watch?v=F06wXLJYZHc&amp;t=5167s",
+        "src": "فيديو مسجل"
+      },
+      {
+        "name": "مشاهدة الورشة المرئية",
+        "url": "https://www.youtube.com/watch?v=F06wXLJYZHc&amp;t=5083s",
+        "src": "فيديو مسجل"
+      },
+      {
+        "name": "مشاهدة الورشة المرئية",
+        "url": "https://www.youtube.com/watch?v=F06wXLJYZHc&amp;t=5493s",
+        "src": "فيديو مسجل"
+      },
+      {
+        "name": "مشاهدة الورشة المرئية",
+        "url": "https://www.youtube.com/watch?v=F06wXLJYZHc&amp;t=6477s",
+        "src": "فيديو مسجل"
+      },
+      {
+        "name": "مشاهدة الورشة المرئية",
+        "url": "https://www.youtube.com/watch?v=F06wXLJYZHc&amp;t=6332s",
+        "src": "فيديو مسجل"
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "title": "شبكة تفسير القرآن بين الآيات و الأحاديث",
+    "category": "tools",
+    "icon": "💻",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "mohamedsoubhi",
+    "discussionUrl": "https://community.itqan.dev/d/981",
+    "discussionNum": "981",
+    "description": "قاعدة بيانات رسومية تربط كل آية بتفسيرها عند التفاسير المختلفة، وتربط التفسير بأدلّته من آيات وأحاديث، بحيث يمكن تتبّع كل صلة إلى مصدرها. كمثال : تفسير ابن كثير نصّ طويل (1...",
+    "links": [
+      {
+        "name": "مستودع mohamed-soubhi/quran-graph",
+        "url": "https://github.com/mohamed-soubhi/quran-graph",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "title": "تحسين تصميم واضافات جديدة في المصحف الذكي",
+    "category": "fonts",
+    "icon": "✒️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "Ahmad Munir",
+    "discussionUrl": "https://community.itqan.dev/d/963",
+    "discussionNum": "963",
+    "description": "السلام عليكم ورحمها لله وبركاته، جزاكم الله خيرا على ملاحظاتكم على مشروع https://github.com/ahmadmounir/quran-library قمت بتحدي وتحسين بعض الامور بناءا على رؤيتكم وملاحظاتك...",
+    "links": [
+      {
+        "name": "مستودع ahmadmounir/quran-library",
+        "url": "https://github.com/ahmadmounir/quran-library",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "title": "جوائز بقيمة 200 ألف ريال لتحدي الذكاء الاصطناعي في خدمة المحتوى الإسلامي",
+    "category": "tools",
+    "icon": "💻",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "علا صالح",
+    "discussionUrl": "https://community.itqan.dev/d/799",
+    "discussionNum": "799",
+    "description": "ماذا لو تحولت فكرة لديك إلى مشروع يخدم المحتوى الإسلامي ويصل إلى مستخدمين حول العالم لفتني هذا التحدي من قبل مؤسسة باذل الأهلية والذي شاركني به أحد الأصدقاء وأرى أنه قد يهم...",
+    "links": [
+      {
+        "name": "الورقة البحثية المنشورة (PDF)",
+        "url": "https://islamicaich.org/files/Hackathon/i2xgA3mxVhrbRe0ReLlA86kTDbFZ9QQ9eb856dq8.pdf",
+        "src": "ورقة علمية"
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "title": "مهارة ذكاء اصطناعي لبناء تطبيقات للقرآن الكريم تتبع هيكل مصحف المدينة",
+    "category": "fonts",
+    "icon": "✒️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "هادي الأحمد",
+    "discussionUrl": "https://community.itqan.dev/d/751",
+    "discussionNum": "751",
+    "description": "السلام عليكم ورحمة الله وبركاته، نشر الأخ طارق @tarekeldeeb قبل أسابيع في المجتمع موضوعاً يستعرض فيه مكتبة يمكن استخدامها لتضمين النصّ القرأنيّ بنفس هيكل مصحف المدينة النبو...",
+    "links": [
+      {
+        "name": "مستودع hadealahmad/quran-madina-layout",
+        "url": "https://github.com/hadealahmad/quran-madina-layout",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "title": "«مسلم»: كيف بنينا مساعدًا صوتيًّا عربيًّا يعرض مصادره قبل أن يجيب",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "Yahya Elnawasany",
+    "discussionUrl": "https://community.itqan.dev/d/739",
+    "discussionNum": "739",
+    "description": "«مسلم»: مساعدٌ صوتيٌّ عربي يعرض مصادره قبل أن يجيب السلام عليكم ورحمة الله وبركاته، أنا أخوكم يحيى النوساني ، مطوّر ومصمّم «مسلم» — أوّل رفيقٍ صوتيٍّ عربيٍّ للمعرفة الإسلام...",
+    "links": [
+      {
+        "name": "مستودع NightPrinceY/muslim-quran-validator",
+        "url": "https://github.com/NightPrinceY/muslim-quran-validator",
+        "src": "GitHub"
+      },
+      {
+        "name": "حزمة NightPrince/Muslim-6B-PRO",
+        "url": "https://huggingface.co/NightPrince/Muslim-6B-PRO",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "حزمة NightPrince/Fasih-TTS-V1",
+        "url": "https://huggingface.co/NightPrince/Fasih-TTS-V1",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "حزمة NightPrince/Nemo-Arabic-STT-Diacritized",
+        "url": "https://huggingface.co/NightPrince/Nemo-Arabic-STT-Diacritized",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "مستودع NightPrinceY/hadith-mcp",
+        "url": "https://github.com/NightPrinceY/hadith-mcp",
+        "src": "GitHub"
+      },
+      {
+        "name": "مستودع NightPrinceY/Hadith_Search",
+        "url": "https://github.com/NightPrinceY/Hadith_Search",
+        "src": "GitHub"
+      },
+      {
+        "name": "حزمة NightPrince/quran-validator",
+        "url": "https://huggingface.co/spaces/NightPrince/quran-validator",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "مستودع NightPrinceY",
+        "url": "https://github.com/NightPrinceY",
+        "src": "GitHub"
+      },
+      {
+        "name": "منظومة NightPrince",
+        "url": "https://huggingface.co/NightPrince",
+        "src": "HuggingFace"
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "title": "QuranTech Skill : مهارة لبناء التطبيقات القرآنية",
+    "category": "audio",
+    "icon": "🔊",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "عبيد",
+    "discussionUrl": "https://community.itqan.dev/d/659",
+    "discussionNum": "659",
+    "description": "السلام عليكم .. أطلقنا QuranTech: مهارة (Agent Skill) تزوّد المساعدات البرمجية بالمعرفة التي تحتاجها تطبيقات القرآن — عرض المصحف، القراءات العشر وفروق العدّ، التجويد، التلا...",
+    "links": [
+      {
+        "name": "مستودع quranpedia/qurantech-skill",
+        "url": "https://github.com/quranpedia/qurantech-skill",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "title": "خادم MCP فوق واجهة Quranpedia",
+    "category": "tools",
+    "icon": "💻",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "عادل بن يحي",
+    "discussionUrl": "https://community.itqan.dev/d/639",
+    "discussionNum": "639",
+    "description": "سبق أن شرحتُ في هذا الموضوع كيفية بناء خادم quran-search-engine-mcp . استخدمتُ القاعدة البرمجية نفسها لبناء خادم MCP جديد حول واجهة Quranpedia API ، باسم quranpedia-mcp . م...",
+    "links": [
+      {
+        "name": "api.quranpedia.net",
+        "url": "https://api.quranpedia.net/v1",
+        "src": "بوابة صوتية / API"
+      },
+      {
+        "name": "مستودع adelpro/quranpedia-mcp",
+        "url": "https://github.com/adelpro/quranpedia-mcp",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "title": "تنقيح دليل تحرير أرامكو وتكثيف عباراته ليتناسب مع بنية النماذج اللغوية",
+    "category": "fonts",
+    "icon": "✒️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "كمال ياسر",
+    "discussionUrl": "https://community.itqan.dev/d/605",
+    "discussionNum": "605",
+    "description": "السلام عليكم ورحمة الله وبركاته. انطلاقاً من اللفتة النافعة التي طرحها الأستاذ الفاضل هادي أحمد في موضوع (منصة خطيب) على المجتمع، إذ نوه برابط [دليل التحرير العربي لأرامكو ...",
+    "links": [
+      {
+        "name": "مستودع kamalyaser31/arabic-guide",
+        "url": "https://github.com/kamalyaser31/arabic-guide",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "title": "هل من تجارب استضافة ل Serverless GPU؟",
+    "category": "tools",
+    "icon": "💻",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "محمد طارق",
+    "discussionUrl": "https://community.itqan.dev/d/586",
+    "discussionNum": "586",
+    "description": "ابحث عن توصيات لمزود خدمة Serverless GPU اعمل حاليا علي نسخة منجم التي جهزها @علي ملص وحجم نسخة دوكر وصل لما يقارب 10 جيجا وأحتاج لمنصة تضمن: دعم رفع وتشغيل Docker containe...",
+    "links": [
+      {
+        "name": "مستودع alinice1998/munajjam-backend",
+        "url": "https://github.com/alinice1998/munajjam-backend",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "title": "تجربتي مع QuranLM: كيف بنيتُ تطبيقًا بـ Stack محلّية بالكامل داخل المتصفّح",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "عادل بن يحي",
+    "discussionUrl": "https://community.itqan.dev/d/580",
+    "discussionNum": "580",
+    "description": "كنتُ أريد تحقيق هدفٍ معظمه تحدّيات هندسيّة: تشغيل نموذج لغوي بوزن يقارب 2 جيجابايت داخل متصفّح المستخدم مباشرةً ؛ بحيث يقرأ الأسئلة باللغة العربية، ويسترجع الآيات والتفاسير...",
+    "links": [
+      {
+        "name": "حزمة blog/cross-origin-storage",
+        "url": "https://huggingface.co/blog/cross-origin-storage",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "مستودع adelpro/quranlm",
+        "url": "https://github.com/adelpro/quranlm",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "title": "فَسِّرْلي: باحث ومفسر قرآني ذكي يعتمد على بروتوكول (MCP) لضبط إجابات الـ AI",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "علي ملص",
+    "discussionUrl": "https://community.itqan.dev/d/563",
+    "discussionNum": "563",
+    "description": "الهلوسة من أبرز التحديات التي تواجهنا عند دمج نماذج الاصطناعي في التطبيقات القرآنية، حيث قد يؤلف النموذج تفسيرًا أو إعرابًا غير دقيق، ما يؤدي إلى تعلم ومعرفة معلومات خاطئة....",
+    "links": [
+      {
+        "name": "مستودع alinice1998/Fasserly",
+        "url": "https://github.com/alinice1998/Fasserly",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "title": "تتمة لمشروع أداة تسميع فوق Quran Muaalem — كشف اللحن الجليّ",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "omar34",
+    "discussionUrl": "https://community.itqan.dev/d/834",
+    "discussionNum": "834",
+    "description": "(( التحديث الثاني )) : السلام عليكم ارجو المساعدة في نشر هذا العمل توثيق تطوير أداة التسميع فوق نظام Muaalem — مشروع مصحف السراج المستودع العام للكود والتقارير والفيديو: ht...",
+    "links": [
+      {
+        "name": "مستودع omarhfs34-ops/tasmee3-muaalem-findings",
+        "url": "https://github.com/omarhfs34-ops/tasmee3-muaalem-findings",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "title": "برنامج التسميع \"عرض\"  لتجربة التسميع ومتابعة الحفظ ",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "NacerTahri",
+    "discussionUrl": "https://community.itqan.dev/d/760",
+    "discussionNum": "760",
+    "description": "التحميل من هنا شرح مشروع التسميع الذكي \"عرض\" عرض : تعني تسميع الآيات القرآنية على شيخ في المدارس القرآنيه بشمال افريقيا. تطبيق ويب محلي لتسميع القرآن الكريم برواية حفص عن ع...",
+    "links": [
+      {
+        "name": "مستودع Iam-Muslim/ReciteQuran",
+        "url": "https://github.com/Iam-Muslim/ReciteQuran",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "title": "تتمة لمشروع أداة تسميع فوق Quran Muaalem — كشف اللحن الجليّ",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "omar34",
+    "discussionUrl": "https://community.itqan.dev/d/755",
+    "discussionNum": "755",
+    "description": "بسم الله الرحمن الرحيم الحمد لله و الصلاة والسلام على سيدنا محمد وعلى آله وأصحابه أجمعين.. أما بعد كانت مشاركتي السابقة : أداة تسميع فوق Quran Muaalem — كشف اللحن الجليّ و ...",
+    "links": [
+      {
+        "name": "حزمة https:/huggingface.co",
+        "url": "https://huggingface.co",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "حزمة omar-abu-hfs-siraj/tasmee3-muaalem-findings",
+        "url": "https://huggingface.co/datasets/omar-abu-hfs-siraj/tasmee3-muaalem-findings",
+        "src": "HuggingFace"
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "title": "المُقرئ — تطبيق أندرويد لتصحيح التلاوة كلمةً بكلمة، يعمل بالكامل على الجهاز",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "Ahmed Al Tamimi",
+    "discussionUrl": "https://community.itqan.dev/d/723",
+    "discussionNum": "723",
+    "description": "السلام عليكم ورحمة الله وبركاته، الحمد لله و الصلاة و السلام على رسول الله ... أما بعد .. يسعدني أن أشارككم إطلاق تطبيق المُقرئ على متجر غوغل بلاي. التطبيق مجاني ... يعرض ا...",
+    "links": [
+      {
+        "name": "مستودع nandxorandor/al-muqri",
+        "url": "https://github.com/nandxorandor/al-muqri",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "title": "🎙️ رحلتنا في تطوير محرك التسميع القرآني وتقليل التفاعل اليدوي في تطبيـق \"تثبيت\"",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "محمد شهبون",
+    "discussionUrl": "https://community.itqan.dev/d/717",
+    "discussionNum": "717",
+    "description": "بسم الله الرحمن الرحيم السلام عليكم ورحمة الله وبركاته، إخواننا وأخواتنا في مجتمع إتقان (itqan.dev) الكريم 🌿، يسرّنا أن نشارككم تجربتنا والتحسينات التقنية التي قمنا بتنفيذه...",
+    "links": [
+      {
+        "name": "مستودع Iam-Muslim/ReciteQuran",
+        "url": "https://github.com/Iam-Muslim/ReciteQuran",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "title": "أداة تسميع فوق Quran Muaalem — كشف اللحن الجليّ",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "omar34",
+    "discussionUrl": "https://community.itqan.dev/d/702",
+    "discussionNum": "702",
+    "description": "بسم الله الرحمن الرحيم، والحمد لله، والصلاة والسلام على رسول الله ﷺ الغاية أداةٌ تعين معلّمَ القرآن: يسمّع الطالبُ آيةً، فتُنبّه الأداةُ إلى موضع الخطأ — كلمةٍ أُسقِطت، أو ...",
+    "links": [
+      {
+        "name": "حزمة omar-abu-hfs-siraj/tasmee3-muaalem-findings",
+        "url": "https://huggingface.co/datasets/omar-abu-hfs-siraj/tasmee3-muaalem-findings",
+        "src": "HuggingFace"
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "title": "محفوظ: برنامج فلاتر لويندوز لتسميع القرآن دون الحاجة لإنترنت يعمل على CPU",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "علي ملص",
+    "discussionUrl": "https://community.itqan.dev/d/676",
+    "discussionNum": "676",
+    "description": "متابعة وتصحيح التلاوة والتسميع الصوتي لحظيًا من أهم المزايا التي نريد تطويرها في تطبيقات القرآن لأن لها الكثير من الفوائد للمسلمين، لكن عند النظر إلى التطبيقات الموجودة حال...",
+    "links": [
+      {
+        "name": "مستودع alinice1998/mahfoodh",
+        "url": "https://github.com/alinice1998/mahfoodh/releases/tag/v1.0.0",
+        "src": "GitHub"
+      },
+      {
+        "name": "مستودع alinice1998/mahfoodh",
+        "url": "https://github.com/alinice1998/mahfoodh",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "title": " تصحيح التلاوة بالذكاء الاصطناعي: النموذج وحده لا يكفي — نحتاج «مُحرِّكاً»",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": " (iPhoneIslam) Tarek Mansour",
+    "discussionUrl": "https://community.itqan.dev/d/584",
+    "discussionNum": "584",
+    "description": "تصحيح التلاوة بالذكاء الاصطناعي من أهمّ ما يسعى مجتمع مطوّري التطبيقات الإسلامية لإتقانه، ولدينا بفضل الله جهودٌ ومصادر مفتوحة رائعة، أبرزها جهود أخينا عبدالله في القرآن ال...",
+    "links": [
+      {
+        "name": "مستودع obadx/quran-muaalem",
+        "url": "https://github.com/obadx/quran-muaalem",
+        "src": "GitHub"
+      },
+      {
+        "name": "منظومة Quran-Lab",
+        "url": "https://huggingface.co/Quran-Lab",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "مستودع Iam-Muslim/ReciteQuran",
+        "url": "https://github.com/Iam-Muslim/ReciteQuran",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "title": "برنامج تسميع للقران العظيم على الهاتف عن طريق موديل Zipformer Streaming Model",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "Iam-Muslim",
+    "discussionUrl": "https://community.itqan.dev/d/535",
+    "discussionNum": "535",
+    "description": "سلام عليكم قلت انه افضل من Tarteel ai لانه في سبيل الله سبحانه و تعالى يعمل عن طريق موديل افضل من الموديل المستخدم في ترتيل و هو موديل بيخرج فونيمات يمكنك اكتشاف اخطاء التج...",
+    "links": [
+      {
+        "name": "مستودع Iam-Muslim/ReciteQuran",
+        "url": "https://github.com/Iam-Muslim/ReciteQuran",
+        "src": "GitHub"
+      },
+      {
+        "name": "مستودع user-attachments/assets",
+        "url": "https://github.com/user-attachments/assets/42fc7e30-8a39-44bf-a4b9-9a3b48135e94",
+        "src": "GitHub"
+      },
+      {
+        "name": "مستودع user-attachments/assets",
+        "url": "https://github.com/user-attachments/assets/357b58a4-3a84-4880-bce6-856c0092f211",
+        "src": "GitHub"
+      },
+      {
+        "name": "مستودع user-attachments/assets",
+        "url": "https://github.com/user-attachments/assets/71bc8cb1-0c01-4eee-8053-3427fa0e0f99",
+        "src": "GitHub"
+      },
+      {
+        "name": "مستودع user-attachments/assets",
+        "url": "https://github.com/user-attachments/assets/ce275229-65fd-435d-921e-de590eeecba6",
+        "src": "GitHub"
+      },
+      {
+        "name": "حزمة Muno459/zipformer_p-quran",
+        "url": "https://huggingface.co/Muno459/zipformer_p-quran",
+        "src": "HuggingFace"
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "title": "قرآني : واجهات برمجة القرآن ومصحح التلاوة بالذكاء الاصطناعي",
+    "category": "audio",
+    "icon": "🔊",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "Seif Reda",
+    "discussionUrl": "https://community.itqan.dev/d/286",
+    "discussionNum": "286",
+    "description": "السلام عليكم ورحمة الله وبركاته، يسعدني أن أشارك مجتمع إتقان بمشروع Qurani.ai ، وهو منصة بنية تحتية تقنية تهدف إلى تمكين المطورين والباحثين ورواد المنتجات الرقمية من بناء ت...",
+    "links": [
+      {
+        "name": "مستودع misraj-ai/quranhub",
+        "url": "https://github.com/misraj-ai/quranhub",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "title": "الإعلان عن Iqra'Eval.2 | أول معيار عالمي لتقويم النطق العربي بالتلاوة",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "معاذ يوسف",
+    "discussionUrl": "https://community.itqan.dev/d/151",
+    "discussionNum": "151",
+    "description": "بعد مشاركة فرق بحثية من أكثر من 40 دولة في Iqra'Eval.1 ضمن مؤتمر ArabicNLP 2025؛ أعلن المنظمون عن إطلاق النسخة الثانية ضمن مؤتمر Interspeech 2026 في سيدني - أستراليا، في ال...",
+    "links": [
+      {
+        "name": "حزمة IqraEval/IqraEval_Interspeech_26",
+        "url": "https://huggingface.co/spaces/IqraEval/IqraEval_Interspeech_26",
+        "src": "HuggingFace"
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "title": "مشروع الإستفادة من موديل الذكاء الاصطناعي (المعلم القرآني) - وواجهة iOS",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": " (iPhoneIslam) Tarek Mansour",
+    "discussionUrl": "https://community.itqan.dev/d/116",
+    "discussionNum": "116",
+    "description": "كلنا رأينا مشروع ( المعلم القرآني ) هذا المشروع المبارك المميز، الذي يسهل بشكل كبير قدرة الذكاء الاصطناعي لتقييم التلاوة عن طريق تطوير رسم صوتي للقرآن الكريم يصف كل قواعد ا...",
+    "links": [
+      {
+        "name": "مستودع obadx/quran-muaalem",
+        "url": "https://github.com/obadx/quran-muaalem",
+        "src": "GitHub"
+      },
+      {
+        "name": "your-api.modal.run",
+        "url": "https://your-api.modal.run/api/analyze-by-verse",
+        "src": "بوابة صوتية / API"
+      },
+      {
+        "name": "مستودع MIMV/Quran-Muaalem-iOS",
+        "url": "https://github.com/MIMV/Quran-Muaalem-iOS",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "title": "نظام يتتبع التلاوه بالذكاء الاصطناعي ",
+    "category": "fonts",
+    "icon": "✒️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "yahyamahroof",
+    "discussionUrl": "https://community.itqan.dev/d/112",
+    "discussionNum": "112",
+    "description": "نظام مخصص لتتبع تلاوة القرآن الكريم مشروع مفتوح المصدر يعتمد على الذكاء الاصطناعي يتيح تتبع التلاوة القرآنية كلمة بكلمة، يهدف المشروع إلى دعم حفظ القرآن وتحسين الدقة، مع ال...",
+    "links": [
+      {
+        "name": "مستودع yayaiu6/Real-Time-Quran-recitation-tracker-System",
+        "url": "https://github.com/yayaiu6/Real-Time-Quran-recitation-tracker-System",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "title": "نظام يتفوق في أداءه للنطق القرآني على أدائه في اللغة العربية | مهمة Iqra’Eval",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "ناريمان كمال الدين",
+    "discussionUrl": "https://community.itqan.dev/d/89",
+    "discussionNum": "89",
+    "description": "ضمن الجهود الهادفة إلى بناء أول معيار علمي عالمي لتقويم النطق العربي على مستوى الفونيم، شارك باحثون من مختلف الدول في المهمة البحثية Iqra’Eval ، التي قدمت دراسات متقدمة لتو...",
+    "links": [
+      {
+        "name": "حزمة IqraEval/SharedTask_ArabicNLP2025",
+        "url": "https://huggingface.co/spaces/IqraEval/SharedTask_ArabicNLP2025",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "الورقة البحثية المنشورة (PDF)",
+        "url": "https://aclanthology.org/2025.arabicnlp-sharedtasks.62.pdf",
+        "src": "ورقة علمية"
+      },
+      {
+        "name": "حزمة facebook/wav2vec2-xls-r-1b",
+        "url": "https://huggingface.co/facebook/wav2vec2-xls-r-1b",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "مستودع Hetchy/Quranic-Phonemizer",
+        "url": "https://github.com/Hetchy/Quranic-Phonemizer",
+        "src": "GitHub"
+      },
+      {
+        "name": "everyayah.com",
+        "url": "https://everyayah.com/",
+        "src": "بوابة صوتية / API"
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "title": "تجربة تحويل Whisper إلى محلل فونيم لتلاوة القرآن: واحدة من أبرز دراسات Iqra'Eval",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "محمد شريف",
+    "discussionUrl": "https://community.itqan.dev/d/85",
+    "discussionNum": "85",
+    "description": "انطلقت فعاليات مهمة Iqra’Eval المشتركة في مؤتمر ArabicNLP 2025 في مدينة سوجو الصينية. وهي مهمة بحثية تهدف إلى تقديم أول معيار دولي لتقويم النطق القرآني. وقد شارك العديد من ...",
+    "links": [
+      {
+        "name": "الورقة البحثية المنشورة (PDF)",
+        "url": "https://aclanthology.org/2025.arabicnlp-sharedtasks.64.pdf",
+        "src": "ورقة علمية"
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "title": "Iqra’Eval مهمة بحثية ضمن ArabicNLP 2025 لكشف أخطاء التلاوة بالذكاء الاصطناعي",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "علا صالح",
+    "discussionUrl": "https://community.itqan.dev/d/83",
+    "discussionNum": "83",
+    "description": "تُمثّل Iqra’Eval أول مبادرة دولية في التقويم الآلي للنطق العربي بالاعتماد على التلاوة القرآنية كنموذج معياري تهدف إلى تطوير أدوات ذكاء اصطناعي قادرة على كشف وتشخيص أخطاء ال...",
+    "links": [
+      {
+        "name": "حزمة IqraEval/SharedTask_ArabicNLP2025",
+        "url": "http://huggingface.co/spaces/IqraEval/SharedTask_ArabicNLP2025",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "حزمة IqraEval/Iqra_train",
+        "url": "https://huggingface.co/datasets/IqraEval/Iqra_train",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "مستودع nawarhalabi/Arabic-Phonetiser",
+        "url": "https://github.com/nawarhalabi/Arabic-Phonetiser",
+        "src": "GitHub"
+      },
+      {
+        "name": "حزمة IqraEval/SharedTask_ArabicNLP2025",
+        "url": "https://huggingface.co/spaces/IqraEval/SharedTask_ArabicNLP2025",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "مستودع Iqra-Eval/interspeech_IqraEval",
+        "url": "https://github.com/Iqra-Eval/interspeech_IqraEval",
+        "src": "GitHub"
+      },
+      {
+        "name": "منظومة IqraEval",
+        "url": "https://huggingface.co/IqraEval",
+        "src": "HuggingFace"
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "title": "تطبيق اختباري مفتوح المصدر لأختبار موديل ترتيل لتحويل الصوت إلى قرآن",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": " (iPhoneIslam) Tarek Mansour",
+    "discussionUrl": "https://community.itqan.dev/d/78",
+    "discussionNum": "78",
+    "description": "السلام عليكم ورحمة الله وبركاته أعمل حالياً على تطبيق قرآن كريم على منصات آبل، الهدف من التطبيق آن يقدم تجربة مستخدم جيدة، مع دعمه لتقنيات حديثة. لأنه في رأيي تطبيقات القرآ...",
+    "links": [
+      {
+        "name": "مستودع MIMV/QuranWhisperKit.git",
+        "url": "https://github.com/MIMV/QuranWhisperKit.git",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "title": "مشروع اقرأ القرآن: مصحح تلاوة بالذكاء الاصطناعي ومفتوح المصدر",
+    "category": "fonts",
+    "icon": "✒️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "أبو بكر عبد الرحمن",
+    "discussionUrl": "https://community.itqan.dev/d/57",
+    "discussionNum": "57",
+    "description": "مصحح تلاوة آلي، كأداة تفاعلية تساعدك على تحسين تلاوتك للقرآن الكريم. تعمل على الويب والهاتف، وتوفر واجهة برمجية API بسيطة لمن يريد دمجها في مشاريع أخرى. مشروع مفتوح المصدر ...",
+    "links": [
+      {
+        "name": "مستودع Itqan-community/iqra-al-quran",
+        "url": "https://github.com/Itqan-community/iqra-al-quran",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "title": "أفضل النماذج مفتوحة المصدر للتعرف الصوتي على القرآن الكريم",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "علا صالح",
+    "discussionUrl": "https://community.itqan.dev/d/24",
+    "discussionNum": "24",
+    "description": "مرحبًا مجتمع إتقان عند مباشرتي للعمل على تطوير تطبيق تصحيح التلاوة باستخدام الذكاء الاصطناعي كان أول ما فكرت به هو البحث عن النموذج المناسب لتحويل التلاوة القرآنية إلى نص م...",
+    "links": [
+      {
+        "name": "مستودع openai/whisper",
+        "url": "https://github.com/openai/whisper",
+        "src": "GitHub"
+      },
+      {
+        "name": "حزمة tarteel-ai/whisper-base-ar-quran",
+        "url": "https://huggingface.co/tarteel-ai/whisper-base-ar-quran",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "حزمة tarteel-ai/whisper-tiny-ar-quran",
+        "url": "https://huggingface.co/tarteel-ai/whisper-tiny-ar-quran",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "حزمة model_doc/wav2vec2",
+        "url": "https://huggingface.co/docs/transformers/en/model_doc/wav2vec2",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "حزمة IbrahimSalah/Wav2vecLarge_quran_syllables_recognition",
+        "url": "https://huggingface.co/IbrahimSalah/Wav2vecLarge_quran_syllables_recognition",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "حزمة HamzaSidhu786/wav2vec2-base-word-by-word-quran-asr",
+        "url": "https://huggingface.co/HamzaSidhu786/wav2vec2-base-word-by-word-quran-asr",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "حزمة nvidia/stt_ar_fastconformer_hybrid_large_pcd_v1.0",
+        "url": "https://huggingface.co/nvidia/stt_ar_fastconformer_hybrid_large_pcd_v1.0",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "حزمة MostafaAhmed98/Conformer-CTC-Arabic-ASR",
+        "url": "https://huggingface.co/MostafaAhmed98/Conformer-CTC-Arabic-ASR",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "مستودع kaldi-asr/kaldi",
+        "url": "https://github.com/kaldi-asr/kaldi",
+        "src": "GitHub"
+      },
+      {
+        "name": "مستودع alphacep/vosk-api",
+        "url": "https://github.com/alphacep/vosk-api",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "title": "من النص إلى التجويد: التحدي الخفي أمام أنظمة التعرف الصوتي",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "Dina Ahmed",
+    "discussionUrl": "https://community.itqan.dev/d/23",
+    "discussionNum": "23",
+    "description": "مرحبًا مجتمع إتقان كنت قد تحدثت في موضوع سابق عن التحديات التي تواجه التعرف الصوتي على القرآن الكريم من نماذج الذكاء الاصطناعي ؛ وفي موضوع اليوم أكمل ما بدأته بتطبيق عملي ي...",
+    "links": [
+      {
+        "name": "الورقة البحثية المنشورة (PDF)",
+        "url": "https://arxiv.org/abs/2106.13000?",
+        "src": "ورقة علمية"
+      },
+      {
+        "name": "الورقة البحثية المنشورة (PDF)",
+        "url": "https://scispace.com/pdf/towards-a-minimal-phonetic-set-for-quran-recitation-3ma5ukexhu.pdf",
+        "src": "ورقة علمية"
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "title": "المصحف المدني مع ادوات مميزة مفتوحة المصدر",
+    "category": "fonts",
+    "icon": "✒️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "Ahmad Munir",
+    "discussionUrl": "https://community.itqan.dev/d/953",
+    "discussionNum": "953",
+    "description": "السلام عليكم ورحمة الله وبركاته إخواني وأساتذتي المطورين.. كثير منا لما يفكر يبني تطبيق أو موقع للقرآن، بيواجه التحدي المعتاد: كيف نعرض \"مصحف المدينة\" بشكله الأصلي المطابق ...",
+    "links": [
+      {
+        "name": "مستودع ahmadmounir/quran-libary",
+        "url": "https://github.com/ahmadmounir/quran-libary",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "title": "مجلس القران  || Quran Maglis ",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "Iam-Muslim",
+    "discussionUrl": "https://community.itqan.dev/d/936",
+    "discussionNum": "936",
+    "description": "بفضل الله وبرحمته - و ما اسالكم عليه اجرا ان اجري الا على رب العالمين الحمد لله الذي هدانا لهذا وما كنا لنهتدي لولا ان هدانا الله. انه بسم الله الرحمن الرحيم سلام عليكم حبي...",
+    "links": [
+      {
+        "name": "مستودع Recite-Quran/Natlu",
+        "url": "https://github.com/Recite-Quran/Natlu/tree/Natlu-%D8%A7%D9%84%D8%AD%D9%85%D8%AF%D9%84%D9%84%D9%87/lib/maglis",
+        "src": "GitHub"
+      },
+      {
+        "name": "مستودع Recite-Quran/Natlu",
+        "url": "https://github.com/Recite-Quran/Natlu",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "title": "قبل بناء قارئ مصحف: دليل من تجربة نداء، وأداة مفتوحة المصدر لتوليد صور الصفحات",
+    "category": "fonts",
+    "icon": "✒️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "F2had",
+    "discussionUrl": "https://community.itqan.dev/d/920",
+    "discussionNum": "920",
+    "description": "السلام عليكم ورحمة الله وبركاته، لمن يعمل على تطبيق مصحف: هذه خلاصة تجربتنا في نداء مع عرض الصفحات صورًا، والأداة التي نولّد بها الصور. الدليل: https://nedaa.dev/ar/docs/bu...",
+    "links": [
+      {
+        "name": "مستودع NedaaDevs/quran-image-generator",
+        "url": "https://github.com/NedaaDevs/quran-image-generator",
+        "src": "GitHub"
+      },
+      {
+        "name": "مستودع quran-ws/quran-engine",
+        "url": "https://github.com/quran-ws/quran-engine",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "title": "باكيج إضافة آيات القرآن لمحرر summernote",
+    "category": "tools",
+    "icon": "💻",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "Ahmet Yusuf",
+    "discussionUrl": "https://community.itqan.dev/d/857",
+    "discussionNum": "857",
+    "description": "السلام عليكم ورحمة الله وبركاته قبل حوالي سنة٫ قمت بانشاء هذا الباكيج https://github.com/ahmadyousefdev/summernote-quran/ يقوم بإضافة آيات القرآن الكريم إلى محرر summernote...",
+    "links": [
+      {
+        "name": "مستودع ahmadyousefdev/summernote-quran",
+        "url": "https://github.com/ahmadyousefdev/summernote-quran/",
+        "src": "GitHub"
+      },
+      {
+        "name": "مستودع ahmadyousefdev/summernote-quran",
+        "url": "https://github.com/ahmadyousefdev/summernote-quran/blob/main/dist/index.html",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "title": "🎙️معالجة وتطوير مصحف الحصري (المعلم) بالذكاء الاصطناعي عبر نموذج SAWT V4",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "محمد",
+    "discussionUrl": "https://community.itqan.dev/d/854",
+    "discussionNum": "854",
+    "description": "السلام عليكم ورحمة الله وبركاته، إخوتي وأخواتي في مجتمع إتقان، انطلاقاً من الحرص على خدمة كتاب الله وتوفير تلاوات قرآنية نقية وعالية الجودة للمطورين وتطبيقات القرآن الكريم،...",
+    "links": [
+      {
+        "name": "أرشيف mo3lm-7sri-H",
+        "url": "https://archive.org/details/mo3lm-7sri-H",
+        "src": "Archive.org"
+      },
+      {
+        "name": "حزمة Quran-Lab/sawt-v4",
+        "url": "https://huggingface.co/Quran-Lab/sawt-v4",
+        "src": "HuggingFace"
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "title": "مراجعة المصطلحات القرآنية: تحديث v0.4.0",
+    "category": "tools",
+    "icon": "💻",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "abdullah mohammed",
+    "discussionUrl": "https://community.itqan.dev/d/843",
+    "discussionNum": "843",
+    "description": "السلام عليكم، شارك الأخ عبيد في المجتمع النسخة التجريبية من mp3quran API v4 . وأثناء مراجعتها بأداة Quranic Terminology Lint، ظهرت مصطلحات نحتاج إلى إضافتها، وبعض الاقتراحا...",
+    "links": [
+      {
+        "name": "مستودع realabdu/quranic-terminology-lint",
+        "url": "https://github.com/realabdu/quranic-terminology-lint/releases/tag/v0.4.0",
+        "src": "GitHub"
+      },
+      {
+        "name": "مستودع realabdu/quranic-terminology-lint",
+        "url": "https://github.com/realabdu/quranic-terminology-lint",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "title": "مراجعة المصطلحات القرآنية قبل الـ commit",
+    "category": "fonts",
+    "icon": "✒️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "abdullah mohammed",
+    "discussionUrl": "https://community.itqan.dev/d/816",
+    "discussionNum": "816",
+    "description": "السلام عليكم، في 2021، بدأت أول وظيفة لي كمهندس برمجيات متدرب في الـ backend. وكانت الـ pre-commit hooks من أوائل الأدوات التي طلب مني senior engineers تثبيتها، لتراجع الكو...",
+    "links": [
+      {
+        "name": "مستودع realabdu/quranic-vocab",
+        "url": "https://github.com/realabdu/quranic-vocab",
+        "src": "GitHub"
+      },
+      {
+        "name": "مستودع realabdu/quranic-terminology-lint",
+        "url": "https://github.com/realabdu/quranic-terminology-lint",
+        "src": "GitHub"
+      },
+      {
+        "name": "مستودع realabdu/quranic-terminology-lint",
+        "url": "https://github.com/realabdu/quranic-terminology-lint/blob/v0.3.0/README.md",
+        "src": "GitHub"
+      },
+      {
+        "name": "مستودع realabdu/quranic-terminology-lint",
+        "url": "https://github.com/realabdu/quranic-terminology-lint/releases/tag/v0.3.0",
+        "src": "GitHub"
+      },
+      {
+        "name": "مستودع quran-center/quran-meta",
+        "url": "https://github.com/quran-center/quran-meta/tree/a5dd4a46dc6f7830a4303e89c3b4b3a15a213ac9",
+        "src": "GitHub"
+      },
+      {
+        "name": "مستودع hci-lab/PyQuran",
+        "url": "https://github.com/hci-lab/PyQuran/tree/24c70e4e7315cd12b05d2b2f4c703b495e029f92",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 82,
+    "title": " باحث قرآني بالعربي - Fast Arabic Text Classification for LLM-Free Quran Search",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "Jyad",
+    "discussionUrl": "https://community.itqan.dev/d/813",
+    "discussionNum": "813",
+    "description": "السلام عليكم ورحمة الله وبركاته، أشارككم أداة مفتوحة المصدر: quran-jeb — تسأل بالعربية (مثل: وين ذكرت كلمة الرحمن؟ أو كم مرة تكررت كلمة الصلاة؟ ) فتحصل على كل المواضع بعنوا...",
+    "links": [
+      {
+        "name": "حزمة IJyad/jeb",
+        "url": "https://huggingface.co/IJyad/jeb",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "مستودع quran-ws/quran-text",
+        "url": "https://github.com/quran-ws/quran-text",
+        "src": "GitHub"
+      },
+      {
+        "name": "حزمة IJyad/quran-jeb",
+        "url": "https://huggingface.co/spaces/IJyad/quran-jeb",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "مستودع MrJYAD/quran-jeb",
+        "url": "https://github.com/MrJYAD/quran-jeb",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "title": "جديد Quran Engine : الزوم وإعادة ترتيب صفحات المصحف",
+    "category": "fonts",
+    "icon": "✒️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "عبيد",
+    "discussionUrl": "https://community.itqan.dev/d/800",
+    "discussionNum": "800",
+    "description": "السلام عليكم ورحمة الله وبركاته، نسلط الضوء في هذا المقال على عدة تحديثات في محرك Quran Engine ، بهدف تقديم تجربة مثالية لعرض المصحف في مختلف المنصات بأفضل أداء ممكن. صفحات...",
+    "links": [
+      {
+        "name": "مستودع quran-ws/quran-engine",
+        "url": "https://github.com/quran-ws/quran-engine/",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 84,
+    "title": "َQVP و quran-engine — طبقة جديدة لبناء تطبيقات المصحف",
+    "category": "fonts",
+    "icon": "✒️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "عبيد",
+    "discussionUrl": "https://community.itqan.dev/d/784",
+    "discussionNum": "784",
+    "description": "السلام عليكم في الموضوع السابق تحدثنا عن Quran.ws والمكوّنات التي نحاول توفيرها للمطورين حتى لا يبدأ كل مشروع قرآني من الصفر. أحد هذه المكوّنات هو quran-svg-elements : صفحا...",
+    "links": [
+      {
+        "name": "مستودع quran-ws/quran-engine",
+        "url": "https://github.com/quran-ws/quran-engine",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 85,
+    "title": "أول مصحف معلّم مبني على الختمة الإذاعية الثانية للمنشاوي (1965م)",
+    "category": "fonts",
+    "icon": "✒️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "كمال ياسر",
+    "discussionUrl": "https://community.itqan.dev/d/762",
+    "discussionNum": "762",
+    "description": "السلام عليكم ورحمة الله وبركاته. عُرف \"المصحف المعلّم\" المنسوب للشيخ محمد صديق المنشاوي (رحمه الله) في تلقين كتاب الله؛ غير أن نسخه المتداولة لم تكن تسجيلاً تعليمياً مقصودا...",
+    "links": [
+      {
+        "name": "مستودع kamalyaser31/minshawi",
+        "url": "https://github.com/kamalyaser31/minshawi",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 86,
+    "title": " 📖 من نقاش حول «توحيد المصطلحات» إلى تدقيق كامل للنص القرآني",
+    "category": "fonts",
+    "icon": "✒️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "محمد شهبون",
+    "discussionUrl": "https://community.itqan.dev/d/718",
+    "discussionNum": "718",
+    "description": "«قبل أن نوحّد أسماء الحزم والمصطلحات البرمجية، الأولوية القصوى والأمانة الأولى هي أن نمتلك قواعد بيانات نظيفة وموثوقة بنسبة 100% لكتاب الله بروايتي حفص وورش.» 💡 نقطة البداي...",
+    "links": [
+      {
+        "name": "مستودع M97Chahboun/quran-database-verifier",
+        "url": "https://github.com/M97Chahboun/quran-database-verifier",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "title": "Munajjam Desktop: مزامنة محلية للتلاوات على مستوى الأنفاس والآيات والكلمات",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "علي ملص",
+    "discussionUrl": "https://community.itqan.dev/d/812",
+    "discussionNum": "812",
+    "description": "منذ فترة أحاول جعل برنامج منجم يعمل على الأجهزة محليًا دون الحاجة لسيرفرات مكلفة أو الاعتماد على خدمات مؤقتة مثل جوجل كولاب، ودون التضحية كذلك بالدقة التي توفرها النماذج ال...",
+    "links": [
+      {
+        "name": "حزمة obadx/recitation-segmenter-v2",
+        "url": "https://huggingface.co/obadx/recitation-segmenter-v2",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "حزمة jonatasgrosman/wav2vec2-large-xlsr-53-arabic",
+        "url": "https://huggingface.co/jonatasgrosman/wav2vec2-large-xlsr-53-arabic",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "حزمة Alimalas/munajjam-onnx-models",
+        "url": "https://huggingface.co/Alimalas/munajjam-onnx-models",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "مستودع alinice1998/munajjam-desktop",
+        "url": "https://github.com/alinice1998/munajjam-desktop",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "title": "من الاختبارات الاصطناعية إلى الصوت الحقيقي",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "Walid-Khalfa",
+    "discussionUrl": "https://community.itqan.dev/d/752",
+    "discussionNum": "752",
+    "description": "من الاختبارات الاصطناعية إلى الصوت الحقيقي: تجربتي في التحقق من FastConformer CTC مع ONNX وNVIDIA NeMo مقدمة أثناء مساهمتي في مشروع Munajjam مفتوح المصدر، ومن خلال Pull Req...",
+    "links": [
+      {
+        "name": "مستودع Itqan-community/Munajjam",
+        "url": "https://github.com/Itqan-community/Munajjam",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "title": "طريقة افضل ل سيستم منجم",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "Iam-Muslim",
+    "discussionUrl": "https://community.itqan.dev/d/715",
+    "discussionNum": "715",
+    "description": "لا استطيع ان ارى اخوتي في ضلال و اكون معرضا انا كنت دعوت مطورين منجم للتوقف العمل به لانه ثقيل و لا يؤتي بنفس جودة سيستم اخي احمد ابراهيم @أحمد إبراهيم و دعوتهم لمشاركته او...",
+    "links": [
+      {
+        "name": "حزمة obadx/muaalem-model-v3_2",
+        "url": "https://huggingface.co/obadx/muaalem-model-v3_2",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "حزمة TheGreatQuran/recitation-segmenter-v2-quantized",
+        "url": "https://huggingface.co/TheGreatQuran/recitation-segmenter-v2-quantized",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "حزمة hetchyy/quranic-universal-aligner",
+        "url": "https://huggingface.co/spaces/hetchyy/quranic-universal-aligner",
+        "src": "HuggingFace"
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "title": "بفضل الله و برحمته : الحصول على مواقيت الحروف لكل كلمة - بديل ل منجم",
+    "category": "audio",
+    "icon": "🔊",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "Iam-Muslim",
+    "discussionUrl": "https://community.itqan.dev/d/709",
+    "discussionNum": "709",
+    "description": "سلام عليكم اخوتي الحمد لله الذي الف بين قلوبنا و هدانا لهذه الاعمال الموديل - اخي مصطفى @Quran Lab / الماتشينج سيستم - اخي احمد ابراهيم @أحمد إبراهيم / محول الفونيمات - اخي...",
+    "links": [
+      {
+        "name": "مستودع Iam-Muslim/QuranReciteToText",
+        "url": "https://github.com/Iam-Muslim/QuranReciteToText/tree/phoneme-%D8%A7%D9%84%D8%AD%D9%85%D8%AF%D9%84%D9%84%D9%87",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 91,
+    "title": "مساهمات منجم منذ بداية حملة كود يخدم القرآن",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "علي ملص",
+    "discussionUrl": "https://community.itqan.dev/d/708",
+    "discussionNum": "708",
+    "description": "السلام عليكم جميعًا، منذ انطلاق حملة \"كود يخدم القرآن\" قبل أسبوعين تقريبًا، حققنا في مشروع منجم (Munajjam) خطوات مميزة؛ إذ أضفنا العديد من المزايا الجديدة، وأجرينا تجارب لا...",
+    "links": [
+      {
+        "name": "مستودع OmarKhalil2003",
+        "url": "https://github.com/OmarKhalil2003",
+        "src": "GitHub"
+      },
+      {
+        "name": "مستودع farhaghallab3",
+        "url": "https://github.com/farhaghallab3",
+        "src": "GitHub"
+      },
+      {
+        "name": "مستودع Walid-Khalfa",
+        "url": "https://github.com/Walid-Khalfa",
+        "src": "GitHub"
+      },
+      {
+        "name": "مستودع Mennatullah122",
+        "url": "https://github.com/Mennatullah122",
+        "src": "GitHub"
+      },
+      {
+        "name": "مستودع Itqan-community/Munajjam",
+        "url": "https://github.com/Itqan-community/Munajjam/issues",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 92,
+    "title": "كيفية تجربة التعديلات التي تجريها كمساهم في برنامج منجم عبر جوجل كولاب",
+    "category": "fonts",
+    "icon": "✒️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "علي ملص",
+    "discussionUrl": "https://community.itqan.dev/d/648",
+    "discussionNum": "648",
+    "description": "كيفية تجربة التعديلات التي تجريها كمساهم في برنامج منجم عبر جوجل كولاب مشروع منجّم هو عبارة عن واجهة خلفية (Backend) وبرنامج لتزمين التلاوة القرآنية ومزامنتها مع النص بدقة ...",
+    "links": [
+      {
+        "name": "مستودع alinice1998/munajjamfrontend",
+        "url": "https://github.com/alinice1998/munajjamfrontend",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 93,
+    "title": "Highlighting Letter by Letter or even Word by Word ",
+    "category": "audio",
+    "icon": "🔊",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "Iam-Muslim",
+    "discussionUrl": "https://community.itqan.dev/d/614",
+    "discussionNum": "614",
+    "description": "Assalamu Alaikum wa Rahmatullahi wa Barakatuh First of all, Jazakum Allahu Khairan to the developers and maintainers for your amazing work on this community. It is highly b...",
+    "links": [
+      {
+        "name": "مستودع Wider-Community/quranic-universal-audio",
+        "url": "https://github.com/Wider-Community/quranic-universal-audio",
+        "src": "GitHub"
+      },
+      {
+        "name": "حزمة hetchyy/quranic-universal-audio",
+        "url": "https://huggingface.co/spaces/hetchyy/quranic-universal-audio",
+        "src": "HuggingFace"
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "title": "Word-by-word English audio for the Qur'an — free, complete, and openly specified",
+    "category": "tools",
+    "icon": "💻",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "Maajid",
+    "discussionUrl": "https://community.itqan.dev/d/599",
+    "discussionNum": "599",
+    "description": "I've made an English gloss spoken aloud for every word of the Qur'an. Try it: https://dfordev1.github.io/qusx-audio/ Code: https://github.com/dfordev1/qusx-audio Tap any wo...",
+    "links": [
+      {
+        "name": "مستودع dfordev1/qusx-audio",
+        "url": "https://github.com/dfordev1/qusx-audio",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 95,
+    "title": " توحيد التلاوات وبيانات التزمين للتطبيقات والمطورين Qur'anic Universal Audio",
+    "category": "audio",
+    "icon": "🔊",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "عبدالرحمن",
+    "discussionUrl": "https://community.itqan.dev/d/565",
+    "discussionNum": "565",
+    "description": "Qur’anic Universal Audio is an open project for Qur’an audio, recitation metadata, and word/letter level timestamps generation with a built-in review system. The goal is to...",
+    "links": [
+      {
+        "name": "حزمة hetchyy/quranic-universal-audio",
+        "url": "https://huggingface.co/spaces/hetchyy/quranic-universal-audio",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "مستودع Wider-Community/quranic-universal-audio",
+        "url": "https://github.com/Wider-Community/quranic-universal-audio",
+        "src": "GitHub"
+      },
+      {
+        "name": "مستودع Wider-Community/quranic-universal-audio",
+        "url": "https://github.com/Wider-Community/quranic-universal-audio/releases",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 96,
+    "title": "مولد فيديوهات قرآن مع التزامن الصوتي الدقيق",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "Abdulrahman Hemedah",
+    "discussionUrl": "https://community.itqan.dev/d/534",
+    "discussionNum": "534",
+    "description": "انتشرت في الآونة الأخيرة تطبيقات تولد فيديوهات قرآنية عبارة عن تلاوة بصوت قارئ مع نص الآيات على الشاشة وخلفية مناسبة. لكن هذه التطبيقات واجهت مشكلة تجعل من الصعب على المستخ...",
+    "links": [
+      {
+        "name": "مستودع cpfair/quran-align",
+        "url": "https://github.com/cpfair/quran-align",
+        "src": "GitHub"
+      },
+      {
+        "name": "مستودع avax43/Quran-Video-Generator",
+        "url": "https://github.com/avax43/Quran-Video-Generator",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "title": "Munajjam Desktop — تطبيق لتزمين التلاوات على windows & macos",
+    "category": "audio",
+    "icon": "🔊",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "abdullah mohammed",
+    "discussionUrl": "https://community.itqan.dev/d/412",
+    "discussionNum": "412",
+    "description": "بعد إطلاق مكتبة Munajjam لمحاذاة الآيات برمجياً، أضفنا اليوم آلية أسهل للوصول إليها والإستفادة منها. Munajjam Desktop تطبيق مكتبي لنظامَي Windows وmacOS يشغّل المكتبة مباشر...",
+    "links": [
+      {
+        "name": "مستودع Itqan-community/Munajjam",
+        "url": "https://github.com/Itqan-community/Munajjam",
+        "src": "GitHub"
+      },
+      {
+        "name": "مستودع Itqan-community/munajjam-desktop",
+        "url": "https://github.com/Itqan-community/munajjam-desktop/releases",
+        "src": "GitHub"
+      },
+      {
+        "name": "مستودع Itqan-community/munajjam-desktop",
+        "url": "https://github.com/Itqan-community/munajjam-desktop",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "title": "نظام إدارة المحتوى القرآني ITQAN CMS",
+    "category": "audio",
+    "icon": "🔊",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "عبدالوهاب أحمد",
+    "discussionUrl": "https://community.itqan.dev/d/261",
+    "discussionNum": "261",
+    "description": "يعد مشروع نظام إدارة المحتوى القرآني من أبرز المشاريع التي يعمل عليها مجتمع إتقان حاليًا، وهو مشروع نظام إدارة المحتوى القرآني، بوصفه مشروعًا مفتوح المصدر يركّز بالأساس على...",
+    "links": [
+      {
+        "name": "مستودع Itqan-community/cms-frontend",
+        "url": "https://github.com/Itqan-community/cms-frontend",
+        "src": "GitHub"
+      },
+      {
+        "name": "مستودع Itqan-community/cms-backend",
+        "url": "https://github.com/Itqan-community/cms-backend",
+        "src": "GitHub"
+      },
+      {
+        "name": "مستودع orgs/Itqan-community",
+        "url": "https://github.com/orgs/Itqan-community/projects/8/views/1",
+        "src": "GitHub"
+      },
+      {
+        "name": "مستودع orgs/Itqan-community",
+        "url": "https://github.com/orgs/Itqan-community/projects/8",
+        "src": "GitHub"
+      },
+      {
+        "name": "مستودع orgs/Itqan-community",
+        "url": "https://github.com/orgs/Itqan-community/projects/7",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "title": "مُنجِّم",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "abdullah mohammed",
+    "discussionUrl": "https://community.itqan.dev/d/252",
+    "discussionNum": "252",
+    "description": "مشروع منجّم Munajjam هو مكتبة بايثون مفتوحة المصدر لأتمتة مزامنة التلاوات القرآنية صوتيًا مع آيات المصحف بدقة عالية، عبر توليد التوقيت الزمني لكل آية باستخدام تقنيات التعرف...",
+    "links": [
+      {
+        "name": "مستودع Itqan-community/Munajjam",
+        "url": "https://github.com/Itqan-community/Munajjam/issues",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "title": "إطلاق الإصدار التجريبي الثاني من نظام إدارة المحتوى القرآني Quranic CMS",
+    "category": "audio",
+    "icon": "🔊",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "عبدالوهاب أحمد",
+    "discussionUrl": "https://community.itqan.dev/d/130",
+    "discussionNum": "130",
+    "description": "بحمد الله نعلن اليوم عن إنجاز مرحلة جديدة من مشروع Quranic CMS ؛ النظام المفتوح الذي يعمل عليه مجتمع إتقان لبناء بنية تحتية حديثة وموثوقة لخدمة التلاوات والبيانات القرآنية....",
+    "links": [
+      {
+        "name": "مستودع orgs/Itqan-community",
+        "url": "https://github.com/orgs/Itqan-community/projects/8/views/1",
+        "src": "GitHub"
+      },
+      {
+        "name": "api.cms.itqan.dev",
+        "url": "https://api.cms.itqan.dev/cms-api/docs",
+        "src": "بوابة صوتية / API"
+      },
+      {
+        "name": "api.cms.itqan.dev",
+        "url": "https://api.cms.itqan.dev/developers-api/docs",
+        "src": "بوابة صوتية / API"
+      },
+      {
+        "name": "api.cms.itqan.dev",
+        "url": "https://api.cms.itqan.dev/django-admin",
+        "src": "بوابة صوتية / API"
+      },
+      {
+        "name": "مستودع Itqan-community/cms-frontend",
+        "url": "https://github.com/Itqan-community/cms-frontend",
+        "src": "GitHub"
+      },
+      {
+        "name": "مستودع Itqan-community/cms-backend",
+        "url": "https://github.com/Itqan-community/cms-backend",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 101,
+    "title": "مشروع تحبير: مبادرة وقفية لتسجيل القراءات العشر جمعًا وإفرادًا",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "Dina Ahmed",
+    "discussionUrl": "https://community.itqan.dev/d/76",
+    "discussionNum": "76",
+    "description": "مشروعٌ وقفي يهدف إلى توثيق تسجيلات القراءات العشر صوتيًا بطريقة محكمة علميًا وتقنيًا، بحيث تُصبح مرجعًا موثوقًا لطُلاب القراءات والمطوِّرين والباحثين ومؤسسات التحفيظ. المشر...",
+    "links": [
+      {
+        "name": "مشاهدة الورشة المرئية",
+        "url": "https://www.youtube.com/channel/UCue0VDiw0UCeD8jkmI2LsFw",
+        "src": "فيديو مسجل"
+      }
+    ]
+  },
+  {
+    "id": 102,
+    "title": "كيف تُنتج طوابع زمنية لتلاوات القرآن وتفتح الآفاق لمئات التطبيقات",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "Dina Ahmed",
+    "discussionUrl": "https://community.itqan.dev/d/62",
+    "discussionNum": "62",
+    "description": "تزداد اليوم المشاريع التقنية التي تخدم القرآن الكريم. ومع هذا التوسع، برزت الحاجة إلى عنصر أساسي لم يكن يُلتفت إليه كثيرًا من قبل: الطوابع الزمنية timestamps للآيات القرآني...",
+    "links": [
+      {
+        "name": "مستودع cpfair/quran-align?",
+        "url": "https://github.com/cpfair/quran-align?",
+        "src": "GitHub"
+      },
+      {
+        "name": "everyayah.com",
+        "url": "https://everyayah.com/?",
+        "src": "بوابة صوتية / API"
+      },
+      {
+        "name": "مستودع anassaiyed/quran_timing_files?",
+        "url": "https://github.com/anassaiyed/quran_timing_files?",
+        "src": "GitHub"
+      },
+      {
+        "name": "مستودع readbeyond/aeneas?",
+        "url": "https://github.com/readbeyond/aeneas?",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 103,
+    "title": "🌿 منصة «جذور البيان» الاستجابة لتدقيق مجتمع إتقان وإطلاق التحديثات الجديدة ",
+    "category": "fonts",
+    "icon": "✒️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "AbdellahBELMAARIS",
+    "discussionUrl": "https://community.itqan.dev/d/917",
+    "discussionNum": "917",
+    "description": "السلام عليكم ورحمة الله وبركاته، إخوتي وأخواتي وأساتذتي الأفاضل في مجتمع «إتقان» المبارك لخدمة التقنيات القرآنية، حيّاكم الله جميعاً وبارك في جهودكم وعلومكم. أود في البداية...",
+    "links": [
+      {
+        "name": "مستودع Abdellah-BELMAARIS/quran-site",
+        "url": "https://github.com/Abdellah-BELMAARIS/quran-site",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 104,
+    "title": "بفضل الله و برحمته || Tarteel AI Clone Opensource",
+    "category": "workshops",
+    "icon": "📺",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "Iam-Muslim",
+    "discussionUrl": "https://community.itqan.dev/d/884",
+    "discussionNum": "884",
+    "description": "Natlu: 100% Free &amp; Open-Source Tarteel AI Alternative with On-Device Tajweed Checking Assalamu Alaikum I am excited to share Natlu (نتلو) , a completely free and open-s...",
+    "links": [
+      {
+        "name": "مستودع Iam-Muslim/Natlu",
+        "url": "https://github.com/Iam-Muslim/Natlu",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 105,
+    "title": "«عماد القرآن»: كيف تصمّم لعبة تحفيظ لا تُفسد الحفظ؟",
+    "category": "fonts",
+    "icon": "✒️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "إبراهيم قريقع",
+    "discussionUrl": "https://community.itqan.dev/d/721",
+    "discussionNum": "721",
+    "description": "السلام عليكم ورحمة الله وبركاته، أنا إبراهيم، وربما عرفني بعضكم من مصحف عماد : أنا من نفّذ نسخة iOS منه في حزمة MushafImad برخصة MIT، ضمن مبادرة Ramadan Impact من مجتمع إتق...",
+    "links": [
+      {
+        "name": "مستودع ibo2001/MushafImad",
+        "url": "https://github.com/ibo2001/MushafImad",
+        "src": "GitHub"
+      },
+      {
+        "name": "مستودع Itqan-community/mushaf-imad-flutter",
+        "url": "https://github.com/Itqan-community/mushaf-imad-flutter",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 106,
+    "title": "الفرق بين إنشاء إضافة لمتصفح كروم وفايرفوكس - تجربة نشر إضافة الورد اليوميّ",
+    "category": "fonts",
+    "icon": "✒️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "هادي الأحمد",
+    "discussionUrl": "https://community.itqan.dev/d/198",
+    "discussionNum": "198",
+    "description": "عملت في الفترة السابقة على نشر نسخة لمتصفح فايرفوكس من إضافة الورد اليومي التي نشرت عنها قبل أيام في هذا الموضوع حيث شاركت تجربتي في نشر إضافة لمتصفح غوغل كروم، وبعد مروري ...",
+    "links": [
+      {
+        "name": "مستودع nicothin/webextension-cross-browser-polyfill",
+        "url": "https://github.com/nicothin/webextension-cross-browser-polyfill",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 107,
+    "title": "تجربة تطبيق راديو التلاوات بالاعتماد على الواجهة البرمجية Quranic CMS API",
+    "category": "audio",
+    "icon": "🔊",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "علا صالح",
+    "discussionUrl": "https://community.itqan.dev/d/161",
+    "discussionNum": "161",
+    "description": "أشارككم في هذا الموضوع تجربتي في تطوير تطبيق راديو التلاوات، وهو تطبيق ويب يعتمد اعتمادًا كاملًا على الواجهة البرمجية لنظام إدارة المحتوى القرآني من إتقان Itqan Quranic CMS...",
+    "links": [
+      {
+        "name": "api.cms.itqan.dev",
+        "url": "https://api.cms.itqan.dev",
+        "src": "بوابة صوتية / API"
+      },
+      {
+        "name": "api.cms.itqan.dev",
+        "url": "https://api.cms.itqan.dev/developers-api",
+        "src": "بوابة صوتية / API"
+      },
+      {
+        "name": "مستودع engsaleh/Itqan-cms-tilawah-radio",
+        "url": "https://github.com/engsaleh/Itqan-cms-tilawah-radio",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 108,
+    "title": "تجربة البحث الدلالي في القرآن الكريم",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "علا صالح",
+    "discussionUrl": "https://community.itqan.dev/d/82",
+    "discussionNum": "82",
+    "description": "في هذا الموضوع أشرح تجربتي في تنفيذ البحث الدلالي Semantic Search في نصوص القرآن الكريم. هدفي من التجربة اختبار الربط بين المعاني القرآنية المختلفة، حتى وإن اختلفت الصياغة ...",
+    "links": [
+      {
+        "name": "حزمة intfloat/multilingual-e5-base",
+        "url": "https://huggingface.co/intfloat/multilingual-e5-base",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "حزمة hkunlp/instructor-large",
+        "url": "https://huggingface.co/hkunlp/instructor-large",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "مستودع facebookresearch/faiss",
+        "url": "https://github.com/facebookresearch/faiss",
+        "src": "GitHub"
+      },
+      {
+        "name": "مستودع engsaleh/quran_semantic_search",
+        "url": "https://github.com/engsaleh/quran_semantic_search",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 109,
+    "title": "بناء API مفتوح المصدر لخدمة التطبيقات القرآنية",
+    "category": "fonts",
+    "icon": "✒️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "علا صالح",
+    "discussionUrl": "https://community.itqan.dev/d/60",
+    "discussionNum": "60",
+    "description": "أشارككم في هذا الموضوع أهم الخطوات اللازمة لبناء واجهة برمجة تطبيقات API قوية وموثوقة يمكن للمطورين الاعتماد عليها لبناء تطبيقاتهم الخاصة. سأستخدم إطار عمل Flask لبناء الوا...",
+    "links": [
+      {
+        "name": "qawm-api.onrender.com",
+        "url": "https://qawm-api.onrender.com",
+        "src": "بوابة صوتية / API"
+      },
+      {
+        "name": "qawm-api.onrender.com",
+        "url": "https://qawm-api.onrender.com/qawms",
+        "src": "بوابة صوتية / API"
+      },
+      {
+        "name": "qawm-api.onrender.com",
+        "url": "https://qawm-api.onrender.com/qawms/1/verses",
+        "src": "بوابة صوتية / API"
+      },
+      {
+        "name": "مستودع engsaleh/QawmAPI",
+        "url": "https://github.com/engsaleh/QawmAPI",
+        "src": "GitHub"
+      },
+      {
+        "name": "مستودع engsaleh/Qawm-frontend",
+        "url": "https://github.com/engsaleh/Qawm-frontend",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 110,
+    "title": "بناء خط معالجة Pipeline لاستخراج النصوص القرآنية وتحويلها لصيغة قياسية",
+    "category": "fonts",
+    "icon": "✒️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "علا صالح",
+    "discussionUrl": "https://community.itqan.dev/d/55",
+    "discussionNum": "55",
+    "description": "أشارككم في هذا الموضوع خطوات بناء خط بيانات Data Pipeline لاستخراج النصوص القرآنية ضمن نظام متكامل لجمع بيانات القرآن الكريم من أحد المصادر الموثوقة عبر الإنترنت ومعالجتها ...",
+    "links": [
+      {
+        "name": "alquran.cloud",
+        "url": "https://alquran.cloud/api",
+        "src": "بوابة صوتية / API"
+      },
+      {
+        "name": "api.alquran.cloud",
+        "url": "https://api.alquran.cloud/v1",
+        "src": "بوابة صوتية / API"
+      },
+      {
+        "name": "مستودع engsaleh/quran_pipeline",
+        "url": "https://github.com/engsaleh/quran_pipeline",
+        "src": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 111,
+    "title": "تجربة بناء محرك بحث قرآني يعتمد على Elasticsearch والذكاء الاصطناعي",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "علا صالح",
+    "discussionUrl": "https://community.itqan.dev/d/31",
+    "discussionNum": "31",
+    "description": "في هذا الموضوع سأشرح لكم تجربتي العملية في بناء محرك بحث قرآني متقدم سميته \"باحث BAHETH\" والذي يدمج بين سرعة الاسترجاع التي يوفرها محرك Elasticsearch، والقدرة الدلالية لنما...",
+    "links": [
+      {
+        "name": "حزمة sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "url": "https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        "src": "HuggingFace"
+      },
+      {
+        "name": "مستودع engsaleh/Baheth-Quran",
+        "url": "https://github.com/engsaleh/Baheth-Quran",
+        "src": "GitHub"
+      }
+    ]
   }
 ]
