@@ -18,6 +18,7 @@ import json
 import os
 import re
 import sys
+import time
 import concurrent.futures
 import urllib.request
 import urllib.error
@@ -190,9 +191,13 @@ def save_resources(data):
     update_index_html(data)
 
 def api_get(url):
+    time.sleep(0.4)
     req = urllib.request.Request(
         url,
-        headers={"User-Agent": "ItqanLibraryCurator/4.0 (+https://github.com/nandxorandor/itqan-library)"}
+        headers={
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            "Accept": "application/json, text/plain, */*"
+        }
     )
     try:
         with urllib.request.urlopen(req, timeout=15) as resp:
@@ -506,6 +511,9 @@ def scan_and_update(run_health_check=True):
                 
                 if disc_title and not any(bad in disc_title for bad in EXCLUDE_TITLE_KEYWORDS):
                     analysis = ai_classify_and_summarize(disc_title, content, links)
+                    st_val, st_lbl, is_ratq_val = determine_status_and_ratq(
+                        disc_title, content, analysis.get("category", "tools"), links, "مساهمة من ردود المجتمع"
+                    )
                     new_item = {
                         "id": len(existing) + 1,
                         "title": disc_title,
@@ -517,12 +525,9 @@ def scan_and_update(run_health_check=True):
                         "discussionUrl": f"https://community.itqan.dev/d/{disc_id}",
                         "discussionNum": disc_id,
                         "description": analysis.get("summary", ""),
-                    "status": determine_status_and_ratq(title, content, analysis.get("category", "tools"), links, author_name)[0],
-                    "statusLabel": determine_status_and_ratq(title, content, analysis.get("category", "tools"), links, author_name)[1],
-                    "ratq": determine_status_and_ratq(title, content, analysis.get("category", "tools"), links, author_name)[2],
-                    "status": determine_status_and_ratq(disc_title, content, analysis.get("category", "tools"), links)[0],
-                    "statusLabel": determine_status_and_ratq(disc_title, content, analysis.get("category", "tools"), links)[1],
-                    "ratq": determine_status_and_ratq(disc_title, content, analysis.get("category", "tools"), links)[2],
+                        "status": st_val,
+                        "statusLabel": st_lbl,
+                        "ratq": is_ratq_val,
                         "links": links[:12]
                     }
                     existing.append(new_item)
@@ -611,6 +616,9 @@ def scan_and_update(run_health_check=True):
                     analysis["icon"] = "📺"
                     analysis["metric"] = "ورشة تقنية مسجلة"
 
+                st_val, st_lbl, is_ratq_val = determine_status_and_ratq(
+                    title, content, analysis.get("category", "tools"), links, author_name
+                )
                 new_item = {
                     "id": len(existing) + 1,
                     "title": title,
@@ -622,12 +630,9 @@ def scan_and_update(run_health_check=True):
                     "discussionUrl": f"https://community.itqan.dev/d/{disc_id}",
                     "discussionNum": disc_id,
                     "description": analysis.get("summary", ""),
-                    "status": determine_status_and_ratq(title, content, analysis.get("category", "tools"), links, author_name)[0],
-                    "statusLabel": determine_status_and_ratq(title, content, analysis.get("category", "tools"), links, author_name)[1],
-                    "ratq": determine_status_and_ratq(title, content, analysis.get("category", "tools"), links, author_name)[2],
-                    "status": determine_status_and_ratq(disc_title, content, analysis.get("category", "tools"), links)[0],
-                    "statusLabel": determine_status_and_ratq(disc_title, content, analysis.get("category", "tools"), links)[1],
-                    "ratq": determine_status_and_ratq(disc_title, content, analysis.get("category", "tools"), links)[2],
+                    "status": st_val,
+                    "statusLabel": st_lbl,
+                    "ratq": is_ratq_val,
                     "links": links[:12]
                 }
                 existing.append(new_item)
