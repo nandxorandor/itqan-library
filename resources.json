@@ -6899,5 +6899,32 @@
         "src": "GitHub"
       }
     ]
+  },
+  {
+    "id": 239,
+    "title": "انطلاقا من تحدي المهندس طارق منصور: رحلتي في بناء تطبيق «اقرأ – القرآن الكريم»",
+    "category": "ai",
+    "icon": "👳‍♂️",
+    "license": "مفتوح المصدر",
+    "metric": "مورد تقني معتمد",
+    "author": "مساهمة من ردود المجتمع",
+    "discussionUrl": "https://community.itqan.dev/d/1027",
+    "discussionNum": "1027",
+    "description": "رحلتي في بناء تطبيق «اقرأ – القرآن الكريم» Nov 27, 2026 · @أحمد شمس من تحدي الثلاث ساعات إلى تجربتي بنيت تطبيق «اقرأ – القرآن الكريم» في يومَي عمل، من غير أن أكتب سطرًا برم...",
+    "status": "beta",
+    "statusLabel": "تجريبي قيد التطوير",
+    "ratq": true,
+    "links": [
+      {
+        "name": "مستودع edriso/rattil",
+        "url": "https://github.com/edriso/rattil",
+        "src": "GitHub"
+      },
+      {
+        "name": "مستودع alinice1998/Tawatur",
+        "url": "https://github.com/alinice1998/Tawatur",
+        "src": "GitHub"
+      }
+    ]
   }
 ]
